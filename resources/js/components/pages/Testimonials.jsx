@@ -1,6 +1,8 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 function Testimonials() {
+    const { t } = useTranslation();
     const testimonials = [
         {
             author: 'Abdelhak KASSABI',
@@ -26,7 +28,7 @@ function Testimonials() {
         <>
             <section className="page-header py-5" style={{background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)', color: 'white'}}>
                 <div className="container text-center">
-                    <h1 className="display-4">Témoignages</h1>
+                    <h1 className="display-4">{t('testimonials.title')}</h1>
                 </div>
             </section>
 

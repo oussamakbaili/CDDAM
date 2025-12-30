@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Home() {
+    const { t } = useTranslation();
     console.log('Home component is rendering');
     const location = useLocation();
     
@@ -141,11 +143,11 @@ function Home() {
                                     />
                                 </div>
                                 <h1 className="welcome-brand-title">
-                                    Le Club des Dirigeants des Associations Maroc
+                                    {t('home.brandTitle')}
                                 </h1>
                                 <div className="welcome-brand-divider"></div>
                                 <p className="welcome-brand-tagline">
-                                    La communauté des leaders associatifs qui façonnent l'impact social de demain.
+                                    {t('home.tagline')}
                                 </p>
                             </div>
                         </div>
@@ -158,56 +160,54 @@ function Home() {
                                 className="welcome-content-elegant"
                             >
                                 <div className="welcome-intro-block">
-                                    <p className="welcome-intro-text">
-                                        Nous sommes heureux de vous accueillir au <strong>Club des Dirigeants des Associations Maroc</strong>, un espace dédié aux femmes et aux hommes engagés dans la gestion associative, porteurs de visions, d'initiatives et de projets à fort impact social.
-                                    </p>
+                                    <p className="welcome-intro-text" dangerouslySetInnerHTML={{ __html: t('home.welcomeText') }} />
                                 </div>
 
                                 <div className="welcome-content-body">
-                                    <p>Notre communauté réunit des présidents d'associations, des directeurs exécutifs, des responsables de projets, ainsi que des acteurs de la société civile désireux de renforcer leurs compétences, développer leurs réseaux et contribuer à un écosystème associatif plus structuré, plus professionnel et plus efficace au service du développement national.</p>
+                                    <p>{t('home.communityText')}</p>
 
-                                    <p>Au sein du Club des Dirigeants des Associations Maroc, vous trouverez un lieu d'échange privilégié, où le partage d'expériences, la collaboration et l'intelligence collective sont au cœur de nos actions. Qu'il s'agisse de renforcer vos capacités managériales, de faire rayonner votre organisation ou de créer des synergies avec d'autres associations, le Club vous offre une plateforme unique pour avancer.</p>
+                                    <p>{t('home.clubDescription')}</p>
 
                                     <div className="welcome-benefits-card">
                                         <h3 className="welcome-benefits-title">
                                             <i className="fas fa-star"></i>
-                                            Avantages exclusifs
+                                            {t('home.exclusiveBenefits')}
                                         </h3>
                                         <ul className="welcome-benefits-list-modern">
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Événements de réseautage thématiques, favorisant les rencontres entre dirigeants associatifs engagés.</span>
+                                                <span>{t('home.benefit1')}</span>
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Conférences et masterclass animées par des experts en gouvernance, mobilisation des ressources, leadership, gestion de projets et communication sociale.</span>
+                                                <span>{t('home.benefit2')}</span>
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Ateliers pratiques pour outiller les associations (gestion financière, stratégie, bonne gouvernance, plaidoyer, innovation sociale…).</span>
+                                                <span>{t('home.benefit3')}</span>
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Opportunités de mentorat et d'accompagnement, permettant de renforcer la professionnalisation des structures associatives.</span>
+                                                <span>{t('home.benefit4')}</span>
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Plateforme digitale regroupant ressources, articles, guides, outils et retours d'expérience pour accompagner les dirigeants au quotidien.</span>
+                                                <span>{t('home.benefit5')}</span>
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle"></i>
-                                                <span>Forums et espaces de discussion, favorisant le dialogue et la coopération entre acteurs du secteur associatif.</span>
+                                                <span>{t('home.benefit6')}</span>
                                             </li>
                                         </ul>
                                     </div>
 
-                                    <p>Notre club se veut avant tout une communauté bienveillante, responsable et tournée vers l'avenir, où chaque membre peut trouver soutien, inspiration et opportunités de développement. Nous croyons fermement que la force du secteur associatif réside dans la solidarité, l'engagement citoyen et la capacité de créer des ponts entre les organisations pour répondre aux défis sociaux de notre pays.</p>
+                                    <p>{t('home.communityValues')}</p>
 
-                                    <p>Que vous souhaitiez élargir votre réseau, renforcer vos compétences, donner plus d'impact à votre association ou rester informé des meilleures pratiques du secteur, le Club des Dirigeants des Associations Maroc est l'espace idéal pour accompagner votre ambition.</p>
+                                    <p>{t('home.joinText')}</p>
 
                                     <div className="welcome-cta-block">
                                         <p className="welcome-cta-text">
-                                            <strong>Bienvenue dans un univers où l'engagement, le leadership et l'impact social sont au cœur de notre action.</strong>
+                                            <strong>{t('home.welcomeMessage')}</strong>
                                         </p>
                                     </div>
                                 </div>
@@ -222,7 +222,7 @@ function Home() {
                                 <div className="welcome-feature-icon">
                                     <i className="fas fa-file-alt"></i>
                                 </div>
-                                <h4 className="welcome-feature-title">Règlement intérieur CDD</h4>
+                                <h4 className="welcome-feature-title">{t('home.regulation')}</h4>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -230,7 +230,7 @@ function Home() {
                                 <div className="welcome-feature-icon">
                                     <i className="fas fa-file-contract"></i>
                                 </div>
-                                <h4 className="welcome-feature-title">Charte CDD</h4>
+                                <h4 className="welcome-feature-title">{t('home.charter')}</h4>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -238,7 +238,7 @@ function Home() {
                                 <div className="welcome-feature-icon">
                                     <i className="fas fa-handshake"></i>
                                 </div>
-                                <h4 className="welcome-feature-title">Engagement</h4>
+                                <h4 className="welcome-feature-title">{t('home.commitment')}</h4>
                             </div>
                         </div>
                     </div>
@@ -264,13 +264,11 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.vision ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3>Vision</h3>
+                                <h3>{t('home.vision')}</h3>
                                 {openIdentityCards.vision && (
                                     <div className="identity-card-content">
                                         <p>
-                                            Construire une communauté nationale de dirigeants associatifs engagés, compétents et responsables,
-                                            capable de transformer les défis sociaux en opportunités de développement durable, pour faire du
-                                            secteur associatif marocain un modèle d'excellence, de gouvernance et d'impact.
+                                            {t('home.visionText')}
                                         </p>
                                     </div>
                                 )}
@@ -292,13 +290,11 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.mission ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3>Mission</h3>
+                                <h3>{t('home.mission')}</h3>
                                 {openIdentityCards.mission && (
                                     <div className="identity-card-content">
                                         <p>
-                                            Accompagner, former et connecter les dirigeants associatifs afin de renforcer leurs compétences,
-                                            valoriser la gouvernance au sein des organisations et promouvoir un écosystème associatif performant,
-                                            innovant et solidaire, pleinement engagé dans le développement humain et territorial du Maroc.
+                                            {t('home.missionText')}
                                         </p>
                                     </div>
                                 )}

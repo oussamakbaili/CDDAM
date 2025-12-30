@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Assemblees() {
+    const { t } = useTranslation();
     return (
         <>
             {/* Hero Section */}
@@ -12,8 +14,8 @@ function Assemblees() {
                 overflow: 'hidden'
             }}>
                 <div className="container text-center position-relative" style={{zIndex: 2}}>
-                    <h1 className="display-4 mb-3 fw-bold">Les Assemblées</h1>
-                    <p className="lead mb-0">La démocratie participative au cœur de la gouvernance du CDDAM</p>
+                    <h1 className="display-4 mb-3 fw-bold">{t('assemblies.title')}</h1>
+                    <p className="lead mb-0">{t('assemblies.subtitle')}</p>
                 </div>
                 <div style={{
                     position: 'absolute',

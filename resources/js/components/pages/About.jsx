@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function About() {
+    const { t } = useTranslation();
     const location = useLocation();
 
     useEffect(() => {
@@ -18,8 +20,8 @@ function About() {
         <>
             <section className="page-header py-5" style={{background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)', color: 'white'}}>
                 <div className="container text-center">
-                    <h1 className="display-4">À Propos</h1>
-                    <p className="lead">Découvrez qui nous sommes</p>
+                    <h1 className="display-4">{t('about.title')}</h1>
+                    <p className="lead">{t('about.subtitle')}</p>
                 </div>
             </section>
 
@@ -30,12 +32,10 @@ function About() {
                         <div className="col-lg-10 mx-auto">
                             <div className="card shadow-sm border-0">
                                 <div className="card-body p-5">
-                                    <h2 className="section-title mb-4 text-center">Présentation Générale</h2>
-                                    <p className="lead text-center mb-4">
-                                        Le <strong>Club des Dirigeants des Associations Maroc (CDDAM)</strong> est une structure nationale dédiée au <strong>renforcement des capacités</strong>, au <strong>réseautage</strong>, à la <strong>valorisation</strong> et à l'<strong>accompagnement</strong> des dirigeants associatifs, entrepreneurs sociaux et porteurs de projets à impact.
-                                    </p>
+                                    <h2 className="section-title mb-4 text-center">{t('about.generalPresentation')}</h2>
+                                    <p className="lead text-center mb-4" dangerouslySetInnerHTML={{ __html: t('about.presentationText1') }} />
                                     <p className="text-center">
-                                        Notre mission est de créer un écosystème dynamique et professionnel qui permet aux leaders du secteur associatif marocain de développer leurs compétences, partager leurs expériences et créer des partenariats stratégiques pour maximiser leur impact social.
+                                        {t('about.presentationText2')}
                                     </p>
                                 </div>
                             </div>
@@ -47,9 +47,9 @@ function About() {
                         <div className="col-lg-6 mb-4">
                             <div className="card h-100 shadow-sm">
                                 <div className="card-body">
-                                    <h3 className="mb-4"><i className="fas fa-bullseye text-primary me-2"></i>Objectif Global</h3>
+                                    <h3 className="mb-4"><i className="fas fa-bullseye text-primary me-2"></i>{t('about.globalObjective')}</h3>
                                     <p className="lead">
-                                        Créer un réseau structuré, professionnel et dynamique permettant aux dirigeants d'associations de développer leurs compétences, partager leurs expériences et créer des partenariats.
+                                        {t('about.globalObjectiveText')}
                                     </p>
                                 </div>
                             </div>
@@ -57,13 +57,13 @@ function About() {
                         <div className="col-lg-6 mb-4">
                             <div className="card h-100 shadow-sm">
                                 <div className="card-body">
-                                    <h3 className="mb-4"><i className="fas fa-list-check text-primary me-2"></i>Objectifs Spécifiques</h3>
+                                    <h3 className="mb-4"><i className="fas fa-list-check text-primary me-2"></i>{t('about.specificObjectives')}</h3>
                                     <ul className="list-unstyled">
-                                        <li><i className="fas fa-check-circle text-success me-2"></i>Promouvoir un leadership associatif moderne</li>
-                                        <li><i className="fas fa-check-circle text-success me-2"></i>Renforcer les capacités managériales</li>
-                                        <li><i className="fas fa-check-circle text-success me-2"></i>Faciliter la collaboration</li>
-                                        <li><i className="fas fa-check-circle text-success me-2"></i>Développer une plateforme d'échange</li>
-                                        <li><i className="fas fa-check-circle text-success me-2"></i>Mettre en avant l'innovation sociale</li>
+                                        <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.objective1')}</li>
+                                        <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.objective2')}</li>
+                                        <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.objective3')}</li>
+                                        <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.objective4')}</li>
+                                        <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.objective5')}</li>
                                     </ul>
                                 </div>
                             </div>
@@ -75,30 +75,30 @@ function About() {
                         <div className="col-12">
                             <div className="card shadow-sm">
                                 <div className="card-body p-5">
-                                    <h3 className="section-title mb-4 text-center"><i className="fas fa-users text-primary me-2"></i>Nos Cibles</h3>
+                                    <h3 className="section-title mb-4 text-center"><i className="fas fa-users text-primary me-2"></i>{t('about.targets')}</h3>
                                     <div className="row">
                                         <div className="col-md-3 col-sm-6 mb-3">
                                             <div className="text-center p-3 bg-light rounded">
                                                 <i className="fas fa-user-tie fa-2x text-primary mb-3"></i>
-                                                <h5>Présidents d'associations</h5>
+                                                <h5>{t('about.target1')}</h5>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6 mb-3">
                                             <div className="text-center p-3 bg-light rounded">
                                                 <i className="fas fa-handshake fa-2x text-primary mb-3"></i>
-                                                <h5>Dirigeants d'ONG</h5>
+                                                <h5>{t('about.target2')}</h5>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6 mb-3">
                                             <div className="text-center p-3 bg-light rounded">
                                                 <i className="fas fa-lightbulb fa-2x text-primary mb-3"></i>
-                                                <h5>Entrepreneurs sociaux</h5>
+                                                <h5>{t('about.target3')}</h5>
                                             </div>
                                         </div>
                                         <div className="col-md-3 col-sm-6 mb-3">
                                             <div className="text-center p-3 bg-light rounded">
                                                 <i className="fas fa-briefcase fa-2x text-primary mb-3"></i>
-                                                <h5>Cadres associatifs</h5>
+                                                <h5>{t('about.target4')}</h5>
                                             </div>
                                         </div>
                                     </div>

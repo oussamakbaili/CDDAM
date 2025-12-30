@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function MyCDD() {
+    const { t } = useTranslation();
     return (
         <>
             {/* Hero Section with Blue Background */}
@@ -22,11 +24,11 @@ function MyCDD() {
                                     fontSize: 'clamp(2.5rem, 5vw, 4rem)',
                                     lineHeight: '1.2'
                                 }}>
-                                    MY CDDAM - VOTRE RÉSEAU SOCIAL<br />
-                                    <span style={{fontSize: '0.9em'}}>D'AFFAIRES</span>
+                                    {t('mycdd.title')}<br />
+                                    <span style={{fontSize: '0.9em'}}>{t('mycdd.subtitle')}</span>
                                 </h1>
                                 <p className="lead mb-4" style={{fontSize: '1.2rem'}}>
-                                    La plateforme exclusive qui connecte les dirigeants associatifs du Maroc
+                                    {t('mycdd.description')}
                                 </p>
                                 <Link 
                                     to="/packs-adhesions" 
@@ -46,7 +48,7 @@ function MyCDD() {
                                         e.currentTarget.style.color = 'var(--primary-color)';
                                     }}
                                 >
-                                    REJOIGNEZ LE CDDAM
+                                    {t('header.join')}
                                 </Link>
                             </div>
                         </div>
@@ -75,13 +77,11 @@ function MyCDD() {
                         <div className="col-lg-10 mx-auto">
                             <div className="intro-section mb-5">
                                 <h2 className="section-title mb-4" style={{color: 'var(--primary-color)', fontSize: '2.5rem'}}>
-                                    Bienvenue sur MyCDDAM
+                                    {t('mycdd.welcome')}
                                 </h2>
-                                <p className="lead mb-4" style={{fontSize: '1.25rem', lineHeight: '1.8'}}>
-                                    Bienvenue sur <strong>MyCDDAM</strong>, votre réseau social d'affaires dédié aux membres du <strong>Club des Dirigeants des Associations Maroc</strong>. MyCDDAM est conçu pour faciliter les échanges, les collaborations et les opportunités au sein de notre communauté dynamique de dirigeants associatifs.
-                                </p>
+                                <p className="lead mb-4" style={{fontSize: '1.25rem', lineHeight: '1.8'}} dangerouslySetInnerHTML={{ __html: t('mycdd.welcomeText1') }} />
                                 <p style={{fontSize: '1.1rem', lineHeight: '1.8', color: '#555'}}>
-                                    En tant que membre de MyCDDAM, vous bénéficiez d'un accès exclusif à une plateforme innovante qui vous permet de développer votre réseau, partager votre expertise et créer des synergies durables avec d'autres dirigeants passionnés par le développement associatif.
+                                    {t('mycdd.welcomeText2')}
                                 </p>
                             </div>
 

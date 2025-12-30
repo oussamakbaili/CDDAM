@@ -1,10 +1,43 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { t, i18n: i18nInstance } = useTranslation();
+    const [currentLang, setCurrentLang] = useState(i18nInstance.language || 'fr');
 
     console.log('Header component is rendering');
+
+    useEffect(() => {
+        // Mettre à jour la langue actuelle quand elle change
+        const handleLanguageChanged = (lng) => {
+            setCurrentLang(lng);
+            // Changer la direction du document pour l'arabe
+            if (lng === 'ar') {
+                document.documentElement.setAttribute('dir', 'rtl');
+                document.documentElement.setAttribute('lang', 'ar');
+            } else {
+                document.documentElement.setAttribute('dir', 'ltr');
+                document.documentElement.setAttribute('lang', lng);
+            }
+        };
+
+        // Écouter les changements de langue
+        i18nInstance.on('languageChanged', handleLanguageChanged);
+        
+        // Initialiser la direction au chargement
+        handleLanguageChanged(i18nInstance.language);
+
+        return () => {
+            i18nInstance.off('languageChanged', handleLanguageChanged);
+        };
+    }, [i18nInstance]);
+
+    const changeLanguage = (lng) => {
+        i18nInstance.changeLanguage(lng);
+        setCurrentLang(lng);
+    };
 
     const closeAllDropdowns = (exceptElement = null) => {
         const allDropdowns = document.querySelectorAll('.dropdown-menu');
@@ -47,26 +80,53 @@ function Header() {
                     <div className="row align-items-center">
                         <div className="col-md-6">
                             <div className="contact-info">
-                                <span><i className="fas fa-phone"></i> +212 526 622 626</span>
-                                <span><i className="fas fa-envelope"></i> contact@cdda.ma</span>
-                                <span><i className="fas fa-map-marker-alt"></i> 45 Bd Bir Anzarane 1er étage N°1 - Maarif - Casablanca - Maroc</span>
+                                <span><i className="fas fa-phone"></i> {t('common.phone')}</span>
+                                <span><i className="fas fa-envelope"></i> {t('common.email')}</span>
+                                <span><i className="fas fa-map-marker-alt"></i> {t('common.address')}</span>
                             </div>
                         </div>
                         <div className="col-md-6 text-end">
                             <div className="d-inline-flex align-items-center justify-content-end gap-3">
                                 <div className="language-switcher">
-                                    <a href="#" className="lang-link active">FR</a>
-                                    <a href="#" className="lang-link">AR</a>
-                                    <a href="#" className="lang-link">EN</a>
+                                    <a 
+                                        href="#" 
+                                        className={`lang-link ${currentLang === 'fr' ? 'active' : ''}`}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            changeLanguage('fr');
+                                        }}
+                                    >
+                                        FR
+                                    </a>
+                                    <a 
+                                        href="#" 
+                                        className={`lang-link ${currentLang === 'ar' ? 'active' : ''}`}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            changeLanguage('ar');
+                                        }}
+                                    >
+                                        AR
+                                    </a>
+                                    <a 
+                                        href="#" 
+                                        className={`lang-link ${currentLang === 'en' ? 'active' : ''}`}
+                                        onClick={(e) => {
+                                            e.preventDefault();
+                                            changeLanguage('en');
+                                        }}
+                                    >
+                                        EN
+                                    </a>
                                 </div>
                                 <div className="top-auth-links d-none d-md-inline-flex">
                                     <Link to="/admin/login" className="auth-link">
                                         <i className="fas fa-user-shield me-1"></i>
-                                        Admin
+                                        {t('header.admin')}
                                     </Link>
                                     <Link to="/admin/login" className="auth-link">
                                         <i className="fas fa-sign-in-alt me-1"></i>
-                                        Connexion
+                                        {t('header.login')}
                                     </Link>
                                 </div>
                             </div>
@@ -97,7 +157,7 @@ function Header() {
                                     onMouseEnter={handleDropdownEnter}
                                     onMouseLeave={handleDropdownLeave}
                                 >
-                                    À Propos
+                                    {t('header.about')}
                                 </Link>
                                 <ul 
                                     className="dropdown-menu" 
@@ -128,11 +188,11 @@ function Header() {
                                                 }
                                             }}
                                         >
-                                            Qui sommes-nous
+                                            {t('header.whoWeAre')}
                                         </Link>
                                     </li>
-                                    <li><Link className="dropdown-item" to="/#identity">Les Instances</Link></li>
-                                    <li><Link className="dropdown-item" to="/commissions">Commissions</Link></li>
+                                    <li><Link className="dropdown-item" to="/#identity">{t('header.instances')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/commissions">{t('header.commissions')}</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item dropdown">
@@ -142,25 +202,25 @@ function Header() {
                                     onMouseEnter={handleDropdownEnter}
                                     onMouseLeave={handleDropdownLeave}
                                 >
-                                    Activités
+                                    {t('header.activities')}
                                 </Link>
                                 <ul 
                                     className="dropdown-menu" 
                                     onMouseEnter={handleMenuEnter}
                                     onMouseLeave={handleMenuLeave}
                                 >
-                                    <li><Link className="dropdown-item" to="/activites/networking">Soirées de networking</Link></li>
-                                    <li><Link className="dropdown-item" to="/activites/congres">Congrès</Link></li>
-                                    <li><Link className="dropdown-item" to="/activites/assemblees">Les assemblées</Link></li>
-                                    <li><Link className="dropdown-item" to="/activites/evenements">Événements</Link></li>
-                                    <li><Link className="dropdown-item" to="/activites/forums">Forums</Link></li>
+                                    <li><Link className="dropdown-item" to="/activites/networking">{t('header.networking')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/activites/congres">{t('header.congress')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/activites/assemblees">{t('header.assemblies')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/activites/evenements">{t('header.events')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/activites/forums">{t('header.forums')}</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/packs-adhesions">Packs Adhésions</Link>
+                                <Link className="nav-link" to="/packs-adhesions">{t('header.membership')}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/mycdda">MyCDDAM</Link>
+                                <Link className="nav-link" to="/mycdda">{t('header.mycddam')}</Link>
                             </li>
                             <li className="nav-item dropdown">
                                 <Link 
@@ -169,29 +229,29 @@ function Header() {
                                     onMouseEnter={handleDropdownEnter}
                                     onMouseLeave={handleDropdownLeave}
                                 >
-                                    Partenaires
+                                    {t('header.partners')}
                                 </Link>
                                 <ul 
                                     className="dropdown-menu" 
                                     onMouseEnter={handleMenuEnter}
                                     onMouseLeave={handleMenuLeave}
                                 >
-                                    <li><Link className="dropdown-item" to="/partenaires#prive">Partenaire Privé</Link></li>
-                                    <li><Link className="dropdown-item" to="/partenaires#public">Partenaire Public</Link></li>
-                                    <li><Link className="dropdown-item" to="/partenaires#ong">ONG Partenaire</Link></li>
+                                    <li><Link className="dropdown-item" to="/partenaires#prive">{t('header.privatePartner')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/partenaires#public">{t('header.publicPartner')}</Link></li>
+                                    <li><Link className="dropdown-item" to="/partenaires#ong">{t('header.ngoPartner')}</Link></li>
                                 </ul>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/temoignages">Témoignages</Link>
+                                <Link className="nav-link" to="/temoignages">{t('header.testimonials')}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/blog">Blog</Link>
+                                <Link className="nav-link" to="/blog">{t('header.blog')}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="/contact">Contact</Link>
+                                <Link className="nav-link" to="/contact">{t('header.contact')}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link btn-join" to="/packs-adhesions">REJOIGNEZ LE CDDAM</Link>
+                                <Link className="nav-link btn-join" to="/packs-adhesions">{t('header.join')}</Link>
                             </li>
                         </ul>
                     </div>

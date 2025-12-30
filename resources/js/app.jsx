@@ -4,6 +4,7 @@ import '../css/app.css';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+import './i18n/config'; // Initialiser i18n
 import App from './components/App';
 
 const container = document.getElementById('app');

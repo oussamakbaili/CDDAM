@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+    const { t } = useTranslation();
     const [searchParams] = useSearchParams();
     const membershipType = searchParams.get('type'); // 'expert' ou 'association'
     
     const getDefaultSubject = () => {
         if (membershipType === 'expert') {
-            return "Demande d'adhésion - Expert Particulier / Acteur Dirigeants";
+            return t('contact.expertSubject');
         } else if (membershipType === 'association') {
-            return "Demande d'adhésion - Association";
+            return t('contact.associationSubject');
         }
         return '';
     };
 
     const getDefaultMessage = () => {
         if (membershipType === 'expert') {
-            return "Bonjour,\n\nJe souhaite rejoindre le CDDAM en tant qu'Expert Particulier / Acteur Dirigeants.\n\nPourriez-vous me fournir plus d'informations sur la formule sur mesure et les modalités d'adhésion ?\n\nCordialement.";
+            return t('contact.expertMessage');
         } else if (membershipType === 'association') {
-            return "Bonjour,\n\nJe représente une association et souhaite rejoindre le CDDAM.\n\nPourriez-vous me fournir plus d'informations sur les formules d'adhésion (Local, Régional, National) et me faire parvenir un devis personnalisé ?\n\nCordialement.";
+            return t('contact.associationMessage');
         }
         return '';
     };
@@ -42,7 +44,7 @@ function Contact() {
                 message: getDefaultMessage()
             }));
         }
-    }, [membershipType]);
+    }, [membershipType, t]);
 
     const handleChange = (e) => {
         setFormData({
@@ -68,7 +70,7 @@ function Contact() {
             if (err.response && err.response.data && err.response.data.message) {
                 setError(err.response.data.message);
             } else {
-                setError('Une erreur est survenue. Veuillez réessayer.');
+                setError(t('contact.error'));
             }
         }
     };
@@ -77,12 +79,12 @@ function Contact() {
         <>
             <section className="page-header py-5" style={{background: 'linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%)', color: 'white'}}>
                 <div className="container text-center">
-                    <h1 className="display-4">Contact</h1>
+                    <h1 className="display-4">{t('contact.title')}</h1>
                     {membershipType && (
                         <p className="lead mt-3" style={{fontSize: '1.2rem'}}>
                             {membershipType === 'expert' 
-                                ? "Formulaire de demande d'adhésion - Expert Particulier" 
-                                : "Formulaire de demande d'adhésion - Association"}
+                                ? t('contact.expertFormTitle')
+                                : t('contact.associationFormTitle')}
                         </p>
                     )}
                 </div>
@@ -98,23 +100,23 @@ function Contact() {
                                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                             }}>
                                 <div className="card-body" style={{padding: '40px'}}>
-                                    <h3 style={{color: 'var(--primary-color)', marginBottom: '30px', fontSize: '24px', fontWeight: 'bold'}}>Informations de contact</h3>
+                                    <h3 style={{color: 'var(--primary-color)', marginBottom: '30px', fontSize: '24px', fontWeight: 'bold'}}>{t('contact.contactInfo')}</h3>
                                     <ul className="contact-list" style={{listStyle: 'none', padding: 0}}>
                                         <li style={{marginBottom: '20px', display: 'flex', alignItems: 'flex-start'}}>
                                             <i className="fas fa-map-marker-alt" style={{color: 'var(--primary-color)', marginRight: '15px', marginTop: '5px', fontSize: '18px'}}></i>
-                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>45 Bd Bir Anzarane 1er étage N°1 - Maarif - Casablanca - Maroc</span>
+                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>{t('common.address')}</span>
                                         </li>
                                         <li style={{marginBottom: '20px', display: 'flex', alignItems: 'flex-start'}}>
                                             <i className="fas fa-phone" style={{color: 'var(--primary-color)', marginRight: '15px', marginTop: '5px', fontSize: '18px'}}></i>
-                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>+212 526 622 626</span>
+                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>{t('common.phone')}</span>
                                         </li>
                                         <li style={{marginBottom: '20px', display: 'flex', alignItems: 'flex-start'}}>
                                             <i className="fas fa-envelope" style={{color: 'var(--primary-color)', marginRight: '15px', marginTop: '5px', fontSize: '18px'}}></i>
-                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>contact.aiais@gmail.com</span>
+                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>{t('common.email')}</span>
                                         </li>
                                         <li style={{marginBottom: '20px', display: 'flex', alignItems: 'flex-start'}}>
                                             <i className="fas fa-clock" style={{color: 'var(--primary-color)', marginRight: '15px', marginTop: '5px', fontSize: '18px'}}></i>
-                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>Lun - Ven : 8AM - 18PM</span>
+                                            <span style={{color: '#666', fontSize: '16px', lineHeight: '1.6'}}>{t('footer.hours')}</span>
                                         </li>
                                     </ul>
                                 </div>
@@ -127,7 +129,7 @@ function Contact() {
                                 boxShadow: '0 2px 10px rgba(0,0,0,0.1)'
                             }}>
                                 <div className="card-body" style={{padding: '40px'}}>
-                                    <h3 style={{color: 'var(--primary-color)', marginBottom: '30px', fontSize: '24px', fontWeight: 'bold'}}>Envoyez-nous un message</h3>
+                                    <h3 style={{color: 'var(--primary-color)', marginBottom: '30px', fontSize: '24px', fontWeight: 'bold'}}>{t('contact.sendMessage')}</h3>
                                     {success && (
                                         <div className="alert alert-success" style={{
                                             backgroundColor: '#d4edda',
@@ -138,7 +140,7 @@ function Contact() {
                                             marginBottom: '20px'
                                         }}>
                                             <i className="fas fa-check-circle me-2"></i>
-                                            Votre message a été envoyé avec succès!
+                                            {t('contact.success')}
                                         </div>
                                     )}
                                     {error && (
@@ -156,7 +158,7 @@ function Contact() {
                                     )}
                                     <form onSubmit={handleSubmit}>
                                         <div className="mb-3">
-                                            <label htmlFor="name" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>Nom</label>
+                                            <label htmlFor="name" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>{t('contact.name')}</label>
                                             <input 
                                                 type="text" 
                                                 className="form-control" 
@@ -174,7 +176,7 @@ function Contact() {
                                             />
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="email" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>Email</label>
+                                            <label htmlFor="email" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>{t('contact.email')}</label>
                                             <input 
                                                 type="email" 
                                                 className="form-control" 
@@ -192,7 +194,7 @@ function Contact() {
                                             />
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="subject" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>Sujet</label>
+                                            <label htmlFor="subject" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>{t('contact.subject')}</label>
                                             <input 
                                                 type="text" 
                                                 className="form-control" 
@@ -210,7 +212,7 @@ function Contact() {
                                             />
                                         </div>
                                         <div className="mb-3">
-                                            <label htmlFor="message" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>Message</label>
+                                            <label htmlFor="message" className="form-label" style={{fontWeight: '500', marginBottom: '8px', color: '#333'}}>{t('contact.message')}</label>
                                             <textarea 
                                                 className="form-control" 
                                                 id="message" 
@@ -250,7 +252,7 @@ function Contact() {
                                                 e.currentTarget.style.backgroundColor = 'var(--primary-color)';
                                             }}
                                         >
-                                            Envoyer
+                                            {t('contact.send')}
                                         </button>
                                     </form>
                                 </div>
