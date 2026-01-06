@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Partenaires')
+@section('title', __('pages.partners.title'))
 
 @section('content')
 <section class="page-header py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, #006a87 100%); color: white;">
     <div class="container text-center">
-        <h1 class="display-4">Nos Partenaires</h1>
+        <h1 class="display-4">{{ __('pages.partners.subtitle') }}</h1>
     </div>
 </section>
 
@@ -13,7 +13,7 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12">
-                <h2 class="section-title text-center">Catégories de partenaires</h2>
+                <h2 class="section-title text-center">{{ __('pages.partners.categories_title') }}</h2>
             </div>
         </div>
         <div class="row">
@@ -21,7 +21,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-university fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires banques et assurances</h4>
+                        <h4>{{ __('pages.partners.category1') }}</h4>
                     </div>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-laptop-code fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires Téchnologiques et Télécoms</h4>
+                        <h4>{{ __('pages.partners.category2') }}</h4>
                     </div>
                 </div>
             </div>
@@ -37,7 +37,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-handshake fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires économiques et sociaux</h4>
+                        <h4>{{ __('pages.partners.category3') }}</h4>
                     </div>
                 </div>
             </div>
@@ -45,7 +45,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-landmark fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires Institutionnels</h4>
+                        <h4>{{ __('pages.partners.category4') }}</h4>
                     </div>
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-graduation-cap fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires Enseignements et Formations</h4>
+                        <h4>{{ __('pages.partners.category5') }}</h4>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-tv fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Partenaires Média</h4>
+                        <h4>{{ __('pages.partners.category6') }}</h4>
                     </div>
                 </div>
             </div>
@@ -69,7 +69,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-plane fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Tourismes et voyages</h4>
+                        <h4>{{ __('pages.partners.category7') }}</h4>
                     </div>
                 </div>
             </div>
@@ -77,7 +77,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-dumbbell fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Sport, santé et bien-être</h4>
+                        <h4>{{ __('pages.partners.category8') }}</h4>
                     </div>
                 </div>
             </div>
@@ -85,7 +85,7 @@
                 <div class="card h-100">
                     <div class="card-body text-center">
                         <i class="fas fa-star fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>Entreprises Premium</h4>
+                        <h4>{{ __('pages.partners.category9') }}</h4>
                     </div>
                 </div>
             </div>

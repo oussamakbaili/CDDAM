@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Club des Dirigeants des Associations Maroc - CDDAM</title>
+    <title>{{ __('common.title') }}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     @viteReactRefresh
@@ -12,10 +12,10 @@
     @stack('styles')
 </head>
 <body>
-    <noscript>Vous devez activer JavaScript pour utiliser cette application.</noscript>
+    <noscript>{{ __('common.enable_javascript') }}</noscript>
     <div id="app">
         <div style="padding: 20px; text-align: center;">
-            <p>Chargement de l'application...</p>
+            <p>{{ __('common.loading') }}</p>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -36,8 +36,8 @@
             if (viteScripts.length === 0) {
                 console.error('No Vite module scripts found!');
                 const appDiv = document.getElementById('app');
-                if (appDiv && !appDiv.querySelector('.react-app-loaded')) {
-                    appDiv.innerHTML = '<div style="padding: 20px; color: red; font-size: 16px;"><h2>Erreur: React n\'est pas chargé</h2><p>Vérifiez la console pour plus de détails.</p><p>Assurez-vous que le serveur Vite est en cours d\'exécution: <code>npm run dev</code></p></div>';
+                    if (appDiv && !appDiv.querySelector('.react-app-loaded')) {
+                    appDiv.innerHTML = '<div style="padding: 20px; color: red; font-size: 16px;"><h2>{{ __('common.react_not_loaded') }}</h2><p>{{ __('common.check_console') }}</p><p>{{ __('common.vite_server') }}</p></div>';
                 }
             }
             
@@ -47,11 +47,11 @@
                     if (appDiv) {
                     // Check if app content is still the loading message (meaning React didn't render)
                     const loadingMsg = appDiv.querySelector('p');
-                    if (loadingMsg && loadingMsg.textContent === 'Chargement de l\'application...' && !appDiv.querySelector('.react-app-loaded')) {
+                    if (loadingMsg && loadingMsg.textContent === '{{ __('common.loading') }}' && !appDiv.querySelector('.react-app-loaded')) {
                         console.error('React app did not render after 5 seconds');
                         // Only show error if no Vite scripts were found
                         if (viteScripts.length === 0) {
-                        appDiv.innerHTML = '<div style="padding: 20px; color: red; font-size: 16px;"><h2>Erreur: React n\'est pas chargé</h2><p>Vérifiez la console pour plus de détails.</p><p>Assurez-vous que le serveur Vite est en cours d\'exécution: <code>npm run dev</code></p></div>';
+                        appDiv.innerHTML = '<div style="padding: 20px; color: red; font-size: 16px;"><h2>{{ __('common.react_not_loaded') }}</h2><p>{{ __('common.check_console') }}</p><p>{{ __('common.vite_server') }}</p></div>';
                         }
                     }
                 }

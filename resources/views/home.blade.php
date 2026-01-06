@@ -1,29 +1,29 @@
 @extends('layouts.app')
 
-@section('title', 'Accueil')
+@section('title', __('pages.home.title'))
 
 @section('content')
 <!-- Hero Section -->
 <section class="hero-section">
     <div class="container">
         <div class="hero-content">
-            <h1 class="hero-title">REJOIGNEZ LE CDD</h1>
-            <p class="hero-subtitle">Nous serons plus fort, ENSEMBLE</p>
+            <h1 class="hero-title">{{ __('pages.home.hero_title') }}</h1>
+            <p class="hero-subtitle">{{ __('pages.home.hero_subtitle') }}</p>
             <div class="hero-buttons">
-                <a href="{{ route('membership') }}" class="btn btn-primary btn-lg">EN SAVOIR PLUS</a>
+                <a href="{{ route('membership') }}" class="btn btn-primary btn-lg">{{ __('pages.home.know_more') }}</a>
             </div>
             <div class="hero-features">
                 <div class="feature-item">
-                    <h3>FAITES PARTIE D'UN RÉSEAU INFLUENT</h3>
-                    <p>REJOIGNEZ LE CDD</p>
+                    <h3>{{ __('pages.home.feature1_title') }}</h3>
+                    <p>{{ __('pages.home.feature1_text') }}</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Un hub d'affaires 100% Marocain</h3>
-                    <p>REJOIGNEZ LE CDD</p>
+                    <h3>{{ __('pages.home.feature2_title') }}</h3>
+                    <p>{{ __('pages.home.feature2_text') }}</p>
                 </div>
                 <div class="feature-item">
-                    <h3>REJOINGEZ UN CERCLE D'AFFAIRES</h3>
-                    <p>REJOIGNEZ LE CDD</p>
+                    <h3>{{ __('pages.home.feature3_title') }}</h3>
+                    <p>{{ __('pages.home.feature3_text') }}</p>
                 </div>
             </div>
         </div>
@@ -35,9 +35,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 mx-auto text-center">
-                <h2 class="section-title">Bienvenue au Club des Dirigeants</h2>
-                <p class="lead">Nous sommes ravis de vous accueillir dans notre communauté dynamique regroupant des dirigeants passionnés et visionnaires. Chez nous, vous trouverez un espace d'échange, de partage et de croissance, conçu spécialement pour répondre aux besoins uniques des leaders d'aujourd'hui.</p>
-                <p>Que vous soyez un entrepreneur chevronné, un cadre supérieur ou un futur dirigeant ambitieux, notre club vous offre une plateforme exceptionnelle pour développer votre réseau, élargir vos horizons et renforcer votre leadership.</p>
+                <h2 class="section-title">{{ __('pages.home.welcome_title') }}</h2>
+                <p class="lead">{{ __('pages.home.welcome_text1') }}</p>
+                <p>{{ __('pages.home.welcome_text2') }}</p>
             </div>
         </div>
     </div>
@@ -49,27 +49,27 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="identity-card">
-                    <h3><i class="fas fa-eye"></i> Vision</h3>
-                    <p>Etre le Hub d'affaire, d'influence, et de création des valeurs le plus responsable et engagé dans le bien-être collectif.</p>
+                    <h3><i class="fas fa-eye"></i> {{ __('pages.home.vision') }}</h3>
+                    <p>{{ __('pages.home.vision_text') }}</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="identity-card">
-                    <h3><i class="fas fa-bullseye"></i> Mission</h3>
+                    <h3><i class="fas fa-bullseye"></i> {{ __('pages.home.mission') }}</h3>
                     <ul>
-                        <li>Connecteur des leaders</li>
-                        <li>Créateur d'opportunités</li>
-                        <li>Constructeur d'un développement durable</li>
+                        <li>{{ __('pages.home.mission1') }}</li>
+                        <li>{{ __('pages.home.mission2') }}</li>
+                        <li>{{ __('pages.home.mission3') }}</li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="identity-card">
-                    <h3><i class="fas fa-heart"></i> Valeurs</h3>
+                    <h3><i class="fas fa-heart"></i> {{ __('pages.home.values') }}</h3>
                     <ul>
-                        <li>Engagement</li>
-                        <li>Equité</li>
-                        <li>Solidarité</li>
+                        <li>{{ __('pages.home.value1') }}</li>
+                        <li>{{ __('pages.home.value2') }}</li>
+                        <li>{{ __('pages.home.value3') }}</li>
                     </ul>
                 </div>
             </div>
@@ -80,7 +80,7 @@
 <!-- Stats Section -->
 <section class="stats-section py-5">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Chiffres clé</h2>
+        <h2 class="section-title text-center mb-5">{{ __('pages.home.stats_title') }}</h2>
         <div class="row">
             @php
                 $stats = isset($stats) && is_array($stats) ? $stats : [];
@@ -91,7 +91,7 @@
                         <i class="fas fa-users"></i>
                     </div>
                     <h3 class="stat-number">+ {{ number_format(isset($stats['members']) ? $stats['members'] : 0) }}</h3>
-                    <p class="stat-label">Membres</p>
+                    <p class="stat-label">{{ __('pages.home.members') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -100,7 +100,7 @@
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3 class="stat-number">{{ isset($stats['regions']) ? $stats['regions'] : 0 }}</h3>
-                    <p class="stat-label">Régions du Maroc</p>
+                    <p class="stat-label">{{ __('pages.home.regions') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -109,7 +109,7 @@
                         <i class="fas fa-globe"></i>
                     </div>
                     <h3 class="stat-number">+ {{ isset($stats['countries']) ? $stats['countries'] : 0 }}</h3>
-                    <p class="stat-label">Pays</p>
+                    <p class="stat-label">{{ __('pages.home.countries') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -118,7 +118,7 @@
                         <i class="fas fa-handshake"></i>
                     </div>
                     <h3 class="stat-number">+ {{ isset($stats['partnerships']) ? $stats['partnerships'] : 0 }}</h3>
-                    <p class="stat-label">Partenariats</p>
+                    <p class="stat-label">{{ __('pages.home.partnerships') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -127,7 +127,7 @@
                         <i class="fas fa-building"></i>
                     </div>
                     <h3 class="stat-number">+ {{ isset($stats['business_circles']) ? $stats['business_circles'] : 0 }}</h3>
-                    <p class="stat-label">Cercles d'affaires</p>
+                    <p class="stat-label">{{ __('pages.home.business_circles') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -136,7 +136,7 @@
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3 class="stat-number">+ {{ isset($stats['congress']) ? $stats['congress'] : 0 }}</h3>
-                    <p class="stat-label">Congrès internationaux</p>
+                    <p class="stat-label">{{ __('pages.home.congress') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -145,7 +145,7 @@
                         <i class="fas fa-wine-glass"></i>
                     </div>
                     <h3 class="stat-number">+ {{ isset($stats['networking_events']) ? $stats['networking_events'] : 0 }}</h3>
-                    <p class="stat-label">Soirée networking</p>
+                    <p class="stat-label">{{ __('pages.home.networking_events') }}</p>
                 </div>
             </div>
             <div class="col-md-3 col-sm-6 mb-4">
@@ -154,7 +154,7 @@
                         <i class="fas fa-laptop"></i>
                     </div>
                     <h3 class="stat-number">{{ isset($stats['platforms']) ? $stats['platforms'] : 0 }}</h3>
-                    <p class="stat-label">Plateformes digitales</p>
+                    <p class="stat-label">{{ __('pages.home.platforms') }}</p>
                 </div>
             </div>
         </div>
@@ -164,7 +164,7 @@
 <!-- Premium Members Section -->
 <section class="members-section py-5 bg-light">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Membres premium</h2>
+        <h2 class="section-title text-center mb-5">{{ __('pages.home.premium_members') }}</h2>
         <div class="row">
             @if(isset($premiumMembers) && is_array($premiumMembers))
                 @foreach($premiumMembers as $member)
@@ -186,7 +186,7 @@
 <!-- VIP Members Section -->
 <section class="members-section py-5">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Membres VIP</h2>
+        <h2 class="section-title text-center mb-5">{{ __('pages.home.vip_members') }}</h2>
         <div class="row">
             @if(isset($vipMembers) && is_array($vipMembers))
                 @foreach($vipMembers as $member)
@@ -210,7 +210,7 @@
 <!-- Testimonials Section -->
 <section class="testimonials-section py-5 bg-light">
     <div class="container">
-        <h2 class="section-title text-center mb-5">Témoignages</h2>
+        <h2 class="section-title text-center mb-5">{{ __('pages.home.testimonials') }}</h2>
         <div class="row">
             @if(isset($testimonials) && is_array($testimonials))
                 @foreach($testimonials as $testimonial)
@@ -237,9 +237,9 @@
 <!-- CTA Section -->
 <section class="cta-section py-5">
     <div class="container text-center">
-        <h2 class="section-title mb-4">Prêt à nous rejoindre?</h2>
-        <p class="lead mb-4">Rejoignez le Club des Dirigeants et faites partie d'un réseau influent</p>
-        <a href="{{ route('membership') }}" class="btn btn-primary btn-lg">REJOIGNEZ LE CDD</a>
+        <h2 class="section-title mb-4">{{ __('pages.home.cta_title') }}</h2>
+        <p class="lead mb-4">{{ __('pages.home.cta_text') }}</p>
+        <a href="{{ route('membership') }}" class="btn btn-primary btn-lg">{{ __('pages.home.join_button') }}</a>
     </div>
 </section>
 @endsection
