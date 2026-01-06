@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Blog')
+@section('title', __('pages.blog.title'))
 
 @section('content')
 <section class="page-header py-5" style="background: linear-gradient(135deg, var(--primary-color) 0%, #006a87 100%); color: white;">
     <div class="container text-center">
-        <h1 class="display-4">Actualités</h1>
+        <h1 class="display-4">{{ __('pages.blog.news') }}</h1>
     </div>
 </section>
 
@@ -26,7 +26,7 @@
                                 <i class="fas fa-user"></i> {{ isset($post['author']) ? $post['author'] : '' }} | 
                                 <i class="fas fa-calendar"></i> {{ isset($post['date']) ? $post['date'] : '' }}
                             </p>
-                            <a href="{{ route('blog.show', isset($post['slug']) ? $post['slug'] : '') }}" class="btn btn-primary">Lire la suite</a>
+                            <a href="{{ route('blog.show', isset($post['slug']) ? $post['slug'] : '') }}" class="btn btn-primary">{{ __('pages.blog.read_more') }}</a>
                         </div>
                     </div>
                 </div>
