@@ -10,9 +10,28 @@ function Header() {
     console.log('Header component is rendering');
 
     useEffect(() => {
+        // Synchroniser avec la langue de l'URL ou de Laravel
+        const urlParams = new URLSearchParams(window.location.search);
+        const langParam = urlParams.get('lang');
+        
+        // Détecter la langue depuis l'URL, le localStorage, ou la langue par défaut
+        let detectedLang = langParam || localStorage.getItem('i18nextLng') || 'fr';
+        
+        // S'assurer que la langue est supportée
+        if (!['fr', 'en', 'ar'].includes(detectedLang)) {
+            detectedLang = 'fr';
+        }
+        
+        // Si la langue détectée est différente de la langue actuelle, la changer
+        if (detectedLang !== i18nInstance.language) {
+            i18nInstance.changeLanguage(detectedLang);
+        }
+
         // Mettre à jour la langue actuelle quand elle change
         const handleLanguageChanged = (lng) => {
             setCurrentLang(lng);
+            // Sauvegarder dans localStorage
+            localStorage.setItem('i18nextLng', lng);
             // Changer la direction du document pour l'arabe
             if (lng === 'ar') {
                 document.documentElement.setAttribute('dir', 'rtl');
@@ -37,6 +56,14 @@ function Header() {
     const changeLanguage = (lng) => {
         i18nInstance.changeLanguage(lng);
         setCurrentLang(lng);
+        // Sauvegarder dans localStorage
+        localStorage.setItem('i18nextLng', lng);
+        // Mettre à jour l'URL avec le paramètre lang sans recharger
+        const url = new URL(window.location);
+        url.searchParams.set('lang', lng);
+        window.history.pushState({}, '', url);
+        // Synchroniser avec Laravel via une requête AJAX si nécessaire
+        // Pour l'instant, le changement de langue React devrait suffire
     };
 
     const closeAllDropdowns = (exceptElement = null) => {

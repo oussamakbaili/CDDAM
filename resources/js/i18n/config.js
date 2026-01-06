@@ -36,7 +36,10 @@ i18n
     // Options de détection
     detection: {
       // Ordre et sources de détection
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['querystring', 'localStorage', 'navigator', 'htmlTag'],
+      
+      // Détecter depuis l'URL
+      lookupQuerystring: 'lang',
       
       // Clés de cache
       caches: ['localStorage'],
