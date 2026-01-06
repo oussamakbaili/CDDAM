@@ -1,7 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function PartnerDetail() {
+    const { t } = useTranslation();
     const { slug } = useParams();
 
     // Données des partenaires (à remplacer par une API ou un fichier de données)
@@ -29,9 +31,9 @@ function PartnerDetail() {
     if (!partner) {
         return (
             <div className="container py-5 text-center">
-                <h1>Partenaire non trouvé</h1>
-                <p>Le partenaire que vous recherchez n'existe pas.</p>
-                <Link to="/partenaires" className="btn btn-primary">Retour aux partenaires</Link>
+                <h1>{t('partnerDetail.notFound')}</h1>
+                <p>{t('partnerDetail.notFoundText')}</p>
+                <Link to="/partenaires" className="btn btn-primary">{t('partnerDetail.backToPartners')}</Link>
             </div>
         );
     }
@@ -85,7 +87,7 @@ function PartnerDetail() {
                                         className="btn btn-outline-primary mb-3"
                                     >
                                         <i className="fas fa-external-link-alt me-2"></i>
-                                        Visiter le site web
+                                        {t('partnerDetail.visitWebsite')}
                                     </a>
                                 )}
                                 {partner.contact && (
@@ -101,7 +103,7 @@ function PartnerDetail() {
                         <div className="col-lg-8">
                             <div className="partner-detail-content">
                                 <h3 className="mb-4" style={{color: 'var(--primary-color)', fontSize: '32px'}}>
-                                    À propos
+                                    {t('partnerDetail.about')}
                                 </h3>
                                 <p className="lead mb-4" style={{fontSize: '18px', lineHeight: '1.8', color: '#555'}}>
                                     {partner.description}
@@ -110,7 +112,7 @@ function PartnerDetail() {
                                 {partner.details && partner.details.length > 0 && (
                                     <div className="partner-detail-details mt-5">
                                         <h4 className="mb-4" style={{color: 'var(--primary-color)', fontSize: '24px'}}>
-                                            Domaines d'expertise
+                                            {t('partnerDetail.expertise')}
                                         </h4>
                                         <ul className="partner-detail-list" style={{listStyle: 'none', padding: 0}}>
                                             {partner.details.map((detail, index) => (
@@ -125,14 +127,14 @@ function PartnerDetail() {
 
                                 <div className="partner-detail-cta mt-5 p-4" style={{background: 'rgba(0, 129, 164, 0.05)', borderRadius: '10px', borderLeft: '4px solid var(--primary-color)'}}>
                                     <h4 className="mb-3" style={{color: 'var(--primary-color)'}}>
-                                        Intéressé par un partenariat ?
+                                        {t('partnerDetail.interested')}
                                     </h4>
                                     <p className="mb-3" style={{color: '#666'}}>
-                                        Le Club des Dirigeants – Association Maroc est toujours à la recherche de nouveaux partenaires stratégiques pour renforcer son impact et développer le secteur associatif marocain.
+                                        {t('partnerDetail.interestedText')}
                                     </p>
                                     <Link to="/contact" className="btn btn-primary">
                                         <i className="fas fa-envelope me-2"></i>
-                                        Contactez-nous
+                                        {t('common.contactUs')}
                                     </Link>
                                 </div>
                             </div>
@@ -145,9 +147,9 @@ function PartnerDetail() {
             <section className="py-5 bg-light">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title">Découvrez nos autres partenaires</h2>
+                        <h2 className="section-title">{t('partnerDetail.discoverOtherPartners')}</h2>
                         <Link to="/partenaires" className="btn btn-outline-primary btn-lg mt-3">
-                            Voir tous les partenaires
+                            {t('partnerDetail.seeAllPartners')}
                         </Link>
                     </div>
                 </div>

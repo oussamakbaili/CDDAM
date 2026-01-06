@@ -478,7 +478,9 @@
   "blog": {
     "title": "News",
     "readMore": "Read more",
-    "author": "clubdesdirigeants"
+    "author": "clubdesdirigeants",
+    "noNews": "No news at the moment",
+    "noNewsText": "News will be available soon."
   },
   "testimonials": {
     "title": "Testimonials"

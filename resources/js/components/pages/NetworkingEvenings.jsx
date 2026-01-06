@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function NetworkingEvenings() {
+    const { t } = useTranslation();
     return (
         <>
             {/* Hero Section */}
@@ -12,8 +14,8 @@ function NetworkingEvenings() {
                 overflow: 'hidden'
             }}>
                 <div className="container text-center position-relative" style={{zIndex: 2}}>
-                    <h1 className="display-4 mb-3 fw-bold">Soirées de Networking</h1>
-                    <p className="lead mb-0">Connectez-vous avec les dirigeants les plus influents du Maroc</p>
+                    <h1 className="display-4 mb-3 fw-bold">{t('networkingEvenings.title')}</h1>
+                    <p className="lead mb-0">{t('networkingEvenings.subtitle')}</p>
                 </div>
                 <div style={{
                     position: 'absolute',
@@ -35,13 +37,13 @@ function NetworkingEvenings() {
                             <div className="pe-lg-4">
                                 <h2 className="section-title mb-4" style={{color: 'var(--primary-color)'}}>
                                     <i className="fas fa-wine-glass-alt me-3"></i>
-                                    Un espace d'échange privilégié
+                                    {t('networkingEvenings.introTitle')}
                                 </h2>
                                 <p className="lead mb-4">
-                                    Les soirées de networking du CDDAM sont des événements mensuels incontournables qui rassemblent les dirigeants associatifs les plus dynamiques du Maroc. Chaque mois, nous créons un espace convivial et professionnel où les opportunités se rencontrent et où les synergies se créent naturellement.
+                                    {t('networkingEvenings.introText1')}
                                 </p>
                                 <p>
-                                    Ces soirées exclusives offrent une plateforme unique pour développer votre réseau professionnel, échanger des idées innovantes, partager vos expériences et découvrir de nouvelles opportunités de collaboration. Dans une atmosphère détendue et élégante, vous pourrez rencontrer des pairs passionnés par le développement associatif et le leadership.
+                                    {t('networkingEvenings.introText2')}
                                 </p>
                             </div>
                         </div>
@@ -57,9 +59,9 @@ function NetworkingEvenings() {
                             }}>
                                 <div className="text-center mb-4">
                                     <i className="fas fa-users fa-4x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                    <h3 className="mb-3">Réseau d'excellence</h3>
+                                    <h3 className="mb-3">{t('networkingEvenings.featureTitle')}</h3>
                                     <p className="mb-0">
-                                        Rejoignez une communauté de plus de 6000 dirigeants associatifs répartis dans 12 régions du Maroc et plus de 30 pays à l'international.
+                                        {t('networkingEvenings.featureText')}
                                     </p>
                                 </div>
                             </div>
@@ -71,7 +73,7 @@ function NetworkingEvenings() {
             {/* Features Section */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Pourquoi participer aux soirées de networking CDDAM ?</h2>
+                    <h2 className="section-title text-center mb-5">{t('networkingEvenings.whyTitle')}</h2>
                     
                     <div className="row g-4">
                         <div className="col-md-6 col-lg-4">
@@ -93,9 +95,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-handshake fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Rencontres stratégiques</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why1Title')}</h4>
                                 <p>
-                                    Connectez-vous avec des dirigeants de tous les secteurs d'activité et créez des partenariats durables qui propulseront votre association vers de nouveaux sommets.
+                                    {t('networkingEvenings.why1Text')}
                                 </p>
                             </div>
                         </div>
@@ -119,9 +121,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-lightbulb fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Thématiques inspirantes</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why2Title')}</h4>
                                 <p>
-                                    Chaque soirée aborde une thématique spécifique en lien avec les enjeux actuels du secteur associatif, vous permettant d'acquérir de nouvelles perspectives et connaissances.
+                                    {t('networkingEvenings.why2Text')}
                                 </p>
                             </div>
                         </div>
@@ -145,9 +147,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-chart-line fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Opportunités d'affaires</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why3Title')}</h4>
                                 <p>
-                                    Découvrez de nouvelles opportunités de collaboration, de partenariats et de projets qui contribueront au développement et à la croissance de votre association.
+                                    {t('networkingEvenings.why3Text')}
                                 </p>
                             </div>
                         </div>
@@ -171,9 +173,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-user-graduate fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Partage d'expertise</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why4Title')}</h4>
                                 <p>
-                                    Bénéficiez de l'expérience et des connaissances de dirigeants chevronnés qui partagent volontiers leurs meilleures pratiques et leurs leçons apprises.
+                                    {t('networkingEvenings.why4Text')}
                                 </p>
                             </div>
                         </div>
@@ -197,9 +199,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-calendar-check fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Rythme mensuel</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why5Title')}</h4>
                                 <p>
-                                    Avec plus de 60 soirées organisées chaque année, vous avez l'opportunité régulière de renforcer votre réseau et de rester connecté avec la communauté CDDAM.
+                                    {t('networkingEvenings.why5Text')}
                                 </p>
                             </div>
                         </div>
@@ -223,9 +225,9 @@ function NetworkingEvenings() {
                                 <div className="feature-icon mb-3">
                                     <i className="fas fa-star fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h4 className="mb-3">Ambiance exclusive</h4>
+                                <h4 className="mb-3">{t('networkingEvenings.why6Title')}</h4>
                                 <p>
-                                    Profitez d'une atmosphère raffinée et conviviale dans des lieux prestigieux, où l'excellence et le professionnalisme sont au rendez-vous.
+                                    {t('networkingEvenings.why6Text')}
                                 </p>
                             </div>
                         </div>
@@ -238,7 +240,7 @@ function NetworkingEvenings() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
-                            <h2 className="section-title text-center mb-5">Format des soirées</h2>
+                            <h2 className="section-title text-center mb-5">{t('networkingEvenings.formatTitle')}</h2>
                             
                             <div className="timeline-style mb-4">
                                 <div className="d-flex mb-4">
@@ -257,9 +259,9 @@ function NetworkingEvenings() {
                                         }}>1</div>
                                     </div>
                                     <div className="flex-grow-1 ms-4">
-                                        <h4 className="mb-2">Accueil et networking informel</h4>
+                                        <h4 className="mb-2">{t('networkingEvenings.format1Title')}</h4>
                                         <p className="mb-0">
-                                            Dès votre arrivée, profitez d'un moment de convivialité autour d'un cocktail d'accueil. C'est l'occasion idéale de faire connaissance avec les autres participants dans une atmosphère détendue.
+                                            {t('networkingEvenings.format1Text')}
                                         </p>
                                     </div>
                                 </div>
@@ -280,9 +282,9 @@ function NetworkingEvenings() {
                                         }}>2</div>
                                     </div>
                                     <div className="flex-grow-1 ms-4">
-                                        <h4 className="mb-2">Présentation et thématique du mois</h4>
+                                        <h4 className="mb-2">{t('networkingEvenings.format2Title')}</h4>
                                         <p className="mb-0">
-                                            Découvrez les actualités du CDDAM et plongez dans la thématique du mois présentée par des experts reconnus. Des sujets variés sont abordés : innovation, gouvernance, financement, impact social, leadership, et bien plus encore.
+                                            {t('networkingEvenings.format2Text')}
                                         </p>
                                     </div>
                                 </div>
@@ -303,9 +305,9 @@ function NetworkingEvenings() {
                                         }}>3</div>
                                     </div>
                                     <div className="flex-grow-1 ms-4">
-                                        <h4 className="mb-2">Échanges et discussions</h4>
+                                        <h4 className="mb-2">{t('networkingEvenings.format3Title')}</h4>
                                         <p className="mb-0">
-                                            Participez à des discussions enrichissantes et des échanges d'idées. Posez vos questions, partagez vos expériences et bénéficiez des conseils de vos pairs.
+                                            {t('networkingEvenings.format3Text')}
                                         </p>
                                     </div>
                                 </div>
@@ -326,9 +328,9 @@ function NetworkingEvenings() {
                                         }}>4</div>
                                     </div>
                                     <div className="flex-grow-1 ms-4">
-                                        <h4 className="mb-2">Dîner et networking continu</h4>
+                                        <h4 className="mb-2">{t('networkingEvenings.format4Title')}</h4>
                                         <p className="mb-0">
-                                            Continuez vos échanges autour d'un dîner de qualité. C'est le moment privilégié pour approfondir vos conversations, échanger vos cartes de visite et planifier des rencontres de suivi.
+                                            {t('networkingEvenings.format4Text')}
                                         </p>
                                     </div>
                                 </div>
@@ -344,18 +346,18 @@ function NetworkingEvenings() {
                 color: 'white'
             }}>
                 <div className="container text-center">
-                    <h2 className="section-title mb-4 text-white">Rejoignez la prochaine soirée de networking</h2>
+                    <h2 className="section-title mb-4 text-white">{t('networkingEvenings.ctaTitle')}</h2>
                     <p className="lead mb-4">
-                        Ne manquez pas l'opportunité de développer votre réseau et de participer à des échanges enrichissants avec les dirigeants associatifs les plus influents du Maroc.
+                        {t('networkingEvenings.ctaText')}
                     </p>
                     <div className="d-flex gap-3 justify-content-center flex-wrap">
                         <Link to="/packs-adhesions" className="btn btn-light btn-lg px-5">
                             <i className="fas fa-user-plus me-2"></i>
-                            Devenir membre
+                            {t('networkingEvenings.becomeMember')}
                         </Link>
                         <Link to="/contact" className="btn btn-outline-light btn-lg px-5">
                             <i className="fas fa-envelope me-2"></i>
-                            Nous contacter
+                            {t('networkingEvenings.contactUs')}
                         </Link>
                     </div>
                 </div>

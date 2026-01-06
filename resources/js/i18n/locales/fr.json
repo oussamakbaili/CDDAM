@@ -479,7 +479,9 @@
   "blog": {
     "title": "Actualités",
     "readMore": "Lire la suite",
-    "author": "clubdesdirigeants"
+    "author": "clubdesdirigeants",
+    "noNews": "Aucune actualité pour le moment",
+    "noNewsText": "Les actualités seront bientôt disponibles."
   },
   "testimonials": {
     "title": "Témoignages"

@@ -37,13 +37,13 @@ function Assemblees() {
                             <div className="pe-lg-4">
                                 <h2 className="section-title mb-4" style={{color: 'var(--primary-color)'}}>
                                     <i className="fas fa-users-cog me-3"></i>
-                                    Gouvernance transparente et participative
+                                    {t('assemblies.governance')}
                                 </h2>
                                 <p className="lead mb-4">
-                                    Les assemblées du CDDAM sont des moments privilégiés de gouvernance démocratique où chaque membre a la parole et participe activement à la vie et au développement du Club. Ces instances de décision collective garantissent la transparence, la représentativité et l'engagement de tous.
+                                    {t('assemblies.governanceText1')}
                                 </p>
                                 <p>
-                                    À travers nos assemblées générales ordinaires et extraordinaires, nous créons un espace de dialogue constructif où les orientations stratégiques sont définies, les décisions importantes sont prises collectivement, et où chaque voix compte dans la construction de l'avenir du CDDAM.
+                                    {t('assemblies.governanceText2')}
                                 </p>
                             </div>
                         </div>
@@ -59,9 +59,9 @@ function Assemblees() {
                             }}>
                                 <div className="text-center mb-4">
                                     <i className="fas fa-balance-scale fa-4x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                    <h3 className="mb-3">Démocratie participative</h3>
+                                    <h3 className="mb-3">{t('assemblies.participatoryDemocracy')}</h3>
                                     <p className="mb-0">
-                                        Un système de gouvernance où chaque membre peut exprimer son opinion, proposer des initiatives et participer aux décisions qui façonnent l'avenir du CDDAM.
+                                        {t('assemblies.participatoryDemocracyText')}
                                     </p>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@ function Assemblees() {
             {/* Types of Assemblies Section */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Types d'assemblées</h2>
+                    <h2 className="section-title text-center mb-5">{t('assemblies.types')}</h2>
                     
                     <div className="row g-4">
                         <div className="col-lg-6">
@@ -100,30 +100,30 @@ function Assemblees() {
                                         <i className="fas fa-calendar-alt"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Assemblée Générale Ordinaire (AGO)</h3>
+                                        <h3 className="mb-3">{t('assemblies.ordinary')}</h3>
                                         <p className="mb-3">
-                                            L'Assemblée Générale Ordinaire se tient annuellement et constitue le moment clé de la vie du CDDAM. Elle permet de :
+                                            {t('assemblies.ordinaryText')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Approuver les rapports d'activité et financier de l'exercice écoulé
+                                                {t('assemblies.ordinaryItem1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Définir les orientations stratégiques pour l'année à venir
+                                                {t('assemblies.ordinaryItem2')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Élire ou renouveler les membres du Bureau Exécutif
+                                                {t('assemblies.ordinaryItem3')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Adopter le budget prévisionnel
+                                                {t('assemblies.ordinaryItem4')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Décider sur toute question à l'ordre du jour
+                                                {t('assemblies.ordinaryItem5')}
                                             </li>
                                         </ul>
                                     </div>
@@ -155,26 +155,26 @@ function Assemblees() {
                                         <i className="fas fa-exclamation-circle"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Assemblée Générale Extraordinaire (AGE)</h3>
+                                        <h3 className="mb-3">{t('assemblies.extraordinary')}</h3>
                                         <p className="mb-3">
-                                            L'Assemblée Générale Extraordinaire peut être convoquée à tout moment pour traiter des questions urgentes ou importantes, notamment :
+                                            {t('assemblies.extraordinaryText')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Modification des statuts du CDDAM
+                                                {t('assemblies.extraordinaryItem1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Décisions stratégiques majeures
+                                                {t('assemblies.extraordinaryItem2')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Questions urgentes nécessitant l'approbation de l'assemblée
+                                                {t('assemblies.extraordinaryItem3')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Dissolution ou fusion (si applicable)
+                                                {t('assemblies.extraordinaryItem4')}
                                             </li>
                                         </ul>
                                     </div>
@@ -188,7 +188,7 @@ function Assemblees() {
             {/* Process Section */}
             <section className="py-5">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Le processus démocratique</h2>
+                    <h2 className="section-title text-center mb-5">{t('assemblies.processTitle')}</h2>
                     
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
@@ -210,9 +210,9 @@ function Assemblees() {
                                             }}>1</div>
                                         </div>
                                         <div className="col-md-10">
-                                            <h4 className="mb-2">Convocation</h4>
+                                            <h4 className="mb-2">{t('assemblies.process1Title')}</h4>
                                             <p className="mb-0">
-                                                Tous les membres sont convoqués par écrit au moins 15 jours avant la date de l'assemblée, avec l'ordre du jour détaillé et tous les documents nécessaires pour prendre des décisions éclairées.
+                                                {t('assemblies.process1Text')}
                                             </p>
                                         </div>
                                     </div>
@@ -235,9 +235,9 @@ function Assemblees() {
                                             }}>2</div>
                                         </div>
                                         <div className="col-md-10">
-                                            <h4 className="mb-2">Présentation et débat</h4>
+                                            <h4 className="mb-2">{t('assemblies.process2Title')}</h4>
                                             <p className="mb-0">
-                                                Le Bureau Exécutif présente les rapports, les projets et les propositions. Chaque membre a l'opportunité de poser des questions, d'exprimer son avis et de proposer des amendements dans un esprit de dialogue constructif.
+                                                {t('assemblies.process2Text')}
                                             </p>
                                         </div>
                                     </div>
@@ -260,9 +260,9 @@ function Assemblees() {
                                             }}>3</div>
                                         </div>
                                         <div className="col-md-10">
-                                            <h4 className="mb-2">Vote et décision</h4>
+                                            <h4 className="mb-2">{t('assemblies.process3Title')}</h4>
                                             <p className="mb-0">
-                                                Les décisions sont prises à la majorité des voix des membres présents ou représentés. Chaque membre dispose d'une voix, garantissant ainsi l'égalité et la démocratie dans le processus décisionnel.
+                                                {t('assemblies.process3Text')}
                                             </p>
                                         </div>
                                     </div>
@@ -285,9 +285,9 @@ function Assemblees() {
                                             }}>4</div>
                                         </div>
                                         <div className="col-md-10">
-                                            <h4 className="mb-2">Suivi et transparence</h4>
+                                            <h4 className="mb-2">{t('assemblies.process4Title')}</h4>
                                             <p className="mb-0">
-                                                Les décisions prises sont consignées dans un procès-verbal détaillé, communiqué à tous les membres. Un suivi régulier est assuré pour garantir la mise en œuvre effective des résolutions adoptées.
+                                                {t('assemblies.process4Text')}
                                             </p>
                                         </div>
                                     </div>
@@ -301,7 +301,7 @@ function Assemblees() {
             {/* Values Section */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Les valeurs de nos assemblées</h2>
+                    <h2 className="section-title text-center mb-5">{t('assemblies.valuesTitle')}</h2>
                     
                     <div className="row g-4">
                         <div className="col-md-6 col-lg-3">
@@ -312,9 +312,9 @@ function Assemblees() {
                                 height: '100%'
                             }}>
                                 <i className="fas fa-eye fa-3x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                <h5 className="mb-3">Transparence</h5>
+                                <h5 className="mb-3">{t('assemblies.value1Title')}</h5>
                                 <p className="mb-0">
-                                    Toutes les informations sont communiquées clairement et en amont pour permettre une participation éclairée de tous les membres.
+                                    {t('assemblies.value1Text')}
                                 </p>
                             </div>
                         </div>
@@ -327,9 +327,9 @@ function Assemblees() {
                                 height: '100%'
                             }}>
                                 <i className="fas fa-user-friends fa-3x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                <h5 className="mb-3">Représentativité</h5>
+                                <h5 className="mb-3">{t('assemblies.value2Title')}</h5>
                                 <p className="mb-0">
-                                    Tous les membres, quelle que soit leur région ou leur secteur, ont une voix égale dans les décisions du CDDAM.
+                                    {t('assemblies.value2Text')}
                                 </p>
                             </div>
                         </div>
@@ -342,9 +342,9 @@ function Assemblees() {
                                 height: '100%'
                             }}>
                                 <i className="fas fa-comments fa-3x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                <h5 className="mb-3">Dialogue</h5>
+                                <h5 className="mb-3">{t('assemblies.value3Title')}</h5>
                                 <p className="mb-0">
-                                    Un espace d'échange respectueux où chaque opinion est écoutée et où le débat constructif est encouragé.
+                                    {t('assemblies.value3Text')}
                                 </p>
                             </div>
                         </div>
@@ -357,9 +357,9 @@ function Assemblees() {
                                 height: '100%'
                             }}>
                                 <i className="fas fa-handshake fa-3x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                <h5 className="mb-3">Engagement</h5>
+                                <h5 className="mb-3">{t('assemblies.value4Title')}</h5>
                                 <p className="mb-0">
-                                    Chaque membre est encouragé à participer activement et à contribuer au développement et à la réussite du CDDAM.
+                                    {t('assemblies.value4Text')}
                                 </p>
                             </div>
                         </div>
@@ -373,18 +373,18 @@ function Assemblees() {
                 color: 'white'
             }}>
                 <div className="container text-center">
-                    <h2 className="section-title mb-4 text-white">Participez à la gouvernance du CDDAM</h2>
+                    <h2 className="section-title mb-4 text-white">{t('assemblies.ctaTitle')}</h2>
                     <p className="lead mb-4">
-                        Votre voix compte ! Rejoignez-nous et participez activement aux décisions qui façonnent l'avenir du Club des Dirigeants – Association.
+                        {t('assemblies.ctaText')}
                     </p>
                     <div className="d-flex gap-3 justify-content-center flex-wrap">
                         <Link to="/packs-adhesions" className="btn btn-light btn-lg px-5">
                             <i className="fas fa-user-plus me-2"></i>
-                            Devenir membre
+                            {t('assemblies.becomeMember')}
                         </Link>
                         <Link to="/contact" className="btn btn-outline-light btn-lg px-5">
                             <i className="fas fa-envelope me-2"></i>
-                            Nous contacter
+                            {t('assemblies.contactUs')}
                         </Link>
                     </div>
                 </div>

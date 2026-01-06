@@ -478,7 +478,9 @@
   "blog": {
     "title": "الأخبار",
     "readMore": "اقرأ المزيد",
-    "author": "clubdesdirigeants"
+    "author": "clubdesdirigeants",
+    "noNews": "لا توجد أخبار في الوقت الحالي",
+    "noNewsText": "ستكون الأخبار متاحة قريباً."
   },
   "testimonials": {
     "title": "الشهادات"

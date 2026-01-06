@@ -109,9 +109,9 @@ function MyCDD() {
                                             <div className="feature-icon mb-3">
                                                 <i className="fas fa-user-friends fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                             </div>
-                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>Connecter</h3>
+                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>{t('mycdd.connect')}</h3>
                                             <p style={{lineHeight: '1.8', color: '#555'}}>
-                                                Élargissez votre réseau professionnel en vous connectant avec d'autres dirigeants associatifs, entrepreneurs et professionnels de divers secteurs d'activité. Créez des liens solides et nouez des relations précieuses qui peuvent conduire à des opportunités de collaboration fructueuses et à des partenariats stratégiques pour le développement de votre association.
+                                                {t('mycdd.connectText')}
                                             </p>
                                         </div>
                                     </div>
@@ -137,9 +137,9 @@ function MyCDD() {
                                             <div className="feature-icon mb-3">
                                                 <i className="fas fa-share-alt fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                             </div>
-                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>Partager</h3>
+                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>{t('mycdd.share')}</h3>
                                             <p style={{lineHeight: '1.8', color: '#555'}}>
-                                                Partagez vos expériences, vos connaissances et vos idées avec la communauté CDDAM. Publiez des articles, des vidéos ou des photos pour mettre en valeur votre expertise et inspirer les autres membres. Contribuez à des discussions stimulantes et approfondissez votre compréhension des défis et des opportunités dans le monde associatif marocain.
+                                                {t('mycdd.shareText')}
                                             </p>
                                         </div>
                                     </div>
@@ -165,9 +165,9 @@ function MyCDD() {
                                             <div className="feature-icon mb-3">
                                                 <i className="fas fa-handshake fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                             </div>
-                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>Collaborer</h3>
+                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>{t('mycdd.collaborate')}</h3>
                                             <p style={{lineHeight: '1.8', color: '#555'}}>
-                                                Trouvez des partenaires associatifs, des consultants ou des experts dans votre domaine d'activité. Utilisez les fonctionnalités de recherche avancée pour identifier les profils correspondants à vos besoins spécifiques. Établissez des collaborations stratégiques qui peuvent renforcer votre association et stimuler son impact social et son développement durable.
+                                                {t('mycdd.collaborateText')}
                                             </p>
                                         </div>
                                     </div>
@@ -193,9 +193,9 @@ function MyCDD() {
                                             <div className="feature-icon mb-3">
                                                 <i className="fas fa-compass fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                             </div>
-                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>Découvrir</h3>
+                                            <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>{t('mycdd.discover')}</h3>
                                             <p style={{lineHeight: '1.8', color: '#555'}}>
-                                                Restez informé des événements, des conférences et des opportunités professionnelles à travers notre calendrier intégré. Explorez les ressources et les contenus pertinents pour votre secteur d'activité associatif. Soyez au courant des dernières tendances et des innovations qui façonnent le monde associatif et le développement social au Maroc.
+                                                {t('mycdd.discoverText')}
                                             </p>
                                         </div>
                                     </div>
@@ -222,9 +222,9 @@ function MyCDD() {
                                                     <i className="fas fa-comments fa-4x" style={{color: 'var(--primary-color)'}}></i>
                                                 </div>
                                                 <div className="col-md-10">
-                                                    <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>Engager</h3>
+                                                    <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>{t('mycdd.engage')}</h3>
                                                     <p style={{lineHeight: '1.8', color: '#555', margin: 0}}>
-                                                        Interagissez avec d'autres membres à travers des commentaires, des likes et des messages privés. Participez à des groupes de discussion spécifiques à vos intérêts et échangez des idées avec des personnes partageant les mêmes passions pour le développement associatif. Contribuez à faire de MyCDDAM une communauté vibrante, collaborative et engagée dans la création de valeur sociale.
+                                                        {t('mycdd.engageText')}
                                                     </p>
                                                 </div>
                                             </div>
@@ -253,11 +253,9 @@ function MyCDD() {
                                     </div>
                                     <div className="col-md-10">
                                         <h3 className="mb-3" style={{color: 'var(--primary-color)'}}>
-                                            Confidentialité et sécurité
+                                            {t('mycdd.securityTitle')}
                                         </h3>
-                                        <p style={{lineHeight: '1.8', color: '#555', margin: 0, fontSize: '1.1rem'}}>
-                                            Chez <strong>MyCDDAM</strong>, la confidentialité et la sécurité de vos données sont nos priorités absolues. Nous veillons à ce que vos informations personnelles soient protégées et que seules les personnes autorisées aient accès à votre profil et à vos activités. Votre confiance est essentielle pour nous, et nous nous engageons à maintenir les plus hauts standards de sécurité et de protection des données.
-                                        </p>
+                                        <p style={{lineHeight: '1.8', color: '#555', margin: 0, fontSize: '1.1rem'}} dangerouslySetInnerHTML={{ __html: t('mycdd.securityText') }} />
                                     </div>
                                 </div>
                             </div>
@@ -273,19 +271,19 @@ function MyCDD() {
             }}>
                 <div className="container text-center">
                     <h2 className="section-title mb-4 text-white" style={{fontSize: '2.5rem'}}>
-                        Rejoignez MyCDDAM dès aujourd'hui
+                        {t('mycdd.ctaTitle')}
                     </h2>
                     <p className="lead mb-4" style={{fontSize: '1.25rem'}}>
-                        Profitez de tous les avantages offerts par notre réseau social d'affaires exclusif. Ensemble, nous renforçons notre communauté et stimulons le succès collectif des dirigeants associatifs du Maroc.
+                        {t('mycdd.ctaText')}
                     </p>
                     <div className="d-flex gap-3 justify-content-center flex-wrap">
                         <Link to="/packs-adhesions" className="btn btn-light btn-lg px-5 py-3 fw-bold">
                             <i className="fas fa-user-plus me-2"></i>
-                            Devenir membre
+                            {t('mycdd.becomeMember')}
                         </Link>
                         <Link to="/contact" className="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
                             <i className="fas fa-envelope me-2"></i>
-                            Nous contacter
+                            {t('mycdd.contactUs')}
                         </Link>
                     </div>
                 </div>

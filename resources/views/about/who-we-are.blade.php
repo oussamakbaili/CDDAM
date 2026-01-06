@@ -31,7 +31,7 @@
                         <h4><i class="fas fa-map-marked-alt" style="color: var(--primary-color);"></i> {{ __('pages.about.scope') }}</h4>
                         <ul>
                             <li>{{ __('pages.about.scope1') }}</li>
-                            <li>{{ __('pages.about.scope2') }}</li>
+                            <li>{{ __('pages.about.scope2') }}</li> 
                             <li>{{ __('pages.about.scope3') }}</li>
                         </ul>
                     </div>

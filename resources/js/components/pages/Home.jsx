@@ -316,33 +316,33 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.valeurs ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3>Valeurs du Club</h3>
+                                <h3>{t('home.valuesTitle')}</h3>
                                 {openIdentityCards.valeurs && (
                                     <div className="identity-card-content">
                                         <ul className="identity-list">
                                             <li>
-                                                <strong>Leadership responsable</strong>
-                                                <p>Promouvoir une gouvernance éthique, transparente et orientée vers l'intérêt général.</p>
+                                                <strong>{t('home.value1Title')}</strong>
+                                                <p>{t('home.value1Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Engagement citoyen</strong>
-                                                <p>Agir avec conviction et mettre l'humain au centre de toutes les initiatives.</p>
+                                                <strong>{t('home.value2Title')}</strong>
+                                                <p>{t('home.value2Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Solidarité &amp; coopération</strong>
-                                                <p>Encourager le partage, le soutien mutuel et les partenariats entre associations.</p>
+                                                <strong>{t('home.value3Title')}</strong>
+                                                <p>{t('home.value3Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Innovation sociale</strong>
-                                                <p>Stimuler la créativité et les nouvelles approches pour répondre efficacement aux défis sociétaux.</p>
+                                                <strong>{t('home.value4Title')}</strong>
+                                                <p>{t('home.value4Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Excellence &amp; professionnalisation</strong>
-                                                <p>Développer des pratiques associatives modernes, rigoureuses et performantes.</p>
+                                                <strong>{t('home.value5Title')}</strong>
+                                                <p>{t('home.value5Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Respect &amp; intégrité</strong>
-                                                <p>Garantir un climat de confiance, d'écoute et de respect mutuel entre les membres.</p>
+                                                <strong>{t('home.value6Title')}</strong>
+                                                <p>{t('home.value6Text')}</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -365,33 +365,33 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.objectifs ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3>Objectifs stratégiques du Club</h3>
+                                <h3>{t('home.objectivesTitle')}</h3>
                                 {openIdentityCards.objectifs && (
                                     <div className="identity-card-content">
                                         <ul className="identity-list">
                                             <li>
-                                                <strong>Renforcer les compétences des dirigeants associatifs</strong>
-                                                <p>À travers des formations, ateliers, masterclass, mentorat et accompagnement spécialisé.</p>
+                                                <strong>{t('home.objective1Title')}</strong>
+                                                <p>{t('home.objective1Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Structurer et professionnaliser les associations marocaines</strong>
-                                                <p>En favorisant les bonnes pratiques, la gouvernance et la performance organisationnelle.</p>
+                                                <strong>{t('home.objective2Title')}</strong>
+                                                <p>{t('home.objective2Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Créer un réseau national solide et actif</strong>
-                                                <p>Pour faciliter les partenariats, les collaborations et les synergies inter-associatives.</p>
+                                                <strong>{t('home.objective3Title')}</strong>
+                                                <p>{t('home.objective3Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Promouvoir l'innovation sociale et la transformation positive</strong>
-                                                <p>Encourager les projets innovants et l'impact social durable.</p>
+                                                <strong>{t('home.objective4Title')}</strong>
+                                                <p>{t('home.objective4Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Valoriser le rôle des dirigeants associatifs</strong>
-                                                <p>Faire reconnaître les leaders du secteur comme acteurs stratégiques du progrès social.</p>
+                                                <strong>{t('home.objective5Title')}</strong>
+                                                <p>{t('home.objective5Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Mettre à disposition des outils, ressources et plateformes d'échange</strong>
-                                                <p>Articles, guides, groupes d'échange, documentation, networking…</p>
+                                                <strong>{t('home.objective6Title')}</strong>
+                                                <p>{t('home.objective6Text')}</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -414,38 +414,38 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.charte ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3>Charte du membre du Club</h3>
+                                <h3>{t('home.charterTitle')}</h3>
                                 {openIdentityCards.charte && (
                                     <div className="identity-card-content">
-                                        <p>Chaque membre du Club des Dirigeants des Associations Maroc s'engage à :</p>
+                                        <p>{t('home.charterIntro')}</p>
                                         <ul className="identity-list">
                                             <li>
-                                                <strong>Agir avec éthique et intégrité</strong>
-                                                <p>Respecter les lois, les bonnes pratiques associatives et les valeurs du club.</p>
+                                                <strong>{t('home.charter1Title')}</strong>
+                                                <p>{t('home.charter1Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Adopter une attitude collaborative</strong>
-                                                <p>Partager son expérience, soutenir les autres membres et promouvoir la coopération.</p>
+                                                <strong>{t('home.charter2Title')}</strong>
+                                                <p>{t('home.charter2Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Participer activement à la vie du Club</strong>
-                                                <p>Assister aux activités, contribuer aux échanges et représenter positivement le club.</p>
+                                                <strong>{t('home.charter3Title')}</strong>
+                                                <p>{t('home.charter3Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Respecter la confidentialité des échanges</strong>
-                                                <p>Protéger les données, informations sensibles ou discussions internes.</p>
+                                                <strong>{t('home.charter4Title')}</strong>
+                                                <p>{t('home.charter4Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Promouvoir la bonne gouvernance au sein de son association</strong>
-                                                <p>Transparence, responsabilité, efficacité et engagement citoyen.</p>
+                                                <strong>{t('home.charter5Title')}</strong>
+                                                <p>{t('home.charter5Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Encourager l'innovation et l'amélioration continue</strong>
-                                                <p>Proposer des idées, expérimenter de nouvelles pratiques et valoriser les initiatives.</p>
+                                                <strong>{t('home.charter6Title')}</strong>
+                                                <p>{t('home.charter6Text')}</p>
                                             </li>
                                             <li>
-                                                <strong>Agir dans l'intérêt général et le développement social du Maroc</strong>
-                                                <p>Mettre son leadership au service de la communauté et du progrès social.</p>
+                                                <strong>{t('home.charter7Title')}</strong>
+                                                <p>{t('home.charter7Text')}</p>
                                             </li>
                                         </ul>
                                     </div>
@@ -459,7 +459,7 @@ function Home() {
             {/* Notre Identité Section */}
             <section className="notre-identite-section py-5">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Notre identité</h2>
+                    <h2 className="section-title text-center mb-5">{t('home.identitySectionTitle')}</h2>
                     <div className="row">
                         {/* Forme juridique */}
                         <div className="col-lg-3 col-md-6 mb-4">
@@ -474,11 +474,11 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.formeJuridique ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3 className="identite-card-title">Forme juridique</h3>
+                                <h3 className="identite-card-title">{t('home.identityLegalFormTitle')}</h3>
                                 {openIdentityCards.formeJuridique && (
                                     <div className="identite-card-content">
                                         <p className="identite-card-text">
-                                            Association à but non lucratif offrant des services à la communauté des dirigeants.
+                                            {t('home.identityLegalFormText')}
                                         </p>
                                     </div>
                                 )}
@@ -498,11 +498,11 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.pourquoi ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3 className="identite-card-title">Pourquoi le CDDAM ?</h3>
+                                <h3 className="identite-card-title">{t('home.identityWhyTitle')}</h3>
                                 {openIdentityCards.pourquoi && (
                                     <div className="identite-card-content">
                                         <p className="identite-card-text">
-                                            Le Club des Dirigeants des Associations Maroc (CDDAM) est né d'un besoin réel et urgent : accompagner la transformation du secteur associatif marocain, renforcer ses leaders, et faire émerger une nouvelle génération de dirigeants engagés, compétents et responsables.
+                                            {t('home.identityWhyText')}
                                         </p>
                                     </div>
                                 )}
@@ -522,20 +522,20 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.perimetre ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3 className="identite-card-title">Périmètre d'activités</h3>
+                                <h3 className="identite-card-title">{t('home.identityScopeTitle')}</h3>
                                 {openIdentityCards.perimetre && (
                                     <div className="identite-card-content">
                                         <p className="identite-card-text mb-3">
-                                            Le CDDAM intervient dans un ensemble d'actions destinées à renforcer les compétences, le réseau et l'impact des dirigeants associatifs. Ses activités couvrent les domaines suivants :
+                                            {t('home.identityScopeText')}
                                         </p>
                                         <ul className="identite-activities-list">
-                                            <li><strong>Formation &amp; Renforcement des Capacités</strong> : Ateliers pratiques, séminaires, masterclass, programmes de leadership associatif, formations en gouvernance, gestion de projets, communication, mobilisation des ressources…</li>
-                                            <li><strong>Networking &amp; Échanges Professionnels</strong> : Rencontres entre dirigeants, événements thématiques, groupes de discussion, cercles sectoriels, déjeuners et cafés-rencontres professionnels.</li>
-                                            <li><strong>Accompagnement &amp; Mentorat</strong> : Coaching individuel, sessions d'accompagnement collectif, mise en relation avec experts et partenaires, partage de bonnes pratiques.</li>
-                                            <li><strong>Production de Ressources</strong> : Guides et outils pratiques, articles, études, analyses, notes méthodologiques, plateforme documentaire en ligne, bibliothèque numérique.</li>
-                                            <li><strong>Innovation &amp; Initiatives Sociales</strong> : Incubation d'idées de projets associatifs, appui à la structuration de projets à impact, création de synergies inter-associatives, soutien aux initiatives citoyennes innovantes.</li>
-                                            <li><strong>Plaidoyer &amp; Représentation</strong> : Participation aux consultations et débats publics, défense des intérêts du secteur associatif, contribution à l'amélioration des politiques sociales, représentation auprès des institutions et partenaires.</li>
-                                            <li><strong>Animation de la Communauté</strong> : Groupes régionaux du club, activités inter-associations, engagement des membres dans des actions sociales, renforcement de l'esprit d'entraide et de solidarité.</li>
+                                            <li><strong>{t('home.identityScope1')}</strong></li>
+                                            <li><strong>{t('home.identityScope2')}</strong></li>
+                                            <li><strong>{t('home.identityScope3')}</strong></li>
+                                            <li><strong>{t('home.identityScope4')}</strong></li>
+                                            <li><strong>{t('home.identityScope5')}</strong></li>
+                                            <li><strong>{t('home.identityScope6')}</strong></li>
+                                            <li><strong>{t('home.identityScope7')}</strong></li>
                                         </ul>
                                     </div>
                                 )}
@@ -555,19 +555,19 @@ function Home() {
                                         <i className={`fas fa-chevron-${openIdentityCards.orientation ? 'up' : 'down'}`}></i>
                                     </div>
                                 </div>
-                                <h3 className="identite-card-title">Orientation du CDDAM</h3>
+                                <h3 className="identite-card-title">{t('home.identityOrientationTitle')}</h3>
                                 {openIdentityCards.orientation && (
                                     <div className="identite-card-content">
                                         <p className="identite-card-text mb-3">
-                                            Le CDDAM s'oriente vers la professionnalisation, la coopération et l'impact social durable. Son action est guidée par une volonté de :
+                                            {t('home.identityOrientationText')}
                                         </p>
                                         <ul className="identite-orientations-list">
-                                            <li><strong>Renforcer le leadership associatif</strong> : Accompagner les dirigeants pour améliorer leurs compétences, leur vision stratégique et leur capacité d'action.</li>
-                                            <li><strong>Promouvoir une gouvernance moderne et éthique</strong> : Encourager la transparence, la responsabilité, la bonne gestion et la crédibilité au sein des associations.</li>
-                                            <li><strong>Favoriser la collaboration inter-associative</strong> : Créer des ponts entre les organisations pour faciliter les partenariats, les synergies et les projets communs.</li>
-                                            <li><strong>Impulser l'innovation sociale</strong> : Stimuler de nouvelles approches, outils et solutions pour répondre aux besoins sociaux de manière efficace.</li>
-                                            <li><strong>Soutenir le développement territorial et citoyen</strong> : Aligner les actions du club sur les priorités nationales et régionales, en plaçant l'intérêt général au centre.</li>
-                                            <li><strong>Valoriser le rôle des dirigeants associatifs</strong> : Faire reconnaître les leaders associatifs comme des acteurs essentiels du progrès social au Maroc.</li>
+                                            <li><strong>{t('home.identityOrientation1')}</strong></li>
+                                            <li><strong>{t('home.identityOrientation2')}</strong></li>
+                                            <li><strong>{t('home.identityOrientation3')}</strong></li>
+                                            <li><strong>{t('home.identityOrientation4')}</strong></li>
+                                            <li><strong>{t('home.identityOrientation5')}</strong></li>
+                                            <li><strong>{t('home.identityOrientation6')}</strong></li>
                                         </ul>
                                     </div>
                                 )}
@@ -581,7 +581,7 @@ function Home() {
             <section className="stats-section py-5 bg-light">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title mb-2">Chiffres clé - Objectifs (2026/2030)</h2>
+                        <h2 className="section-title mb-2">{t('home.statsTitle')}</h2>
                     </div>
                     <div className="row">
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -590,7 +590,7 @@ function Home() {
                                     <i className="fas fa-users"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>+500</h3>
-                                <p className="stat-label">Membres</p>
+                                <p className="stat-label">{t('home.stat1')}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -599,7 +599,7 @@ function Home() {
                                     <i className="fas fa-map-marked-alt"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>12</h3>
-                                <p className="stat-label">Régions du Maroc</p>
+                                <p className="stat-label">{t('home.stat2')}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -608,7 +608,7 @@ function Home() {
                                     <i className="fas fa-handshake"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>+100</h3>
-                                <p className="stat-label">Partenariats</p>
+                                <p className="stat-label">{t('home.stat3')}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -617,7 +617,7 @@ function Home() {
                                     <i className="fas fa-building"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>12</h3>
-                                <p className="stat-label">Cercles d'affaires</p>
+                                <p className="stat-label">{t('home.stat4')}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -626,7 +626,7 @@ function Home() {
                                     <i className="fas fa-calendar-check"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>5</h3>
-                                <p className="stat-label">Participation en congrès</p>
+                                <p className="stat-label">{t('home.stat5')}</p>
                             </div>
                         </div>
                         <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
@@ -635,7 +635,7 @@ function Home() {
                                     <i className="fas fa-wine-glass"></i>
                                 </div>
                                 <h3 className="stat-number" style={{color: 'var(--primary-color)'}}>8</h3>
-                                <p className="stat-label">Soirée networking</p>
+                                <p className="stat-label">{t('home.stat6')}</p>
                             </div>
                         </div>
                     </div>
@@ -646,17 +646,17 @@ function Home() {
             <section className="actualites-section py-5">
                 <div className="container">
                     <div className="d-flex justify-content-between align-items-center mb-5">
-                        <h2 className="section-title mb-0">Actualités</h2>
+                        <h2 className="section-title mb-0">{t('home.newsTitle')}</h2>
                         <Link to="/blog" className="btn btn-outline-primary">
-                            Toutes les actualités
+                            {t('home.allNews')}
                         </Link>
                     </div>
                     <div className="row">
                         <div className="col-12">
                             <div className="empty-actualites text-center py-5">
                                 <i className="fas fa-newspaper" style={{fontSize: '64px', color: '#ccc', marginBottom: '20px'}}></i>
-                                <p className="text-muted" style={{fontSize: '18px'}}>Aucune actualité pour le moment</p>
-                                <p className="text-muted">Les actualités seront bientôt disponibles.</p>
+                                <p className="text-muted" style={{fontSize: '18px'}}>{t('home.noNews')}</p>
+                                <p className="text-muted">{t('home.noNewsText')}</p>
                             </div>
                         </div>
                     </div>
@@ -667,8 +667,8 @@ function Home() {
             <section className="partenaires-section py-5">
                 <div className="container">
                     <div className="text-center mb-5">
-                        <h2 className="section-title">Nos partenaires</h2>
-                        <p className="lead text-muted">Des partenariats stratégiques pour renforcer notre impact</p>
+                        <h2 className="section-title">{t('home.partnersTitle')}</h2>
+                        <p className="lead text-muted">{t('home.partnersSubtitle')}</p>
                     </div>
                     
                     {/* Partenaire Privé */}
@@ -681,7 +681,7 @@ function Home() {
                             <div className="partenaire-category-icon">
                                 <i className="fas fa-briefcase"></i>
                             </div>
-                            <h3 className="partenaire-category-title">Partenaire Privé</h3>
+                            <h3 className="partenaire-category-title">{t('home.privatePartner')}</h3>
                             <div className={`partenaire-toggle-icon ${openCategories.prive ? 'open' : ''}`}>
                                 <i className="fas fa-chevron-down"></i>
                             </div>
@@ -721,7 +721,7 @@ function Home() {
                             <div className="partenaire-category-icon">
                                 <i className="fas fa-landmark"></i>
                             </div>
-                            <h3 className="partenaire-category-title">Partenaire Public</h3>
+                            <h3 className="partenaire-category-title">{t('home.publicPartner')}</h3>
                             <div className={`partenaire-toggle-icon ${openCategories.public ? 'open' : ''}`}>
                                 <i className="fas fa-chevron-down"></i>
                     </div>
@@ -733,7 +733,7 @@ function Home() {
                                         <div className="empty-partenaires-icon">
                                             <i className="fas fa-building"></i>
                                         </div>
-                                        <p className="empty-partenaires-text">Aucun partenaire public pour le moment</p>
+                                        <p className="empty-partenaires-text">{t('home.noPublicPartner')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -750,7 +750,7 @@ function Home() {
                             <div className="partenaire-category-icon">
                                 <i className="fas fa-hands-helping"></i>
                             </div>
-                            <h3 className="partenaire-category-title">ONG Partenaire</h3>
+                            <h3 className="partenaire-category-title">{t('home.ngoPartner')}</h3>
                             <div className={`partenaire-toggle-icon ${openCategories.ong ? 'open' : ''}`}>
                                 <i className="fas fa-chevron-down"></i>
                             </div>
@@ -762,7 +762,7 @@ function Home() {
                                         <div className="empty-partenaires-icon">
                                             <i className="fas fa-hands-helping"></i>
                                         </div>
-                                        <p className="empty-partenaires-text">Aucune ONG partenaire pour le moment</p>
+                                        <p className="empty-partenaires-text">{t('home.noNgoPartner')}</p>
                                     </div>
                                 </div>
                             </div>
@@ -774,9 +774,9 @@ function Home() {
             {/* CTA Section */}
             <section className="cta-section py-5">
                 <div className="container text-center">
-                    <h2 className="section-title mb-4">Prêt à nous rejoindre ?</h2>
-                    <p className="lead mb-4">Rejoignez le Club des Dirigeants des Associations Maroc et intégrez un réseau d'excellence dédié au développement du secteur associatif marocain</p>
-                    <Link to="/packs-adhesions" className="btn btn-primary btn-lg">REJOIGNEZ LE CDDAM</Link>
+                    <h2 className="section-title mb-4">{t('home.ctaTitle')}</h2>
+                    <p className="lead mb-4">{t('home.ctaText')}</p>
+                    <Link to="/packs-adhesions" className="btn btn-primary btn-lg">{t('header.join')}</Link>
                 </div>
             </section>
         </>

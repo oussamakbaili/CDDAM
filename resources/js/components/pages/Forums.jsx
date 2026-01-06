@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 function Forums() {
+    const { t } = useTranslation();
     return (
         <>
             {/* Hero Section */}
@@ -12,8 +14,8 @@ function Forums() {
                 overflow: 'hidden'
             }}>
                 <div className="container text-center position-relative" style={{zIndex: 2}}>
-                    <h1 className="display-4 mb-3 fw-bold">Forums</h1>
-                    <p className="lead mb-0">Des espaces de dialogue et d'innovation pour le secteur associatif</p>
+                    <h1 className="display-4 mb-3 fw-bold">{t('forums.title')}</h1>
+                    <p className="lead mb-0">{t('forums.subtitle')}</p>
                 </div>
                 <div style={{
                     position: 'absolute',
@@ -35,13 +37,13 @@ function Forums() {
                             <div className="pe-lg-4">
                                 <h2 className="section-title mb-4" style={{color: 'var(--primary-color)'}}>
                                     <i className="fas fa-comments me-3"></i>
-                                    L'intelligence collective au service du développement
+                                    {t('forums.introTitle')}
                                 </h2>
                                 <p className="lead mb-4">
-                                    Les forums du CDDAM sont des espaces privilégiés de dialogue, de réflexion collective et d'innovation où les dirigeants associatifs se réunissent pour débattre des enjeux majeurs du secteur et co-construire des solutions durables.
+                                    {t('forums.introText1')}
                                 </p>
                                 <p>
-                                    Dans un contexte où les défis sociaux évoluent rapidement, les forums CDDAM offrent une plateforme unique pour partager les expériences, analyser les tendances, explorer de nouvelles approches et créer des synergies qui contribuent au développement social et économique du Maroc.
+                                    {t('forums.introText2')}
                                 </p>
                             </div>
                         </div>
@@ -57,9 +59,9 @@ function Forums() {
                             }}>
                                 <div className="text-center mb-4">
                                     <i className="fas fa-brain fa-4x mb-3" style={{color: 'var(--primary-color)'}}></i>
-                                    <h3 className="mb-3">Intelligence collective</h3>
+                                    <h3 className="mb-3">{t('forums.featureTitle')}</h3>
                                     <p className="mb-0">
-                                        Des espaces où la diversité des perspectives et l'échange d'idées génèrent des solutions innovantes et des recommandations concrètes pour le secteur associatif.
+                                        {t('forums.featureText')}
                                     </p>
                                 </div>
                             </div>
@@ -71,7 +73,7 @@ function Forums() {
             {/* Forum Types Section */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Types de forums</h2>
+                    <h2 className="section-title text-center mb-5">{t('forums.typesTitle')}</h2>
                     
                     <div className="row g-4">
                         <div className="col-lg-6">
@@ -98,30 +100,30 @@ function Forums() {
                                         <i className="fas fa-chart-line"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Forums thématiques</h3>
+                                        <h3 className="mb-3">{t('forums.type1Title')}</h3>
                                         <p className="mb-3">
-                                            Des forums centrés sur des thématiques spécifiques du secteur associatif :
+                                            {t('forums.type1Text')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Gouvernance et transparence associative
+                                                {t('forums.type1Item1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Financement durable et diversification des ressources
+                                                {t('forums.type1Item2')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Impact social et mesure de performance
+                                                {t('forums.type1Item3')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Innovation et transformation digitale
+                                                {t('forums.type1Item4')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Coopération internationale et partenariats
+                                                {t('forums.type1Item5')}
                                             </li>
                                         </ul>
                                     </div>
@@ -153,26 +155,26 @@ function Forums() {
                                         <i className="fas fa-lightbulb"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Forums d'innovation</h3>
+                                        <h3 className="mb-3">{t('forums.type2Title')}</h3>
                                         <p className="mb-3">
-                                            Des espaces dédiés à l'exploration de nouvelles approches et solutions :
+                                            {t('forums.type2Text')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Présentation de projets innovants
+                                                {t('forums.type2Item1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Partage de bonnes pratiques
+                                                {t('forums.type2Item2')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Co-création de solutions
+                                                {t('forums.type2Item3')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Networking autour de l'innovation
+                                                {t('forums.type2Item4')}
                                             </li>
                                         </ul>
                                     </div>
@@ -204,22 +206,22 @@ function Forums() {
                                         <i className="fas fa-handshake"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Forums de partenariat</h3>
+                                        <h3 className="mb-3">{t('forums.type3Title')}</h3>
                                         <p className="mb-3">
-                                            Des rencontres facilitant la création de partenariats stratégiques :
+                                            {t('forums.type3Text')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Rencontres B2B entre associations
+                                                {t('forums.type3Item1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Présentation d'opportunités de collaboration
+                                                {t('forums.type3Item2')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Signature de conventions de partenariat
+                                                {t('forums.type3Item3')}
                                             </li>
                                         </ul>
                                     </div>
@@ -251,22 +253,22 @@ function Forums() {
                                         <i className="fas fa-gavel"></i>
                                     </div>
                                     <div>
-                                        <h3 className="mb-3">Forums de plaidoyer</h3>
+                                        <h3 className="mb-3">{t('forums.type4Title')}</h3>
                                         <p className="mb-3">
-                                            Des espaces pour porter la voix du secteur associatif :
+                                            {t('forums.type4Text')}
                                         </p>
                                         <ul style={{listStyle: 'none', padding: 0}}>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Élaboration de positions communes
+                                                {t('forums.type4Item1')}
                                             </li>
                                             <li className="mb-2">
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Dialogue avec les pouvoirs publics
+                                                {t('forums.type4Item2')}
                                             </li>
                                             <li>
                                                 <i className="fas fa-check-circle me-2" style={{color: 'var(--primary-color)'}}></i>
-                                                Recommandations pour les politiques publiques
+                                                {t('forums.type4Item3')}
                                             </li>
                                         </ul>
                                     </div>
@@ -280,7 +282,7 @@ function Forums() {
             {/* Methodology Section */}
             <section className="py-5">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Méthodologie des forums</h2>
+                    <h2 className="section-title text-center mb-5">{t('forums.methodologyTitle')}</h2>
                     
                     <div className="row g-4">
                         <div className="col-md-6 col-lg-3">
@@ -294,9 +296,9 @@ function Forums() {
                                 <div className="method-icon mb-3">
                                     <i className="fas fa-user-friends fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h5 className="mb-3">Participation active</h5>
+                                <h5 className="mb-3">{t('forums.method1Title')}</h5>
                                 <p className="mb-0">
-                                    Chaque participant est encouragé à partager son expérience, ses idées et ses perspectives dans un esprit de respect et d'écoute mutuelle.
+                                    {t('forums.method1Text')}
                                 </p>
                             </div>
                         </div>
@@ -312,9 +314,9 @@ function Forums() {
                                 <div className="method-icon mb-3">
                                     <i className="fas fa-comments fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h5 className="mb-3">Débat structuré</h5>
+                                <h5 className="mb-3">{t('forums.method2Title')}</h5>
                                 <p className="mb-0">
-                                    Des sessions de débat organisées avec des modérateurs expérimentés qui guident les discussions et assurent la qualité des échanges.
+                                    {t('forums.method2Text')}
                                 </p>
                             </div>
                         </div>
@@ -330,9 +332,9 @@ function Forums() {
                                 <div className="method-icon mb-3">
                                     <i className="fas fa-tasks fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h5 className="mb-3">Travail en groupes</h5>
+                                <h5 className="mb-3">{t('forums.method3Title')}</h5>
                                 <p className="mb-0">
-                                    Des ateliers en petits groupes permettant d'approfondir les sujets et de co-construire des solutions concrètes et actionnables.
+                                    {t('forums.method3Text')}
                                 </p>
                             </div>
                         </div>
@@ -348,9 +350,9 @@ function Forums() {
                                 <div className="method-icon mb-3">
                                     <i className="fas fa-file-alt fa-3x" style={{color: 'var(--primary-color)'}}></i>
                                 </div>
-                                <h5 className="mb-3">Recommandations</h5>
+                                <h5 className="mb-3">{t('forums.method4Title')}</h5>
                                 <p className="mb-0">
-                                    Chaque forum aboutit à des recommandations concrètes, des plans d'action et des engagements collectifs pour le secteur associatif.
+                                    {t('forums.method4Text')}
                                 </p>
                             </div>
                         </div>
@@ -363,7 +365,7 @@ function Forums() {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
-                            <h2 className="section-title text-center mb-5">L'impact des forums CDDAM</h2>
+                            <h2 className="section-title text-center mb-5">{t('forums.impactTitle')}</h2>
                             
                             <div className="impact-box p-4" style={{
                                 background: 'var(--white)',
@@ -372,7 +374,7 @@ function Forums() {
                                 borderLeft: '5px solid var(--primary-color)'
                             }}>
                                 <p className="lead mb-4">
-                                    Les forums du CDDAM ont un impact concret et mesurable sur le développement du secteur associatif marocain :
+                                    {t('forums.impactText')}
                                 </p>
                                 
                                 <div className="row g-3">
@@ -380,9 +382,9 @@ function Forums() {
                                         <div className="d-flex align-items-start">
                                             <i className="fas fa-check-circle fa-2x me-3 mt-1" style={{color: 'var(--primary-color)'}}></i>
                                             <div>
-                                                <h6 className="mb-2">Solutions innovantes</h6>
+                                                <h6 className="mb-2">{t('forums.impact1Title')}</h6>
                                                 <p className="mb-0 small">
-                                                    Des solutions pratiques et innovantes émergent de chaque forum, contribuant à résoudre les défis du secteur.
+                                                    {t('forums.impact1Text')}
                                                 </p>
                                             </div>
                                         </div>
@@ -392,9 +394,9 @@ function Forums() {
                                         <div className="d-flex align-items-start">
                                             <i className="fas fa-check-circle fa-2x me-3 mt-1" style={{color: 'var(--primary-color)'}}></i>
                                             <div>
-                                                <h6 className="mb-2">Partenariats durables</h6>
+                                                <h6 className="mb-2">{t('forums.impact2Title')}</h6>
                                                 <p className="mb-0 small">
-                                                    De nombreux partenariats stratégiques naissent lors des forums, créant des synergies durables entre associations.
+                                                    {t('forums.impact2Text')}
                                                 </p>
                                             </div>
                                         </div>
@@ -404,9 +406,9 @@ function Forums() {
                                         <div className="d-flex align-items-start">
                                             <i className="fas fa-check-circle fa-2x me-3 mt-1" style={{color: 'var(--primary-color)'}}></i>
                                             <div>
-                                                <h6 className="mb-2">Influence sur les politiques</h6>
+                                                <h6 className="mb-2">{t('forums.impact3Title')}</h6>
                                                 <p className="mb-0 small">
-                                                    Les recommandations des forums influencent les politiques publiques et les décisions institutionnelles.
+                                                    {t('forums.impact3Text')}
                                                 </p>
                                             </div>
                                         </div>
@@ -416,9 +418,9 @@ function Forums() {
                                         <div className="d-flex align-items-start">
                                             <i className="fas fa-check-circle fa-2x me-3 mt-1" style={{color: 'var(--primary-color)'}}></i>
                                             <div>
-                                                <h6 className="mb-2">Renforcement des capacités</h6>
+                                                <h6 className="mb-2">{t('forums.impact4Title')}</h6>
                                                 <p className="mb-0 small">
-                                                    Les participants acquièrent de nouvelles compétences, connaissances et perspectives qui enrichissent leur pratique.
+                                                    {t('forums.impact4Text')}
                                                 </p>
                                             </div>
                                         </div>
@@ -436,18 +438,18 @@ function Forums() {
                 color: 'white'
             }}>
                 <div className="container text-center">
-                    <h2 className="section-title mb-4 text-white">Participez aux forums CDDAM</h2>
+                    <h2 className="section-title mb-4 text-white">{t('forums.ctaTitle')}</h2>
                     <p className="lead mb-4">
-                        Rejoignez les espaces de dialogue et d'innovation qui façonnent l'avenir du secteur associatif marocain. Votre voix et votre expertise comptent !
+                        {t('forums.ctaText')}
                     </p>
                     <div className="d-flex gap-3 justify-content-center flex-wrap">
                         <Link to="/packs-adhesions" className="btn btn-light btn-lg px-5">
                             <i className="fas fa-user-plus me-2"></i>
-                            Devenir membre
+                            {t('forums.becomeMember')}
                         </Link>
                         <Link to="/contact" className="btn btn-outline-light btn-lg px-5">
                             <i className="fas fa-envelope me-2"></i>
-                            Nous contacter
+                            {t('forums.contactUs')}
                         </Link>
                     </div>
                 </div>

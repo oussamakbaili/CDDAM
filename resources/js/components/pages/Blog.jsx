@@ -37,23 +37,31 @@ function Blog() {
 
             <section className="py-5">
                 <div className="container">
-                    <div className="row">
-                        {posts.map((post, index) => (
-                            <div key={index} className="col-md-4 mb-4">
-                                <div className="card h-100">
-                                    <div className="card-body">
-                                        <h5 className="card-title">{post.title}</h5>
-                                        <p className="card-text">{post.excerpt}</p>
-                                        <p className="text-muted small">
-                                            <i className="fas fa-user"></i> {t('blog.author')} | 
-                                            <i className="fas fa-calendar"></i> {post.date}
-                                        </p>
-                                        <a href={`/blog/${post.slug}`} className="btn btn-primary">{t('blog.readMore')}</a>
+                    {posts.length > 0 ? (
+                        <div className="row">
+                            {posts.map((post, index) => (
+                                <div key={index} className="col-md-4 mb-4">
+                                    <div className="card h-100">
+                                        <div className="card-body">
+                                            <h5 className="card-title">{post.title}</h5>
+                                            <p className="card-text">{post.excerpt}</p>
+                                            <p className="text-muted small">
+                                                <i className="fas fa-user"></i> {t('blog.author')} | 
+                                                <i className="fas fa-calendar"></i> {post.date}
+                                            </p>
+                                            <a href={`/blog/${post.slug}`} className="btn btn-primary">{t('blog.readMore')}</a>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-5">
+                            <i className="fas fa-newspaper fa-4x text-muted mb-4" style={{opacity: 0.3}}></i>
+                            <h3 className="text-muted mb-3">{t('blog.noNews')}</h3>
+                            <p className="text-muted">{t('blog.noNewsText')}</p>
+                        </div>
+                    )}
                 </div>
             </section>
         </>
