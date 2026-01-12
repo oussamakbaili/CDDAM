@@ -138,7 +138,7 @@ function Home() {
                                     <div className="welcome-logo-glow"></div>
                                     <img
                                         src="/images/description.png"
-                                        alt="Le Club des Dirigeants des Associations Maroc"
+                                        alt={t('home.brandTitle')}
                                         className="welcome-logo-main"
                                     />
                                 </div>
@@ -695,14 +695,14 @@ function Home() {
                                                 <div className="partenaire-logo-wrapper">
                                                     <img 
                                                         src="/images/omecs.jpg" 
-                                                        alt="OMECS - Observatoire Marocain des Études et Conseils Sociaux" 
+                                                        alt={`OMECS - ${t('home.omecsDescription')}`}
                                                         className="partenaire-logo"
                                                     />
                                                 </div>
                                             </div>
                                             <div className="partenaire-info">
                                                 <h4 className="partenaire-name">OMECS</h4>
-                                                <p className="partenaire-description">Observatoire Marocain des Études et Conseils Sociaux</p>
+                                                <p className="partenaire-description">{t('home.omecsDescription')}</p>
                                             </div>
                                         </div>
                                     </Link>

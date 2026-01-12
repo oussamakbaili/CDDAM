@@ -114,33 +114,33 @@ function About() {
                 <div className="container">
                     <div className="row mb-5">
                         <div className="col-lg-8 mx-auto">
-                            <h2 className="section-title">Notre identité</h2>
+                            <h2 className="section-title">{t('about.identitySection')}</h2>
                             <div className="card mb-4">
                                 <div className="card-body">
-                                    <h4><i className="fas fa-gavel" style={{color: 'var(--primary-color)'}}></i> Forme juridique</h4>
-                                    <p>Association à but non lucratif offrant des services à la communauté des dirigeants.</p>
+                                    <h4><i className="fas fa-gavel" style={{color: 'var(--primary-color)'}}></i> {t('about.legalFormTitle')}</h4>
+                                    <p>{t('about.legalFormText')}</p>
                                 </div>
                             </div>
                             <div className="card mb-4">
                                 <div className="card-body">
-                                    <h4><i className="fas fa-question-circle" style={{color: 'var(--primary-color)'}}></i> Pourquoi le CDDAM?</h4>
-                                    <p>Le Club des Dirigeants des Associations Maroc offre un réseau professionnel de qualité, sécurisé et efficace, disposant d'une plateforme innovante et d'un annuaire d'experts spécialisés dans le secteur associatif. Nous offrons des outils, des ressources et des opportunités de networking exclusivement dédiés aux dirigeants d'associations.</p>
+                                    <h4><i className="fas fa-question-circle" style={{color: 'var(--primary-color)'}}></i> {t('about.whyTitle')}</h4>
+                                    <p>{t('about.whyText')}</p>
                                 </div>
                             </div>
                             <div className="card mb-4">
                                 <div className="card-body">
-                                    <h4><i className="fas fa-map-marked-alt" style={{color: 'var(--primary-color)'}}></i> Périmètre d'activités</h4>
+                                    <h4><i className="fas fa-map-marked-alt" style={{color: 'var(--primary-color)'}}></i> {t('about.scopeTitle')}</h4>
                                     <ul>
-                                        <li>Made in Morocco.</li>
-                                        <li>Présence Régionale, Nationale et Internationale</li>
-                                        <li>Représentation de tous les secteurs d'activités.</li>
+                                        <li>{t('about.scope1')}</li>
+                                        <li>{t('about.scope2')}</li>
+                                        <li>{t('about.scope3')}</li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="card mb-4">
                                 <div className="card-body">
-                                    <h4><i className="fas fa-compass" style={{color: 'var(--primary-color)'}}></i> Orientations</h4>
-                                    <p>Aucune vocation politique ou religieuse.</p>
+                                    <h4><i className="fas fa-compass" style={{color: 'var(--primary-color)'}}></i> {t('about.orientationTitle')}</h4>
+                                    <p>{t('about.orientationText')}</p>
                                 </div>
                             </div>
                         </div>
@@ -149,30 +149,30 @@ function About() {
                     <div className="row">
                         <div className="col-md-4 mb-4">
                             <div className="identity-card">
-                                <h3><i className="fas fa-eye"></i> Vision</h3>
-                                <p>Être la référence incontournable en matière de développement et de renforcement des capacités du secteur associatif marocain, en créant un écosystème d'excellence qui favorise l'innovation, la collaboration et l'impact social durable.</p>
+                                <h3><i className="fas fa-eye"></i> {t('about.visionTitle')}</h3>
+                                <p>{t('about.visionText')}</p>
                             </div>
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="identity-card">
-                                <h3><i className="fas fa-bullseye"></i> Mission</h3>
+                                <h3><i className="fas fa-bullseye"></i> {t('about.missionTitle')}</h3>
                                 <ul>
-                                    <li>Rassembler et connecter les dirigeants d'associations</li>
-                                    <li>Renforcer les capacités organisationnelles et managériales</li>
-                                    <li>Créer des opportunités de partenariats stratégiques</li>
-                                    <li>Promouvoir l'excellence et l'innovation dans le secteur associatif</li>
-                                    <li>Contribuer au développement durable et à l'impact social</li>
+                                    <li>{t('about.mission1')}</li>
+                                    <li>{t('about.mission2')}</li>
+                                    <li>{t('about.mission3')}</li>
+                                    <li>{t('about.mission4')}</li>
+                                    <li>{t('about.mission5')}</li>
                                 </ul>
                             </div>
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="identity-card">
-                                <h3><i className="fas fa-heart"></i> Valeurs</h3>
+                                <h3><i className="fas fa-heart"></i> {t('about.valuesTitle')}</h3>
                                 <ul>
-                                    <li><i className="fas fa-star text-warning me-2"></i>Leadership</li>
-                                    <li><i className="fas fa-lightbulb text-info me-2"></i>Innovation</li>
-                                    <li><i className="fas fa-eye text-primary me-2"></i>Transparence</li>
-                                    <li><i className="fas fa-hand-holding-heart text-danger me-2"></i>Impact social</li>
+                                    <li><i className="fas fa-star text-warning me-2"></i>{t('about.value1')}</li>
+                                    <li><i className="fas fa-lightbulb text-info me-2"></i>{t('about.value2')}</li>
+                                    <li><i className="fas fa-eye text-primary me-2"></i>{t('about.value3')}</li>
+                                    <li><i className="fas fa-hand-holding-heart text-danger me-2"></i>{t('about.value4')}</li>
                                 </ul>
                             </div>
                         </div>
@@ -183,14 +183,14 @@ function About() {
             {/* Structure Organisationnelle */}
             <section id="structure" className="py-5">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Structure Organisationnelle</h2>
+                    <h2 className="section-title text-center mb-5">{t('about.organizationalStructure')}</h2>
                     <div className="row">
                         <div className="col-md-6 col-lg-3 mb-4">
                             <div className="card h-100 text-center shadow-sm">
                                 <div className="card-body">
                                     <i className="fas fa-users-cog fa-3x text-primary mb-3"></i>
-                                    <h4>Assemblée Générale</h4>
-                                    <p className="text-muted">Organe souverain de l'association</p>
+                                    <h4>{t('about.structure1')}</h4>
+                                    <p className="text-muted">{t('about.structure1Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -198,8 +198,8 @@ function About() {
                             <div className="card h-100 text-center shadow-sm">
                                 <div className="card-body">
                                     <i className="fas fa-building fa-3x text-primary mb-3"></i>
-                                    <h4>Conseil d'Administration</h4>
-                                    <p className="text-muted">Gouvernance et stratégie</p>
+                                    <h4>{t('about.structure2')}</h4>
+                                    <p className="text-muted">{t('about.structure2Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -207,8 +207,8 @@ function About() {
                             <div className="card h-100 text-center shadow-sm">
                                 <div className="card-body">
                                     <i className="fas fa-clipboard-list fa-3x text-primary mb-3"></i>
-                                    <h4 id="commissions">Commissions Thématiques</h4>
-                                    <p className="text-muted">Expertise par domaine</p>
+                                    <h4 id="commissions">{t('about.structure3')}</h4>
+                                    <p className="text-muted">{t('about.structure3Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -216,8 +216,8 @@ function About() {
                             <div className="card h-100 text-center shadow-sm">
                                 <div className="card-body">
                                     <i className="fas fa-map-marked-alt fa-3x text-primary mb-3"></i>
-                                    <h4>Antennes Régionales</h4>
-                                    <p className="text-muted">Présence territoriale</p>
+                                    <h4>{t('about.structure4')}</h4>
+                                    <p className="text-muted">{t('about.structure4Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -228,14 +228,14 @@ function About() {
             {/* Financement */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Modèle de Financement</h2>
+                    <h2 className="section-title text-center mb-5">{t('about.funding')}</h2>
                     <div className="row">
                         <div className="col-md-6 col-lg-3 mb-4">
                             <div className="card h-100 border-primary">
                                 <div className="card-body text-center">
                                     <i className="fas fa-money-bill-wave fa-3x text-primary mb-3"></i>
-                                    <h5>Cotisations</h5>
-                                    <p className="text-muted small">Membres Premium et VIP</p>
+                                    <h5>{t('about.funding1')}</h5>
+                                    <p className="text-muted small">{t('about.funding1Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -243,8 +243,8 @@ function About() {
                             <div className="card h-100 border-primary">
                                 <div className="card-body text-center">
                                     <i className="fas fa-handshake fa-3x text-primary mb-3"></i>
-                                    <h5>Sponsoring</h5>
-                                    <p className="text-muted small">Partenaires stratégiques</p>
+                                    <h5>{t('about.funding2')}</h5>
+                                    <p className="text-muted small">{t('about.funding2Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -252,8 +252,8 @@ function About() {
                             <div className="card h-100 border-primary">
                                 <div className="card-body text-center">
                                     <i className="fas fa-gift fa-3x text-primary mb-3"></i>
-                                    <h5>Subventions</h5>
-                                    <p className="text-muted small">Financements institutionnels</p>
+                                    <h5>{t('about.funding3')}</h5>
+                                    <p className="text-muted small">{t('about.funding3Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -261,8 +261,8 @@ function About() {
                             <div className="card h-100 border-primary">
                                 <div className="card-body text-center">
                                     <i className="fas fa-calendar-check fa-3x text-primary mb-3"></i>
-                                    <h5>Événements Payants</h5>
-                                    <p className="text-muted small">Formations et conférences</p>
+                                    <h5>{t('about.funding4')}</h5>
+                                    <p className="text-muted small">{t('about.funding4Desc')}</p>
                                 </div>
                             </div>
                         </div>
@@ -277,27 +277,27 @@ function About() {
                         <div className="col-lg-10 mx-auto">
                             <div className="card shadow-lg border-0">
                                 <div className="card-body p-5">
-                                    <h2 className="section-title text-center mb-5">Impact Attendu</h2>
+                                    <h2 className="section-title text-center mb-5">{t('about.expectedImpact')}</h2>
                                     <div className="row">
                                         <div className="col-md-4 mb-4">
                                             <div className="text-center p-4">
                                                 <i className="fas fa-chart-line fa-3x text-success mb-3"></i>
-                                                <h4>Professionnalisation</h4>
-                                                <p>Professionnalisation du secteur associatif marocain</p>
+                                                <h4>{t('about.impact1')}</h4>
+                                                <p>{t('about.impact1Desc')}</p>
                                             </div>
                                         </div>
                                         <div className="col-md-4 mb-4">
                                             <div className="text-center p-4">
                                                 <i className="fas fa-shield-alt fa-3x text-primary mb-3"></i>
-                                                <h4>Gouvernance</h4>
-                                                <p>Renforcement de la gouvernance associative</p>
+                                                <h4>{t('about.impact2')}</h4>
+                                                <p>{t('about.impact2Desc')}</p>
                                             </div>
                                         </div>
                                         <div className="col-md-4 mb-4">
                                             <div className="text-center p-4">
                                                 <i className="fas fa-network-wired fa-3x text-info mb-3"></i>
-                                                <h4>Partenariats</h4>
-                                                <p>Développement de partenariats stratégiques</p>
+                                                <h4>{t('about.impact3')}</h4>
+                                                <p>{t('about.impact3Desc')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -311,7 +311,7 @@ function About() {
             {/* Plan de Lancement */}
             <section className="py-5 bg-light">
                 <div className="container">
-                    <h2 className="section-title text-center mb-5">Plan de Lancement</h2>
+                    <h2 className="section-title text-center mb-5">{t('about.launchPlan')}</h2>
                     <div className="row">
                         <div className="col-lg-10 mx-auto">
                             <div className="timeline">
@@ -323,13 +323,13 @@ function About() {
                                                     <div className="badge bg-primary rounded-circle p-3 me-3" style={{width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                                                         <span className="fs-4 fw-bold">1</span>
                                                     </div>
-                                                    <h4 className="mb-0">Phase 1: Préparation</h4>
+                                                    <h4 className="mb-0">{t('about.phase1')}</h4>
                                                 </div>
                                                 <ul className="list-unstyled ms-5">
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Structuration juridique</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Définition de la stratégie</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Mise en place de l'équipe</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Développement de la plateforme</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase1Item1')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase1Item2')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase1Item3')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase1Item4')}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -341,13 +341,13 @@ function About() {
                                                     <div className="badge bg-success rounded-circle p-3 me-3" style={{width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                                                         <span className="fs-4 fw-bold">2</span>
                                                     </div>
-                                                    <h4 className="mb-0">Phase 2: Lancement Officiel</h4>
+                                                    <h4 className="mb-0">{t('about.phase2')}</h4>
                                                 </div>
                                                 <ul className="list-unstyled ms-5">
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Cérémonie d'inauguration</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Campagne de communication</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Recrutement des premiers membres</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Premiers événements</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase2Item1')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase2Item2')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase2Item3')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase2Item4')}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -359,13 +359,13 @@ function About() {
                                                     <div className="badge bg-info rounded-circle p-3 me-3" style={{width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                                                         <span className="fs-4 fw-bold">3</span>
                                                     </div>
-                                                    <h4 className="mb-0">Phase 3: Déploiement</h4>
+                                                    <h4 className="mb-0">{t('about.phase3')}</h4>
                                                 </div>
                                                 <ul className="list-unstyled ms-5">
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Mise en place des commissions</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Programmes de formation</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Activation des antennes régionales</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Développement des partenariats</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase3Item1')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase3Item2')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase3Item3')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase3Item4')}</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -377,13 +377,13 @@ function About() {
                                                     <div className="badge bg-warning rounded-circle p-3 me-3" style={{width: '60px', height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
                                                         <span className="fs-4 fw-bold">4</span>
                                                     </div>
-                                                    <h4 className="mb-0">Phase 4: Expansion</h4>
+                                                    <h4 className="mb-0">{t('about.phase4')}</h4>
                                                 </div>
                                                 <ul className="list-unstyled ms-5">
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Élargissement du réseau</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Internationalisation</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Innovation continue</li>
-                                                    <li><i className="fas fa-check-circle text-success me-2"></i>Impact mesurable</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase4Item1')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase4Item2')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase4Item3')}</li>
+                                                    <li><i className="fas fa-check-circle text-success me-2"></i>{t('about.phase4Item4')}</li>
                                                 </ul>
                                             </div>
                                         </div>
