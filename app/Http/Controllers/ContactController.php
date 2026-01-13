@@ -49,10 +49,32 @@ class ContactController extends Controller
             ], 200);
 
         } catch (\Exception $e) {
-            \Log::error('Erreur lors de l\'envoi de l\'email de contact: ' . $e->getMessage());
+            // Logger l'erreur complète avec la stack trace
+            \Log::error('Erreur lors de l\'envoi de l\'email de contact', [
+                'message' => $e->getMessage(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString(),
+                'config' => [
+                    'mail_mailer' => config('mail.default'),
+                    'mail_host' => config('mail.mailers.smtp.host'),
+                    'mail_port' => config('mail.mailers.smtp.port'),
+                    'mail_encryption' => config('mail.mailers.smtp.encryption'),
+                    'mail_username' => config('mail.mailers.smtp.username') ? '***configured***' : 'NOT SET',
+                ]
+            ]);
+            
+            // En mode debug, renvoyer plus de détails
+            $errorMessage = config('app.debug') 
+                ? 'Erreur: ' . $e->getMessage() . ' (Vérifiez les logs pour plus de détails)'
+                : 'Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer plus tard.';
             
             return response()->json([
-                'message' => 'Une erreur est survenue lors de l\'envoi de votre message. Veuillez réessayer plus tard.'
+                'message' => $errorMessage,
+                'error_details' => config('app.debug') ? [
+                    'exception' => get_class($e),
+                    'message' => $e->getMessage(),
+                ] : null
             ], 500);
         }
     }
