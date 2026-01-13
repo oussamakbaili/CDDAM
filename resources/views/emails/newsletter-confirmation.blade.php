@@ -94,7 +94,7 @@
         <div class="footer">
             <p>Club des Dirigeants des Associations Maroc</p>
             <p>45 Bd Bir Anzarane 1er étage N°1 - Maarif - Casablanca - Maroc</p>
-            <p>contact.aiais@gmail.com | +212 526 622 626</p>
+            <p>contact.aiais@gmail.com | +212 520 720 805</p>
         </div>
     </div>
 </body>

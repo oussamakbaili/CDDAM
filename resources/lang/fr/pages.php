@@ -76,7 +76,7 @@ return [
         'contact_info' => 'Informations de contact',
         'address' => 'TECHNOPARK, Bureau 409 Casablanca',
         'phone' => '0663-727258',
-        'email' => 'contact@cdda.ma',
+        'email' => 'contact@cddam.org',
         'hours' => 'Lun - Ven : 8AM - 18PM',
         'send_message' => 'Envoyez-nous un message',
         'name' => 'Nom',

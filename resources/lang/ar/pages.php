@@ -76,7 +76,7 @@ return [
         'contact_info' => 'معلومات الاتصال',
         'address' => 'TECHNOPARK، المكتب 409 الدار البيضاء',
         'phone' => '0663-727258',
-        'email' => 'contact@cdda.ma',
+        'email' => 'contact@cddam.org',
         'hours' => 'الإثنين - الجمعة: 8 صباحاً - 6 مساءً',
         'send_message' => 'أرسل لنا رسالة',
         'name' => 'الاسم',
