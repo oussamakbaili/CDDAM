@@ -38,8 +38,11 @@ class ContactController extends Controller
             ];
 
             // Envoyer l'email
+            // Note: L'adresse "From" doit être contact@cddam.org (celle utilisée pour SMTP)
+            // L'email de l'utilisateur est mis en "Reply-To" pour que les réponses lui soient envoyées
             Mail::send('emails.contact', $data, function ($message) use ($data) {
-                $message->from($data['email'], $data['name'])
+                $message->from(config('mail.from.address'), config('mail.from.name'))
+                        ->replyTo($data['email'], $data['name'])
                         ->to('contact@cddam.org')
                         ->subject('Nouveau message de contact - CDDAM: ' . $data['subject']);
             });
