@@ -40,7 +40,7 @@ class ContactController extends Controller
             // Envoyer l'email
             Mail::send('emails.contact', $data, function ($mail) use ($data) {
                 $mail->from($data['email'], $data['name'])
-                     ->to('contact.aiais@gmail.com')
+                     ->to('contact@cddam.org')
                      ->subject('Nouveau message de contact - CDDAM: ' . $data['subject']);
             });
 
