@@ -97,7 +97,7 @@
             <div class="field">
                 <div class="field-label">Message</div>
                 <div class="message-box">
-                    {{ $message }}
+                    {{ $messageText }}
                 </div>
             </div>
         </div>

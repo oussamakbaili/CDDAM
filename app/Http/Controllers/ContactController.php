@@ -34,14 +34,14 @@ class ContactController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'subject' => $request->subject,
-                'message' => $request->message,
+                'messageText' => $request->message, // Renommé pour éviter conflit avec $message réservé dans les vues email
             ];
 
             // Envoyer l'email
-            Mail::send('emails.contact', $data, function ($mail) use ($data) {
-                $mail->from($data['email'], $data['name'])
-                     ->to('contact@cddam.org')
-                     ->subject('Nouveau message de contact - CDDAM: ' . $data['subject']);
+            Mail::send('emails.contact', $data, function ($message) use ($data) {
+                $message->from($data['email'], $data['name'])
+                        ->to('contact@cddam.org')
+                        ->subject('Nouveau message de contact - CDDAM: ' . $data['subject']);
             });
 
             return response()->json([
