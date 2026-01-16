@@ -119,3 +119,4 @@ Si vous avez des problèmes avec les paramètres SMTP Hostinger :
 2. Demandez les paramètres SMTP pour votre domaine `cddam.org`
 3. Vérifiez la documentation Hostinger : https://www.hostinger.com/tutorials/how-to-use-smtp
 
+

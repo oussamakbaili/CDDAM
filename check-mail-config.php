@@ -70,3 +70,4 @@ if (empty($errors)) {
     echo "\nVérifiez votre fichier .env et assurez-vous que toutes les variables MAIL_* sont définies.\n";
 }
 
+

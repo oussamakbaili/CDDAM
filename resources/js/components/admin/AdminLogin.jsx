@@ -5,7 +5,7 @@ import { useAdminAuth } from './AdminAuthContext';
 function AdminLogin() {
     const navigate = useNavigate();
     const { isAuthenticated, login } = useAdminAuth();
-    const [email, setEmail] = useState('admin@cdda.ma');
+    const [email, setEmail] = useState('admin@cddam.org');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [loading, setLoading] = useState(false);
@@ -27,7 +27,7 @@ function AdminLogin() {
         } catch (err) {
             const message =
                 err.response?.data?.message ||
-                "Impossible de se connecter. Vérifiez l'email et le mot de passe (par défaut: admin@cdda.ma / admin123).";
+                "Impossible de se connecter. Vérifiez l'email et le mot de passe (par défaut: admin@cddam.org / admin123).";
             setError(message);
         } finally {
             setLoading(false);

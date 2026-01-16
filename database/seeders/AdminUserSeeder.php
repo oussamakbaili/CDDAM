@@ -13,10 +13,10 @@ class AdminUserSeeder extends Seeder
      */
     public function run(): void
     {
-        if (!User::where('email', 'admin@CDDAM.ma')->exists()) {
+        if (!User::where('email', 'admin@cddam.org')->exists()) {
             User::create([
                 'name' => 'Administrateur CDDAM',
-                'email' => 'admin@CDDAM.ma',
+                'email' => 'admin@cddam.org',
                 'password' => Hash::make('admin123'),
                 'is_admin' => true,
             ]);

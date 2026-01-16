@@ -78,7 +78,7 @@ function Header() {
     const handleDropdownEnter = (e) => {
         closeAllDropdowns();
         const dropdown = e.currentTarget.nextElementSibling;
-        if (dropdown) {
+         if (dropdown) {
             dropdown.classList.add('show');
         }
     };
