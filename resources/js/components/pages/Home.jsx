@@ -231,22 +231,8 @@ function Home() {
             <section className="royal-quote-section py-5">
                 <div className="container">
                     <div className="row g-5 align-items-center">
-                        {/* Image du Roi */}
-                        <div className="col-lg-5 col-md-6">
-                            <div className="royal-image-wrapper">
-                                <div className="royal-image-glow"></div>
-                                <img
-                                    src="/images/image.png"
-                                    alt={t('home.royalQuoteTitle')}
-                                    className="royal-image"
-                                />
-                                <div className="royal-image-overlay"></div>
-                                <div className="royal-crown-decoration"></div>
-                            </div>
-                        </div>
-
                         {/* Citation Royale */}
-                        <div className="col-lg-7 col-md-6">
+                        <div className="col-lg-7 col-md-6 order-lg-1 order-2">
                             <div className="royal-quote-content">
                                 <div className="royal-quote-header">
                                     <div className="royal-quote-icon">
@@ -279,6 +265,19 @@ function Home() {
                                         <span>{t('home.royalQuoteDate')}</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Image du Roi */}
+                        <div className="col-lg-5 col-md-6 order-lg-2 order-1">
+                            <div className="royal-image-wrapper">
+                                <div className="royal-image-glow"></div>
+                                <img
+                                    src="/images/image.png"
+                                    alt={t('home.royalQuoteTitle')}
+                                    className="royal-image"
+                                />
+                                <div className="royal-image-overlay"></div>
                             </div>
                         </div>
                     </div>
