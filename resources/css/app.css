@@ -643,6 +643,341 @@ Témoignages
     }
 }
 
+/* Royal Quote Section */
+.royal-quote-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f4f8 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.royal-quote-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(160, 62, 63, 0.2), transparent);
+}
+
+.royal-image-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.royal-image-wrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 90px rgba(160, 62, 63, 0.3);
+}
+
+.royal-image-glow {
+    position: absolute;
+    inset: -25px;
+    background: radial-gradient(circle, rgba(160, 62, 63, 0.25) 0%, rgba(0, 129, 164, 0.15) 50%, transparent 70%);
+    border-radius: 20px;
+    animation: royal-glow-pulse 4s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes royal-glow-pulse {
+    0%, 100% { 
+        opacity: 0.5; 
+        transform: scale(1); 
+    }
+    50% { 
+        opacity: 0.8; 
+        transform: scale(1.05); 
+    }
+}
+
+.royal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.4s ease;
+}
+
+.royal-image-wrapper:hover .royal-image {
+    transform: scale(1.02);
+}
+
+.royal-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to top, rgba(160, 62, 63, 0.4), transparent);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.royal-crown-decoration {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+    z-index: 3;
+    animation: crown-float 3s ease-in-out infinite;
+}
+
+.royal-crown-decoration::before {
+    content: "👑";
+    font-size: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+@keyframes crown-float {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+.royal-quote-content {
+    background: #ffffff;
+    border-radius: 24px;
+    padding: 50px 45px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(160, 62, 63, 0.1);
+    position: relative;
+}
+
+.royal-quote-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, #A03E3F, #8a2e2f, #A03E3F);
+    border-radius: 24px 0 0 24px;
+}
+
+.royal-quote-header {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(160, 62, 63, 0.1);
+    text-align: center;
+}
+
+.royal-quote-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: linear-gradient(135deg, #A03E3F, #8a2e2f);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffd700;
+    font-size: 32px;
+    box-shadow: 0 8px 25px rgba(160, 62, 63, 0.3);
+    animation: icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(160, 62, 63, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 35px rgba(160, 62, 63, 0.4);
+    }
+}
+
+.royal-quote-title {
+    font-size: 32px;
+    font-weight: 800;
+    color: #A03E3F;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.royal-quote-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, #A03E3F, #ffd700, #A03E3F);
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+.royal-quote-source {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(160, 62, 63, 0.05), rgba(0, 129, 164, 0.05));
+    border-radius: 12px;
+    border-left: 4px solid #A03E3F;
+}
+
+.royal-quote-source-text {
+    font-size: 14px;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.royal-quote-source-text i {
+    color: #A03E3F;
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.royal-quote-text-wrapper {
+    position: relative;
+    margin: 35px 0;
+}
+
+.royal-quote-text-wrapper::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: -10px;
+    font-size: 120px;
+    font-family: Georgia, serif;
+    color: rgba(160, 62, 63, 0.1);
+    line-height: 1;
+    z-index: 0;
+}
+
+.royal-quote-text-wrapper::after {
+    content: '"';
+    position: absolute;
+    bottom: -60px;
+    right: -10px;
+    font-size: 120px;
+    font-family: Georgia, serif;
+    color: rgba(160, 62, 63, 0.1);
+    line-height: 1;
+    z-index: 0;
+}
+
+.royal-quote-text {
+    position: relative;
+    z-index: 1;
+}
+
+.royal-quote-main-text {
+    font-size: 18px;
+    line-height: 1.9;
+    color: #2c3e50;
+    font-weight: 500;
+    text-align: justify;
+    margin: 0;
+    padding: 30px 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
+    border-radius: 16px;
+    border: 1px solid rgba(160, 62, 63, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+}
+
+.royal-quote-footer {
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 2px solid rgba(160, 62, 63, 0.1);
+    text-align: center;
+}
+
+.royal-quote-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, rgba(160, 62, 63, 0.1), rgba(0, 129, 164, 0.1));
+    border-radius: 25px;
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.royal-quote-date i {
+    color: #A03E3F;
+    font-size: 16px;
+}
+
+/* Responsive Design for Royal Quote Section */
+@media (max-width: 991.98px) {
+    .royal-quote-section {
+        padding: 60px 0;
+    }
+
+    .royal-image-wrapper {
+        max-width: 400px;
+        margin-bottom: 40px;
+    }
+
+    .royal-quote-content {
+        padding: 35px 28px;
+    }
+
+    .royal-quote-title {
+        font-size: 28px;
+    }
+
+    .royal-quote-main-text {
+        font-size: 16px;
+        padding: 25px 18px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .royal-quote-section {
+        padding: 50px 0;
+    }
+
+    .royal-image-wrapper {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .royal-quote-content {
+        padding: 28px 20px;
+    }
+
+    .royal-quote-title {
+        font-size: 24px;
+    }
+
+    .royal-quote-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .royal-quote-main-text {
+        font-size: 15px;
+        padding: 20px 15px;
+    }
+
+    .royal-quote-text-wrapper::before,
+    .royal-quote-text-wrapper::after {
+        font-size: 80px;
+    }
+}
+
 .welcome-section {
     padding: 100px 0;
     background: linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);

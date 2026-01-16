@@ -171,7 +171,11 @@
     "presidentMessageP5": "Convaincu que chaque dirigeant associatif, quelle que soit la taille de son organisation, a un rôle à jouer dans cette dynamique nationale, le CDDA se veut ouvert, inclusif et résolument tourné vers l'avenir.",
     "presidentMessageInvitation": "Je vous invite à rejoindre cette aventure collective, à y contribuer par votre expérience, vos idées et votre engagement, et à participer à la construction d'un leadership associatif à la hauteur des ambitions du Maroc d'aujourd'hui et de demain, sous la sage conduite de Sa Majesté le Roi Mohammed VI, que Dieu Le glorifie.",
     "presidentName": "Hani El Harraq",
-    "presidentRole": "Fondateur du Club des Dirigeants des Associations (CDDA)"
+    "presidentRole": "Fondateur du Club des Dirigeants des Associations (CDDA)",
+    "royalQuoteTitle": "Parole Royale",
+    "royalQuoteSource": "Extrait du discours officiel de Sa Majesté le Roi Mohammed VI, que Dieu L'assiste, du 9 mars 2011 sur la réforme constitutionnelle",
+    "royalQuoteText": "«Nous veillons également à permettre à la société civile de jouer son rôle important dans l'encadrement, la défense des causes de la société et la contribution à l'élaboration des décisions publiques, ainsi qu'au suivi de leur exécution et à leur évaluation, dans le cadre d'une démocratie participative véritable. L'éthique de la vie publique, le lien entre responsabilité et reddition de comptes, et l'élargissement des domaines de participation citoyenne constituent des piliers fondamentaux pour construire un Maroc moderne, fondé sur l'État de droit et de justice.»",
+    "royalQuoteDate": "Extrait du discours de Sa Majesté le Roi Mohammed VI, que Dieu L'assiste, daté du 9 mars 2011"
   },
   "contact": {
     "title": "Contact",

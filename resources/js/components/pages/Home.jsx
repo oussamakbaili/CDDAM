@@ -227,6 +227,64 @@ function Home() {
                 </div>
             </section>
 
+            {/* Royal Quote Section */}
+            <section className="royal-quote-section py-5">
+                <div className="container">
+                    <div className="row g-5 align-items-center">
+                        {/* Image du Roi */}
+                        <div className="col-lg-5 col-md-6">
+                            <div className="royal-image-wrapper">
+                                <div className="royal-image-glow"></div>
+                                <img
+                                    src="/images/image.png"
+                                    alt={t('home.royalQuoteTitle')}
+                                    className="royal-image"
+                                />
+                                <div className="royal-image-overlay"></div>
+                                <div className="royal-crown-decoration"></div>
+                            </div>
+                        </div>
+
+                        {/* Citation Royale */}
+                        <div className="col-lg-7 col-md-6">
+                            <div className="royal-quote-content">
+                                <div className="royal-quote-header">
+                                    <div className="royal-quote-icon">
+                                        <i className="fas fa-crown"></i>
+                                    </div>
+                                    <h2 className="royal-quote-title">
+                                        {t('home.royalQuoteTitle')}
+                                    </h2>
+                                    <div className="royal-quote-divider"></div>
+                                </div>
+
+                                <div className="royal-quote-source">
+                                    <p className="royal-quote-source-text">
+                                        <i className="fas fa-quote-left"></i>
+                                        {t('home.royalQuoteSource')}
+                                    </p>
+                                </div>
+
+                                <div className="royal-quote-text-wrapper">
+                                    <div className="royal-quote-text">
+                                        <p className="royal-quote-main-text">
+                                            {t('home.royalQuoteText')}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="royal-quote-footer">
+                                    <div className="royal-quote-date">
+                                        <i className="fas fa-calendar-alt"></i>
+                                        <span>{t('home.royalQuoteDate')}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* Welcome Section - Design moderne et professionnel */}
             <section className="welcome-section py-5">
                 <div className="container">
