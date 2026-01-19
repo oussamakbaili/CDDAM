@@ -341,8 +341,8 @@ Témoignages
 .president-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 420px;
-    margin: 0 auto;
+    max-width: 500px;
+    margin: 0 auto 50px;
     border-radius: 0;
     overflow: visible;
     transition: transform 0.4s ease;
