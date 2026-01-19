@@ -319,8 +319,8 @@ Témoignages
 
 /* President Message Section */
 .president-message-section {
-    padding: 100px 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 50%, #f0f4f8 100%);
+    padding: 120px 0;
+    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
     position: relative;
     overflow: hidden;
 }
@@ -331,44 +331,44 @@ Témoignages
     top: 0;
     left: 0;
     right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 129, 164, 0.15), transparent);
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 129, 164, 0.03) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(160, 62, 63, 0.03) 0%, transparent 50%);
+    pointer-events: none;
 }
 
 .president-image-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     margin: 0 auto;
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border-radius: 0;
+    overflow: visible;
+    transition: transform 0.4s ease;
+}
+
+.president-image-wrapper::before {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 8px;
+    opacity: 0.1;
+    z-index: 0;
+    transition: opacity 0.4s ease;
+}
+
+.president-image-wrapper:hover::before {
+    opacity: 0.2;
 }
 
 .president-image-wrapper:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 80px rgba(0, 129, 164, 0.25);
+    transform: translateY(-5px);
 }
 
 .president-image-glow {
-    position: absolute;
-    inset: -20px;
-    background: radial-gradient(circle, rgba(0, 129, 164, 0.2) 0%, transparent 70%);
-    border-radius: 20px;
-    animation: president-glow-pulse 3s ease-in-out infinite;
-    z-index: 0;
-}
-
-@keyframes president-glow-pulse {
-    0%, 100% { 
-        opacity: 0.4; 
-        transform: scale(1); 
-    }
-    50% { 
-        opacity: 0.7; 
-        transform: scale(1.05); 
-    }
+    display: none;
 }
 
 .president-image {
@@ -378,92 +378,124 @@ Témoignages
     position: relative;
     z-index: 1;
     object-fit: cover;
-    border-radius: 20px;
-    transition: transform 0.4s ease;
+    border-radius: 8px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    border: 8px solid #ffffff;
+    transition: box-shadow 0.4s ease;
 }
 
 .president-image-wrapper:hover .president-image {
-    transform: scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
 }
 
 .president-image-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 40%;
-    background: linear-gradient(to top, rgba(0, 129, 164, 0.3), transparent);
-    z-index: 2;
-    pointer-events: none;
+    display: none;
 }
 
 .president-message-content {
     background: #ffffff;
-    border-radius: 24px;
-    padding: 50px 45px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.08);
-    border: 1px solid rgba(0, 129, 164, 0.08);
+    border-radius: 0;
+    padding: 60px 50px;
+    box-shadow: none;
+    border: none;
     position: relative;
+    border-left: 6px solid var(--primary-color);
 }
 
 .president-message-content::before {
     content: "";
     position: absolute;
     top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(0, 129, 164, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+    pointer-events: none;
+}
+
+.president-message-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
     left: 0;
-    width: 5px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-    border-radius: 24px 0 0 24px;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(160, 62, 63, 0.05) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+    pointer-events: none;
 }
 
 .president-message-header {
-    margin-bottom: 35px;
-    padding-bottom: 25px;
-    border-bottom: 2px solid #f0f4f8;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e7eb;
+    position: relative;
+}
+
+.president-message-header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), transparent);
 }
 
 .president-message-title {
-    font-size: 32px;
-    font-weight: 800;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    line-height: 1.2;
+    font-size: 42px;
+    font-weight: 900;
+    color: #1a1a1a;
+    margin-bottom: 0;
+    display: block;
+    line-height: 1.1;
+    letter-spacing: -1px;
+    position: relative;
 }
 
-.president-message-title i {
-    font-size: 28px;
-    color: var(--secondary-color);
-    opacity: 0.8;
-}
-
-.president-message-divider {
-    width: 80px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+.president-message-title::before {
+    content: "";
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
 
+.president-message-title i {
+    display: none;
+}
+
+.president-message-divider {
+    display: none;
+}
+
 .president-message-text {
-    line-height: 1.85;
-    color: #2c3e50;
+    line-height: 1.9;
+    color: #374151;
 }
 
 .president-message-text p {
-    font-size: 16px;
-    margin-bottom: 22px;
+    font-size: 17px;
+    margin-bottom: 24px;
     text-align: justify;
-    color: #4a5568;
+    color: #4b5563;
+    font-weight: 400;
 }
 
 .president-intro {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 500;
-    line-height: 1.8;
-    color: #2c3e50;
+    line-height: 1.85;
+    color: #1f2937;
+    margin-bottom: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--primary-color);
 }
 
 .president-intro strong {
@@ -472,39 +504,69 @@ Témoignages
 }
 
 .president-highlight {
-    background: linear-gradient(135deg, rgba(0, 129, 164, 0.05) 0%, rgba(212, 44, 81, 0.05) 100%);
-    border-left: 4px solid var(--primary-color);
-    border-radius: 8px;
-    padding: 25px 30px;
-    margin: 30px 0;
+    background: #ffffff;
+    border: 2px solid var(--primary-color);
+    border-radius: 0;
+    padding: 30px 35px;
+    margin: 35px 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 129, 164, 0.1);
+}
+
+.president-highlight::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    z-index: -1;
+    opacity: 0.1;
 }
 
 .president-highlight strong {
     color: var(--primary-color);
     font-weight: 700;
+    font-size: 18px;
 }
 
 .president-ambition {
-    background: linear-gradient(135deg, #f8fafc 0%, #ffffff 100%);
-    border-radius: 16px;
-    padding: 30px;
-    margin: 35px 0;
-    border-left: 4px solid var(--secondary-color);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    background: #f9fafb;
+    border-radius: 0;
+    padding: 35px 40px;
+    margin: 40px 0;
+    border: 1px solid #e5e7eb;
+    border-left: 5px solid var(--secondary-color);
+    position: relative;
+}
+
+.president-ambition::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(160, 62, 63, 0.03));
+    pointer-events: none;
 }
 
 .president-ambition-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 18px;
 }
 
 .president-ambition-title i {
-    font-size: 18px;
+    font-size: 20px;
     color: var(--primary-color);
 }
 
@@ -518,9 +580,9 @@ Témoignages
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 14px 0;
-    border-bottom: 1px solid rgba(0, 129, 164, 0.08);
-    transition: transform 0.2s ease, padding-left 0.2s ease;
+    padding: 16px 0;
+    border-bottom: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
 }
 
 .president-ambition-list li:last-child {
@@ -528,118 +590,181 @@ Témoignages
 }
 
 .president-ambition-list li:hover {
-    transform: translateX(5px);
-    padding-left: 5px;
+    transform: translateX(8px);
+    padding-left: 8px;
+    background: rgba(0, 129, 164, 0.02);
+    margin: 0 -15px;
+    padding-left: 23px;
+    padding-right: 15px;
+    border-radius: 4px;
 }
 
 .president-ambition-list li i {
     color: var(--secondary-color);
-    font-size: 18px;
-    margin-top: 3px;
+    font-size: 20px;
+    margin-top: 2px;
     flex-shrink: 0;
 }
 
 .president-ambition-list li span {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #4a5568;
+    font-size: 16px;
+    line-height: 1.75;
+    color: #374151;
+    font-weight: 400;
 }
 
 .president-invitation {
-    background: linear-gradient(135deg, rgba(0, 129, 164, 0.08) 0%, rgba(212, 44, 81, 0.08) 100%);
-    border-radius: 12px;
-    padding: 25px 30px;
-    margin: 30px 0;
-    border-left: 4px solid var(--secondary-color);
-    font-size: 17px;
-    line-height: 1.8;
+    background: #ffffff;
+    border: 2px solid var(--secondary-color);
+    border-radius: 0;
+    padding: 30px 35px;
+    margin: 35px 0;
+    font-size: 18px;
+    line-height: 1.85;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(160, 62, 63, 0.1);
+}
+
+.president-invitation::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    z-index: -1;
+    opacity: 0.1;
 }
 
 .president-invitation strong {
-    color: var(--primary-color);
+    color: var(--secondary-color);
     font-weight: 700;
 }
 
 .president-signature {
-    margin-top: 40px;
-    padding-top: 30px;
-    border-top: 2px solid #f0f4f8;
+    margin-top: 50px;
+    padding-top: 35px;
+    border-top: 1px solid #e5e7eb;
     text-align: right;
+    position: relative;
+}
+
+.president-signature::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 0;
+    width: 150px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color));
 }
 
 .president-name {
-    font-size: 22px;
-    font-weight: 700;
+    font-size: 26px;
+    font-weight: 800;
     color: var(--primary-color);
-    margin-bottom: 8px;
-    font-style: italic;
+    margin-bottom: 6px;
+    font-style: normal;
+    letter-spacing: -0.5px;
 }
 
 .president-role {
-    font-size: 15px;
-    color: #666;
+    font-size: 16px;
+    color: #6b7280;
     margin: 0;
-    font-style: italic;
+    font-style: normal;
+    font-weight: 500;
 }
 
 /* Responsive Design for President Message Section */
 @media (max-width: 991.98px) {
     .president-message-section {
-        padding: 60px 0;
+        padding: 80px 0;
     }
 
     .president-image-wrapper {
-        max-width: 350px;
-        margin-bottom: 40px;
+        max-width: 380px;
+        margin-bottom: 50px;
     }
 
     .president-message-content {
-        padding: 35px 28px;
+        padding: 45px 35px;
     }
 
     .president-message-title {
-        font-size: 28px;
+        font-size: 36px;
     }
 
     .president-message-text p {
-        font-size: 15px;
+        font-size: 16px;
+    }
+
+    .president-intro {
+        font-size: 19px;
     }
 }
 
 @media (max-width: 767.98px) {
     .president-message-section {
-        padding: 50px 0;
+        padding: 60px 0;
     }
 
     .president-image-wrapper {
         max-width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 40px;
+    }
+
+    .president-image {
+        border-width: 6px;
     }
 
     .president-message-content {
-        padding: 28px 20px;
+        padding: 35px 25px;
+        border-left-width: 4px;
     }
 
     .president-message-title {
-        font-size: 24px;
+        font-size: 28px;
+        padding-left: 15px;
     }
 
-    .president-message-title i {
-        font-size: 20px;
+    .president-message-title::before {
+        left: -15px;
+        width: 3px;
     }
 
     .president-intro {
-        font-size: 16px;
+        font-size: 18px;
+        padding-left: 15px;
+        border-left-width: 2px;
+    }
+
+    .president-highlight {
+        padding: 25px 20px;
     }
 
     .president-ambition {
+        padding: 28px 25px;
+    }
+
+    .president-invitation {
         padding: 25px 20px;
+        font-size: 16px;
     }
 
     .president-signature {
         text-align: center;
-        margin-top: 30px;
-        padding-top: 25px;
+        margin-top: 40px;
+        padding-top: 30px;
+    }
+
+    .president-name {
+        font-size: 22px;
+    }
+
+    .president-role {
+        font-size: 14px;
     }
 }
 
