@@ -130,7 +130,8 @@ function Home() {
             {/* Mot du Président Section */}
             <section className="president-message-section">
                 <div className="container">
-                    <div className="president-message-container">
+                    {/* Première ligne : Image + Intro + P1 + P2 */}
+                    <div className="president-message-top-row">
                         {/* Image du Président */}
                         <div className="president-image-container">
                             <div className="president-image-frame">
@@ -148,8 +149,8 @@ function Home() {
                             </div>
                         </div>
 
-                        {/* Contenu du Message */}
-                        <div className="president-message-content">
+                        {/* Contenu du début du Message */}
+                        <div className="president-message-content-top">
                             <div className="president-message-header">
                                 <div className="president-message-badge">
                                     <span className="badge-icon">👑</span>
@@ -162,7 +163,7 @@ function Home() {
                                 </div>
                             </div>
 
-                            <div className="president-message-text">
+                            <div className="president-message-text-top">
                                 <p className="president-intro">
                                     {t('home.presidentMessageIntro')}
                                     {t('home.presidentMessageIntroBold') && t('home.presidentMessageIntroBold').trim() !== '' && (
@@ -173,51 +174,59 @@ function Home() {
                                 <div className="president-message-paragraphs">
                                     <p>{t('home.presidentMessageP1')}</p>
                                     <p>{t('home.presidentMessageP2')}</p>
-                                    <p>{t('home.presidentMessageP3')}</p>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                <div className="president-highlight-box">
-                                    <div className="highlight-icon">💡</div>
-                                    <p className="president-highlight">
-                                        {t('home.presidentMessageHighlight')}
-                                    </p>
-                                </div>
+                    {/* Deuxième ligne : P3 et tout le reste en pleine largeur */}
+                    <div className="president-message-bottom-section">
+                        <div className="president-message-content-bottom">
+                            <div className="president-message-paragraphs">
+                                <p>{t('home.presidentMessageP3')}</p>
+                            </div>
 
-                                <div className="president-ambition">
-                                    <h3 className="president-ambition-title">
-                                        <span className="ambition-icon">🎯</span>
-                                        {t('home.presidentMessageAmbitionTitle')}
-                                    </h3>
-                                    <ul className="president-ambition-list">
-                                        <li>
-                                            <span className="ambition-check">✓</span>
-                                            <span>{t('home.presidentMessageAmbition1')}</span>
-                                        </li>
-                                        <li>
-                                            <span className="ambition-check">✓</span>
-                                            <span>{t('home.presidentMessageAmbition2')}</span>
-                                        </li>
-                                        <li>
-                                            <span className="ambition-check">✓</span>
-                                            <span>{t('home.presidentMessageAmbition3')}</span>
-                                        </li>
-                                        <li>
-                                            <span className="ambition-check">✓</span>
-                                            <span>{t('home.presidentMessageAmbition4')}</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                            <div className="president-highlight-box">
+                                <div className="highlight-icon">💡</div>
+                                <p className="president-highlight">
+                                    {t('home.presidentMessageHighlight')}
+                                </p>
+                            </div>
 
-                                <div className="president-message-paragraphs">
-                                    <p>{t('home.presidentMessageP4')}</p>
-                                    <p>{t('home.presidentMessageP5')}</p>
-                                </div>
+                            <div className="president-ambition">
+                                <h3 className="president-ambition-title">
+                                    <span className="ambition-icon">🎯</span>
+                                    {t('home.presidentMessageAmbitionTitle')}
+                                </h3>
+                                <ul className="president-ambition-list">
+                                    <li>
+                                        <span className="ambition-check">✓</span>
+                                        <span>{t('home.presidentMessageAmbition1')}</span>
+                                    </li>
+                                    <li>
+                                        <span className="ambition-check">✓</span>
+                                        <span>{t('home.presidentMessageAmbition2')}</span>
+                                    </li>
+                                    <li>
+                                        <span className="ambition-check">✓</span>
+                                        <span>{t('home.presidentMessageAmbition3')}</span>
+                                    </li>
+                                    <li>
+                                        <span className="ambition-check">✓</span>
+                                        <span>{t('home.presidentMessageAmbition4')}</span>
+                                    </li>
+                                </ul>
+                            </div>
 
-                                <div className="president-invitation-box">
-                                    <p className="president-invitation">
-                                        {t('home.presidentMessageInvitation')}
-                                    </p>
-                                </div>
+                            <div className="president-message-paragraphs">
+                                <p>{t('home.presidentMessageP4')}</p>
+                                <p>{t('home.presidentMessageP5')}</p>
+                            </div>
+
+                            <div className="president-invitation-box">
+                                <p className="president-invitation">
+                                    {t('home.presidentMessageInvitation')}
+                                </p>
                             </div>
                         </div>
                     </div>

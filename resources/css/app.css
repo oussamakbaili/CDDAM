@@ -356,36 +356,37 @@ Témoignages
     50% { transform: translate(30px, -30px) scale(1.1); }
 }
 
-.president-message-container {
+/* Top Row: Image + Intro + P1 + P2 */
+.president-message-top-row {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 80px;
     align-items: start;
     position: relative;
     z-index: 1;
+    margin-bottom: 60px;
 }
 
 @media (max-width: 992px) {
-    .president-message-container {
+    .president-message-top-row {
         grid-template-columns: 1fr;
         gap: 50px;
+        margin-bottom: 50px;
     }
+}
+
+/* Bottom Section: P3 and everything after in full width */
+.president-message-bottom-section {
+    position: relative;
+    z-index: 1;
+    margin-top: 40px;
 }
 
 /* President Image Container */
 .president-image-container {
-    position: sticky;
-    top: 120px;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-}
-
-@media (max-width: 992px) {
-    .president-image-container {
-        position: relative;
-        top: 0;
-    }
 }
 
 .president-image-frame {
@@ -474,8 +475,8 @@ Témoignages
     letter-spacing: 1px;
 }
 
-/* President Message Content */
-.president-message-content {
+/* President Message Content - Top Section */
+.president-message-content-top {
     background: #ffffff;
     border-radius: 20px;
     padding: 60px 70px;
@@ -486,7 +487,7 @@ Témoignages
     overflow: hidden;
 }
 
-.president-message-content::before {
+.president-message-content-top::before {
     content: "";
     position: absolute;
     top: 0;
@@ -497,7 +498,7 @@ Témoignages
     border-radius: 0 0 0 0;
 }
 
-.president-message-content::after {
+.president-message-content-top::after {
     content: "";
     position: absolute;
     top: -100px;
@@ -510,9 +511,57 @@ Témoignages
 }
 
 @media (max-width: 768px) {
-    .president-message-content {
+    .president-message-content-top {
         padding: 40px 30px;
     }
+}
+
+/* President Message Content - Bottom Section (Full Width) */
+.president-message-content-bottom {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 60px 70px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.president-message-content-bottom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0 0 0 0;
+}
+
+.president-message-content-bottom::after {
+    content: "";
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 129, 164, 0.03) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .president-message-content-bottom {
+        padding: 40px 30px;
+    }
+}
+
+/* Text Top Section */
+.president-message-text-top {
+    line-height: 1.95;
+    color: #374151;
 }
 
 /* President Message Header */
@@ -887,11 +936,12 @@ Témoignages
 }
 
 /* RTL Support for President Message Section */
-[dir="rtl"] .president-message-container {
+[dir="rtl"] .president-message-top-row {
     direction: rtl;
 }
 
-[dir="rtl"] .president-message-content::before {
+[dir="rtl"] .president-message-content-top::before,
+[dir="rtl"] .president-message-content-bottom::before {
     left: auto;
     right: 0;
 }
