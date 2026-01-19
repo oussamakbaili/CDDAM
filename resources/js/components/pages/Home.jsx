@@ -131,21 +131,8 @@ function Home() {
             <section className="president-message-section py-5">
                 <div className="container">
                     <div className="row g-5 align-items-center">
-                        {/* Image du Président */}
-                        <div className="col-lg-4 col-md-5">
-                            <div className="president-image-wrapper">
-                                <div className="president-image-glow"></div>
-                                <img
-                                    src="/images/president.jpeg"
-                                    alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
-                                    className="president-image"
-                                />
-                                <div className="president-image-overlay"></div>
-                            </div>
-                        </div>
-
                         {/* Contenu du Message */}
-                        <div className="col-lg-8 col-md-7">
+                        <div className="col-lg-8 col-md-7 order-lg-1 order-2">
                             <div className="president-message-content">
                                 <div className="president-message-header">
                                     <h2 className="president-message-title">
@@ -221,6 +208,19 @@ function Home() {
                                         <p className="president-role">{t('home.presidentRole')}</p>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        {/* Image du Président */}
+                        <div className="col-lg-4 col-md-5 order-lg-2 order-1">
+                            <div className="president-image-wrapper">
+                                <div className="president-image-glow"></div>
+                                <img
+                                    src="/images/president.jpeg"
+                                    alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
+                                    className="president-image"
+                                />
+                                <div className="president-image-overlay"></div>
                             </div>
                         </div>
                     </div>
