@@ -235,13 +235,12 @@ function Home() {
                         <div className="col-lg-7 col-md-6 order-lg-1 order-2">
                             <div className="royal-quote-content">
                                 <div className="royal-quote-header">
-                                    <div className="royal-quote-icon">
-                                        <i className="fas fa-crown"></i>
+                                    <div className="royal-quote-title-wrapper">
+                                        <h2 className="royal-quote-title">
+                                            {t('home.royalQuoteTitle')}
+                                        </h2>
+                                        <div className="royal-quote-divider"></div>
                                     </div>
-                                    <h2 className="royal-quote-title">
-                                        {t('home.royalQuoteTitle')}
-                                    </h2>
-                                    <div className="royal-quote-divider"></div>
                                 </div>
 
                                 <div className="royal-quote-source">

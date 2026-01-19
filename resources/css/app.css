@@ -744,68 +744,73 @@ Témoignages
 }
 
 .royal-quote-header {
-    margin-bottom: 30px;
-    padding-bottom: 25px;
+    margin-bottom: 35px;
+    padding-bottom: 30px;
     border-bottom: 2px solid rgba(160, 62, 63, 0.1);
     text-align: center;
 }
 
-.royal-quote-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto 25px;
-    background: linear-gradient(135deg, #A03E3F 0%, #8a2e2f 50%, #A03E3F 100%);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffd700;
-    font-size: 36px;
-    box-shadow: 0 10px 30px rgba(160, 62, 63, 0.25), inset 0 2px 10px rgba(255, 215, 0, 0.2);
+.royal-quote-title-wrapper {
     position: relative;
-    transition: all 0.3s ease;
-    border: 2px solid rgba(255, 215, 0, 0.3);
-}
-
-.royal-quote-icon::before {
-    content: "";
-    position: absolute;
-    inset: -3px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(160, 62, 63, 0.2));
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.royal-quote-icon:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(160, 62, 63, 0.35), inset 0 2px 10px rgba(255, 215, 0, 0.3);
-}
-
-.royal-quote-icon:hover::before {
-    opacity: 1;
-}
-
-.royal-quote-icon i {
-    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
-    text-shadow: 0 2px 8px rgba(255, 215, 0, 0.5);
+    display: inline-block;
+    width: 100%;
 }
 
 .royal-quote-title {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
     color: #A03E3F;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     line-height: 1.2;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.royal-quote-title::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 50px;
+    background: linear-gradient(180deg, #A03E3F, #ffd700, #A03E3F);
+    border-radius: 2px;
+}
+
+.royal-quote-title::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 50px;
+    background: linear-gradient(180deg, #A03E3F, #ffd700, #A03E3F);
+    border-radius: 2px;
 }
 
 .royal-quote-divider {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, #A03E3F, #ffd700, #A03E3F);
+    width: 150px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #A03E3F 20%, #ffd700 50%, #A03E3F 80%, transparent);
     margin: 0 auto;
     border-radius: 2px;
+    position: relative;
+}
+
+.royal-quote-divider::before {
+    content: "👑";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    background: #ffffff;
+    padding: 0 8px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
 
 .royal-quote-source {
@@ -943,13 +948,16 @@ Témoignages
 
     .royal-quote-title {
         font-size: 24px;
+        padding: 0 15px;
     }
 
-    .royal-quote-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-        margin-bottom: 20px;
+    .royal-quote-title::before,
+    .royal-quote-title::after {
+        height: 40px;
+    }
+
+    .royal-quote-divider {
+        width: 120px;
     }
 
     .royal-quote-main-text {
