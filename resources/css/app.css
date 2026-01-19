@@ -319,8 +319,8 @@ Témoignages
 
 /* President Message Section */
 .president-message-section {
-    padding: 120px 0;
-    background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    padding: 100px 0;
+    background: linear-gradient(135deg, #fafbfc 0%, #ffffff 50%, #f8fafb 100%);
     position: relative;
     overflow: hidden;
 }
@@ -328,246 +328,372 @@ Témoignages
 .president-message-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(0, 129, 164, 0.03) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(160, 62, 63, 0.03) 0%, transparent 50%);
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 129, 164, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
     pointer-events: none;
+    animation: float 20s ease-in-out infinite;
 }
 
-.president-image-wrapper {
-    position: relative;
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto 50px;
-    border-radius: 0;
-    overflow: visible;
-    transition: transform 0.4s ease;
-}
-
-.president-image-wrapper::before {
+.president-message-section::after {
     content: "";
     position: absolute;
-    inset: -15px;
+    bottom: -30%;
+    left: -5%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(160, 62, 63, 0.06) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 25s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(30px, -30px) scale(1.1); }
+}
+
+.president-message-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 992px) {
+    .president-message-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+}
+
+/* President Image Container */
+.president-image-container {
+    position: sticky;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+    .president-image-container {
+        position: relative;
+        top: 0;
+    }
+}
+
+.president-image-frame {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8fafb 100%);
+    border-radius: 24px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.president-image-frame:hover {
+    transform: translateY(-8px);
+    box-shadow: 
+        0 30px 80px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.president-image-decoration {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 80px;
+    height: 80px;
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 8px;
-    opacity: 0.1;
-    z-index: 0;
-    transition: opacity 0.4s ease;
+    border-radius: 50%;
+    opacity: 0.15;
+    filter: blur(20px);
+    animation: pulse 3s ease-in-out infinite;
 }
 
-.president-image-wrapper:hover::before {
-    opacity: 0.2;
-}
-
-.president-image-wrapper:hover {
-    transform: translateY(-5px);
-}
-
-.president-image-glow {
-    display: none;
+@keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.15; }
+    50% { transform: scale(1.2); opacity: 0.25; }
 }
 
 .president-image {
     width: 100%;
     height: auto;
     display: block;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 1;
-    object-fit: cover;
-    border-radius: 8px;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
-    border: 8px solid #ffffff;
-    transition: box-shadow 0.4s ease;
 }
 
-.president-image-wrapper:hover .president-image {
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+.president-image-frame:hover .president-image {
+    transform: scale(1.02);
 }
 
-.president-image-overlay {
-    display: none;
+.president-image-signature {
+    margin-top: 30px;
+    text-align: center;
+    padding-top: 25px;
+    border-top: 2px solid rgba(0, 129, 164, 0.1);
 }
 
+.signature-line {
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    margin: 0 auto 15px;
+}
+
+.president-image-signature .president-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.5px;
+}
+
+.president-image-signature .president-role {
+    font-size: 14px;
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* President Message Content */
 .president-message-content {
     background: #ffffff;
-    border-radius: 0;
-    padding: 60px 50px;
-    box-shadow: none;
-    border: none;
+    border-radius: 20px;
+    padding: 60px 70px;
+    box-shadow: 
+        0 10px 40px rgba(0, 0, 0, 0.08),
+        0 0 0 1px rgba(0, 0, 0, 0.03);
     position: relative;
-    border-left: 6px solid var(--primary-color);
+    overflow: hidden;
 }
 
 .president-message-content::before {
     content: "";
     position: absolute;
     top: 0;
-    right: 0;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(0, 129, 164, 0.05) 0%, transparent 70%);
-    border-radius: 50%;
-    transform: translate(50%, -50%);
-    pointer-events: none;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
+    border-radius: 0 0 0 0;
 }
 
 .president-message-content::after {
     content: "";
     position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 150px;
-    height: 150px;
-    background: radial-gradient(circle, rgba(160, 62, 63, 0.05) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 129, 164, 0.03) 0%, transparent 70%);
     border-radius: 50%;
-    transform: translate(-50%, 50%);
     pointer-events: none;
 }
 
+@media (max-width: 768px) {
+    .president-message-content {
+        padding: 40px 30px;
+    }
+}
+
+/* President Message Header */
 .president-message-header {
-    margin-bottom: 40px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 50px;
     position: relative;
 }
 
-.president-message-header::after {
-    content: "";
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), transparent);
+.president-message-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(0, 129, 164, 0.1), rgba(160, 62, 63, 0.1));
+    padding: 12px 24px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(0, 129, 164, 0.2);
+    transition: all 0.3s ease;
 }
 
-.president-message-title {
-    font-size: 42px;
-    font-weight: 900;
-    color: #1a1a1a;
-    margin-bottom: 0;
-    display: block;
-    line-height: 1.1;
-    letter-spacing: -1px;
-    position: relative;
+.president-message-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 129, 164, 0.15);
 }
 
-.president-message-title::before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 0;
-    width: 4px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--primary-color), var(--secondary-color));
-    border-radius: 2px;
+.badge-icon {
+    font-size: 20px;
+    filter: grayscale(0.3);
 }
 
-.president-message-title i {
-    display: none;
+.badge-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
 .president-message-divider {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
 }
 
+.divider-line {
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+}
+
+.divider-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 129, 164, 0.5);
+}
+
+/* President Message Text */
 .president-message-text {
-    line-height: 1.9;
+    line-height: 1.95;
     color: #374151;
 }
 
-.president-message-text p {
+.president-message-paragraphs p {
     font-size: 17px;
     margin-bottom: 24px;
     text-align: justify;
     color: #4b5563;
     font-weight: 400;
+    line-height: 1.9;
 }
 
 .president-intro {
-    font-size: 20px;
+    font-size: 21px;
     font-weight: 500;
     line-height: 1.85;
     color: #1f2937;
-    margin-bottom: 28px;
-    padding-left: 20px;
-    border-left: 3px solid var(--primary-color);
+    margin-bottom: 35px;
+    padding: 25px 30px;
+    background: linear-gradient(135deg, rgba(0, 129, 164, 0.05), rgba(160, 62, 63, 0.05));
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+    position: relative;
 }
 
-.president-intro strong {
+.president-intro::before {
+    content: """;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 60px;
+    color: var(--primary-color);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.intro-bold {
     color: var(--primary-color);
     font-weight: 700;
+    display: block;
+    margin-top: 8px;
+}
+
+/* President Highlight Box */
+.president-highlight-box {
+    background: linear-gradient(135deg, rgba(0, 129, 164, 0.08), rgba(160, 62, 63, 0.08));
+    border: 2px solid rgba(0, 129, 164, 0.2);
+    border-radius: 16px;
+    padding: 30px 35px;
+    margin: 40px 0;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    box-shadow: 0 8px 25px rgba(0, 129, 164, 0.1);
+    transition: all 0.3s ease;
+}
+
+.president-highlight-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(0, 129, 164, 0.15);
+    border-color: rgba(0, 129, 164, 0.3);
+}
+
+.highlight-icon {
+    font-size: 32px;
+    flex-shrink: 0;
+    filter: grayscale(0.3);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
 }
 
 .president-highlight {
-    background: #ffffff;
-    border: 2px solid var(--primary-color);
-    border-radius: 0;
-    padding: 30px 35px;
-    margin: 35px 0;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(0, 129, 164, 0.1);
-}
-
-.president-highlight::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    z-index: -1;
-    opacity: 0.1;
-}
-
-.president-highlight strong {
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 600;
     font-size: 18px;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
 }
 
+/* President Ambition Section */
 .president-ambition {
-    background: #f9fafb;
-    border-radius: 0;
-    padding: 35px 40px;
-    margin: 40px 0;
-    border: 1px solid #e5e7eb;
+    background: linear-gradient(135deg, #f8fafb 0%, #ffffff 100%);
+    border-radius: 16px;
+    padding: 40px 45px;
+    margin: 45px 0;
+    border: 2px solid rgba(160, 62, 63, 0.15);
     border-left: 5px solid var(--secondary-color);
     position: relative;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
 }
 
-.president-ambition::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100px;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(160, 62, 63, 0.03));
-    pointer-events: none;
+.president-ambition:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border-color: rgba(160, 62, 63, 0.25);
 }
 
 .president-ambition-title {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--secondary-color);
-    margin-bottom: 25px;
+    margin-bottom: 30px;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-size: 18px;
+    letter-spacing: 1px;
 }
 
-.president-ambition-title i {
-    font-size: 20px;
-    color: var(--primary-color);
+.ambition-icon {
+    font-size: 24px;
+    filter: grayscale(0.3);
 }
 
 .president-ambition-list {
@@ -579,10 +705,11 @@ Témoignages
 .president-ambition-list li {
     display: flex;
     align-items: flex-start;
-    gap: 15px;
-    padding: 16px 0;
-    border-bottom: 1px solid #e5e7eb;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     transition: all 0.3s ease;
+    position: relative;
 }
 
 .president-ambition-list li:last-child {
@@ -590,76 +717,67 @@ Témoignages
 }
 
 .president-ambition-list li:hover {
-    transform: translateX(8px);
-    padding-left: 8px;
-    background: rgba(0, 129, 164, 0.02);
-    margin: 0 -15px;
-    padding-left: 23px;
-    padding-right: 15px;
-    border-radius: 4px;
+    transform: translateX(10px);
+    padding-left: 15px;
+    background: rgba(0, 129, 164, 0.03);
+    margin: 0 -20px;
+    padding-left: 35px;
+    padding-right: 20px;
+    border-radius: 8px;
 }
 
-.president-ambition-list li i {
-    color: var(--secondary-color);
-    font-size: 20px;
-    margin-top: 2px;
+.ambition-check {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
     flex-shrink: 0;
+    margin-top: 2px;
+    box-shadow: 0 3px 10px rgba(160, 62, 63, 0.3);
 }
 
-.president-ambition-list li span {
+.president-ambition-list li span:not(.ambition-check) {
     font-size: 16px;
-    line-height: 1.75;
+    line-height: 1.8;
     color: #374151;
     font-weight: 400;
+    flex: 1;
+}
+
+/* President Invitation Box */
+.president-invitation-box {
+    background: linear-gradient(135deg, rgba(160, 62, 63, 0.08), rgba(0, 129, 164, 0.08));
+    border: 2px solid rgba(160, 62, 63, 0.2);
+    border-radius: 16px;
+    padding: 30px 35px;
+    margin: 40px 0;
+    position: relative;
+    box-shadow: 0 8px 25px rgba(160, 62, 63, 0.1);
+    transition: all 0.3s ease;
+}
+
+.president-invitation-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(160, 62, 63, 0.15);
+    border-color: rgba(160, 62, 63, 0.3);
 }
 
 .president-invitation {
-    background: #ffffff;
-    border: 2px solid var(--secondary-color);
-    border-radius: 0;
-    padding: 30px 35px;
-    margin: 35px 0;
     font-size: 18px;
     line-height: 1.85;
-    position: relative;
-    box-shadow: 0 4px 20px rgba(160, 62, 63, 0.1);
-}
-
-.president-invitation::before {
-    content: "";
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    z-index: -1;
-    opacity: 0.1;
-}
-
-.president-invitation strong {
     color: var(--secondary-color);
-    font-weight: 700;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
 }
 
-.president-signature {
-    margin-top: 50px;
-    padding-top: 35px;
-    border-top: 1px solid #e5e7eb;
-    text-align: right;
-    position: relative;
-}
-
-.president-signature::before {
-    content: "";
-    position: absolute;
-    top: -1px;
-    right: 0;
-    width: 150px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--primary-color));
-}
-
+/* President Name and Role (in image signature) */
 .president-name {
     font-size: 26px;
     font-weight: 800;
@@ -766,6 +884,53 @@ Témoignages
     .president-role {
         font-size: 14px;
     }
+}
+
+/* RTL Support for President Message Section */
+[dir="rtl"] .president-message-container {
+    direction: rtl;
+}
+
+[dir="rtl"] .president-message-content::before {
+    left: auto;
+    right: 0;
+}
+
+[dir="rtl"] .president-intro {
+    padding-left: 0;
+    padding-right: 30px;
+    border-left: none;
+    border-right: 4px solid var(--primary-color);
+}
+
+[dir="rtl"] .president-intro::before {
+    left: auto;
+    right: 15px;
+}
+
+[dir="rtl"] .president-ambition {
+    border-left: none;
+    border-right: 5px solid var(--secondary-color);
+}
+
+[dir="rtl"] .president-ambition-list li:hover {
+    transform: translateX(-10px);
+    margin: 0 -20px;
+    padding-right: 35px;
+    padding-left: 20px;
+}
+
+[dir="rtl"] .president-highlight-box,
+[dir="rtl"] .president-invitation-box {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .president-message-badge {
+    direction: rtl;
+}
+
+[dir="rtl"] .president-message-divider {
+    flex-direction: row-reverse;
 }
 
 /* Royal Quote Section */
