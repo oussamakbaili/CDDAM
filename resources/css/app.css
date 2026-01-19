@@ -601,7 +601,7 @@ Témoignages
 }
 
 .president-intro::before {
-    content: """;
+    content: "\201C";
     position: absolute;
     top: 15px;
     left: 15px;
@@ -1131,7 +1131,7 @@ Témoignages
 }
 
 .royal-quote-text-wrapper::before {
-    content: '"';
+    content: "\201C";
     position: absolute;
     top: -20px;
     left: -10px;
@@ -1143,7 +1143,7 @@ Témoignages
 }
 
 .royal-quote-text-wrapper::after {
-    content: '"';
+    content: "\201D";
     position: absolute;
     bottom: -60px;
     right: -10px;
