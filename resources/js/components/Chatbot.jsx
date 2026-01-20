@@ -24,7 +24,8 @@ const Chatbot = () => {
             const welcomeMessage = {
                 id: Date.now(),
                 text: t('chatbot.welcome'),
-                sender: 'bot'
+                sender: 'bot',
+                responseType: null // Pas de bouton pour le message de bienvenue
             };
             setMessages([welcomeMessage]);
         }
@@ -155,7 +156,7 @@ const Chatbot = () => {
             ? [/المزيد|تفاصيل أكثر|أريد المزيد|أكثر تفصيلاً|تفاصيل إضافية/i]
             : lang === 'en'
             ? [/more details|more information|tell me more|more about|additional details|further information/i]
-            : [/plus (de|des) détails|plus d['']informations|en savoir plus|davantage|plus de précisions|donnez-moi plus/i];
+            : [/plus (de|des) détails|plus (de|des) details|plus d['']informations|en savoir plus|davantage|plus de précisions|donnez-moi plus/i];
 
         const isMoreDetailsRequest = moreDetailsPatterns.some(pattern => pattern.test(userMessage));
 
@@ -297,11 +298,40 @@ const Chatbot = () => {
             const botResponse = {
                 id: Date.now() + 1,
                 text: response.text || response, // Support pour l'ancien format
-                sender: 'bot'
+                sender: 'bot',
+                responseType: response.type || null // Stocker le type de réponse dans le message
             };
             setMessages(prev => [...prev, botResponse]);
             // Mettre à jour le type de la dernière réponse
             setLastResponseType(response.type || null);
+        }, 500);
+    };
+
+    const handleMoreDetails = (responseType) => {
+        if (!responseType) return;
+        
+        // Envoyer un message "plus de détails" pour ce type de réponse
+        const userMessage = {
+            id: Date.now(),
+            text: 'plus de détails',
+            sender: 'user'
+        };
+
+        setMessages(prev => [...prev, userMessage]);
+
+        // Simuler un délai de réponse
+        setTimeout(() => {
+            const detailKey = `chatbot.${responseType}DetailResponse`;
+            const detailResponse = t(detailKey);
+            const botResponse = {
+                id: Date.now() + 1,
+                text: (detailResponse && detailResponse !== detailKey) ? detailResponse : t(`chatbot.${responseType}Response`),
+                sender: 'bot',
+                responseType: responseType
+            };
+            setMessages(prev => [...prev, botResponse]);
+            // Mettre à jour le type de la dernière réponse
+            setLastResponseType(responseType);
         }, 500);
     };
 
@@ -340,13 +370,25 @@ const Chatbot = () => {
 
                     <div className="chatbot-messages">
                         {messages.map((message) => (
-                            <div
-                                key={message.id}
-                                className={`chatbot-message ${message.sender === 'user' ? 'user' : 'bot'}`}
-                            >
-                                <div className="chatbot-message-content">
-                                    {message.text}
+                            <div key={message.id}>
+                                <div
+                                    className={`chatbot-message ${message.sender === 'user' ? 'user' : 'bot'}`}
+                                >
+                                    <div className="chatbot-message-content">
+                                        {message.text}
+                                    </div>
                                 </div>
+                                {/* Bouton "plus de détails" pour les messages du bot avec un type de réponse */}
+                                {message.sender === 'bot' && message.responseType && (
+                                    <div className="chatbot-more-details-container">
+                                        <button
+                                            className="chatbot-more-details-btn"
+                                            onClick={() => handleMoreDetails(message.responseType)}
+                                        >
+                                            {t('chatbot.moreDetails') || 'plus de details'}
+                                        </button>
+                                    </div>
+                                )}
                             </div>
                         ))}
                         <div ref={messagesEndRef} />

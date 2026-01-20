@@ -815,6 +815,7 @@
     "testimonialsDetailResponse": "Les témoignages de nos membres illustrent concrètement l'impact positif du CDDAM sur leur parcours professionnel et le développement de leurs associations. Ces témoignages couvrent différents aspects : l'amélioration des compétences de leadership, l'accès à un réseau professionnel de qualité, les opportunités de formation et de développement, les synergies créées avec d'autres associations, l'inspiration tirée des échanges avec d'autres dirigeants, et les résultats concrets obtenus grâce à l'adhésion au CDDAM. Les membres partagent leurs expériences, leurs réussites, et les défis qu'ils ont surmontés. Ces témoignages sont une source d'inspiration pour les nouveaux membres et montrent la valeur ajoutée réelle du CDDAM pour le développement du secteur associatif marocain. Vous pouvez lire ces témoignages détaillés sur notre page dédiée.",
     "defaultResponse": "Je peux vous renseigner sur le CDDAM, nos activités, l'adhésion, nos partenaires, les commissions, le blog et les témoignages. Posez-moi une question spécifique sur l'un de ces sujets !",
     "offTopic": "Désolé, je suis spécialisé dans les questions concernant le Club des Dirigeants des Associations Maroc (CDDAM). Je peux vous aider avec des informations sur notre organisation, nos activités, l'adhésion, nos partenaires et autres sujets liés au CDDAM.",
+    "moreDetails": "plus de details",
     "placeholder": "Tapez votre message...",
     "toggle": "Ouvrir/Fermer le chatbot",
     "close": "Fermer le chatbot"

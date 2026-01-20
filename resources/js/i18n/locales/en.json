@@ -814,6 +814,7 @@
     "testimonialsDetailResponse": "The testimonials of our members concretely illustrate the positive impact of CDDAM on their professional journey and the development of their associations. These testimonials cover different aspects: improvement of leadership skills, access to a quality professional network, training and development opportunities, synergies created with other associations, inspiration drawn from exchanges with other leaders, and concrete results obtained through CDDAM membership. Members share their experiences, successes, and challenges they have overcome. These testimonials are a source of inspiration for new members and show the real added value of CDDAM for the development of the Moroccan associative sector. You can read these detailed testimonials on our dedicated page.",
     "defaultResponse": "I can provide information about CDDAM, our activities, membership, our partners, commissions, blog and testimonials. Ask me a specific question about one of these topics!",
     "offTopic": "Sorry, I specialize in questions about the Club of Directors of Associations Morocco (CDDAM). I can help you with information about our organization, activities, membership, partners and other topics related to CDDAM.",
+    "moreDetails": "more details",
     "placeholder": "Type your message...",
     "toggle": "Open/Close chatbot",
     "close": "Close chatbot"

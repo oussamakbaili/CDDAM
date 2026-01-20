@@ -295,3 +295,40 @@
     }
 }
 
+/* Bouton "plus de détails" */
+.chatbot-more-details-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 8px;
+    margin-bottom: 15px;
+    padding-left: 0;
+}
+
+.chatbot-more-details-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 129, 164, 0.3);
+}
+
+.chatbot-more-details-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 129, 164, 0.4);
+}
+
+.chatbot-more-details-btn:active {
+    transform: translateY(0);
+}
+
+[dir="rtl"] .chatbot-more-details-container {
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-right: 0;
+}
+
