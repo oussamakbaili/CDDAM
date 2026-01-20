@@ -130,72 +130,45 @@ function Home() {
             {/* Mot du Président Section */}
             <section className="president-message-section">
                 <div className="container">
-                    {/* Première ligne : Image à gauche + Début du texte à droite */}
+                    {/* Première ligne : Image à gauche + Citation à droite */}
                     <div className="president-message-top-row">
-                        {/* Image du Président - En haut à gauche */}
+                        {/* Image du Président - À gauche */}
                         <div className="president-image-container">
-                            <div className="president-image-frame">
-                                <div className="president-image-decoration"></div>
-                                <img
-                                    src="/images/president.jpeg"
-                                    alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
-                                    className="president-image"
-                                />
-                                <div className="president-image-signature">
-                                    <div className="signature-line"></div>
-                                    <p className="president-name">{t('home.presidentName')}</p>
-                                    <p className="president-role">{t('home.presidentRole')}</p>
-                                </div>
-                            </div>
+                            <img
+                                src="/images/president.jpeg"
+                                alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
+                                className="president-image"
+                            />
                         </div>
 
-                        {/* Début du texte - À droite de l'image */}
-                        <div className="president-message-content-top">
-                            <div className="president-message-header">
-                                <div className="president-message-badge">
-                                    <i className="fas fa-crown badge-icon"></i>
-                                    <span className="badge-text">{t('home.presidentMessageTitle')}</span>
-                                </div>
-                                <div className="president-message-divider">
-                                    <span className="divider-line"></span>
-                                    <span className="divider-dot"></span>
-                                    <span className="divider-line"></span>
-                                </div>
-                            </div>
-
-                            <div className="president-message-text-top">
-                                <p className="president-intro">
-                                    {t('home.presidentMessageIntro')}
+                        {/* Citation - À droite de l'image */}
+                        <div className="president-quote-box">
+                            <div className="president-quote-content">
+                                <div className="president-quote-text">
+                                    <span className="president-quote-intro">{t('home.presidentMessageIntro')}</span>
                                     {t('home.presidentMessageIntroBold') && t('home.presidentMessageIntroBold').trim() !== '' && (
-                                        <strong className="intro-bold">{t('home.presidentMessageIntroBold')}</strong>
+                                        <span className="president-quote-bold">{t('home.presidentMessageIntroBold')}</span>
                                     )}
-                                </p>
-
-                                <div className="president-message-paragraphs">
-                                    <p>{t('home.presidentMessageP1')}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Suite du texte - En pleine largeur sous l'image */}
+                    {/* Suite du texte - En pleine largeur sous l'image, sans cadre */}
                     <div className="president-message-bottom-section">
                         <div className="president-message-content-bottom">
-                            <div className="president-message-paragraphs president-message-continued">
-                                <p className="president-continued-text">{t('home.presidentMessageP2')}</p>
+                            <div className="president-message-paragraphs">
+                                <p>{t('home.presidentMessageP1')}</p>
+                                <p>{t('home.presidentMessageP2')}</p>
                                 <p>{t('home.presidentMessageP3')}</p>
                             </div>
 
-                            <div className="president-highlight-box">
-                                <div className="highlight-icon">💡</div>
-                                <p className="president-highlight">
-                                    {t('home.presidentMessageHighlight')}
-                                </p>
-                            </div>
+                            <p className="president-highlight">
+                                {t('home.presidentMessageHighlight')}
+                            </p>
 
                             <div className="president-ambition">
                                 <h3 className="president-ambition-title">
-                                    <span className="ambition-icon">🎯</span>
                                     {t('home.presidentMessageAmbitionTitle')}
                                 </h3>
                                 <ul className="president-ambition-list">
