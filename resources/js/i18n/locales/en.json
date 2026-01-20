@@ -815,6 +815,7 @@
     "defaultResponse": "I can provide information about CDDAM, our activities, membership, our partners, commissions, blog and testimonials. Ask me a specific question about one of these topics!",
     "offTopic": "Sorry, I specialize in questions about the Club of Directors of Associations Morocco (CDDAM). I can help you with information about our organization, activities, membership, partners and other topics related to CDDAM.",
     "moreDetails": "more details",
+    "askText": "Ask",
     "placeholder": "Type your message...",
     "toggle": "Open/Close chatbot",
     "close": "Close chatbot"

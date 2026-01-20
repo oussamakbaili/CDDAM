@@ -153,7 +153,7 @@ function Home() {
                         <div className="president-message-content-top">
                             <div className="president-message-header">
                                 <div className="president-message-badge">
-                                    <span className="badge-icon">👑</span>
+                                    <i className="fas fa-crown badge-icon"></i>
                                     <span className="badge-text">{t('home.presidentMessageTitle')}</span>
                                 </div>
                                 <div className="president-message-divider">

@@ -816,6 +816,7 @@
     "defaultResponse": "Je peux vous renseigner sur le CDDAM, nos activités, l'adhésion, nos partenaires, les commissions, le blog et les témoignages. Posez-moi une question spécifique sur l'un de ces sujets !",
     "offTopic": "Désolé, je suis spécialisé dans les questions concernant le Club des Dirigeants des Associations Maroc (CDDAM). Je peux vous aider avec des informations sur notre organisation, nos activités, l'adhésion, nos partenaires et autres sujets liés au CDDAM.",
     "moreDetails": "plus de details",
+    "askText": "Poser une question",
     "placeholder": "Tapez votre message...",
     "toggle": "Ouvrir/Fermer le chatbot",
     "close": "Fermer le chatbot"

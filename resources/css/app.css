@@ -616,31 +616,87 @@ Témoignages
 .president-message-badge {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
-    background: linear-gradient(135deg, rgba(0, 129, 164, 0.1), rgba(160, 62, 63, 0.1));
-    padding: 12px 24px;
-    border-radius: 50px;
-    margin-bottom: 20px;
-    border: 1px solid rgba(0, 129, 164, 0.2);
-    transition: all 0.3s ease;
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.98) 100%);
+    backdrop-filter: blur(20px);
+    padding: 16px 28px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    border: 1px solid rgba(0, 129, 164, 0.15);
+    box-shadow: 
+        0 4px 20px rgba(0, 129, 164, 0.08),
+        0 0 0 1px rgba(255, 255, 255, 0.5) inset,
+        0 1px 2px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.president-message-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 129, 164, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.president-message-badge:hover::before {
+    left: 100%;
 }
 
 .president-message-badge:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 129, 164, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 
+        0 8px 30px rgba(0, 129, 164, 0.15),
+        0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+        0 2px 4px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 129, 164, 0.25);
 }
 
 .badge-icon {
-    font-size: 20px;
-    filter: grayscale(0.3);
+    font-size: 22px;
+    color: #FFD700;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF6347 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.4));
+    position: relative;
+    z-index: 1;
+    animation: crownGlow 2s ease-in-out infinite;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes crownGlow {
+    0%, 100% {
+        filter: drop-shadow(0 2px 4px rgba(255, 215, 0, 0.3));
+        transform: scale(1);
+    }
+    50% {
+        filter: drop-shadow(0 4px 8px rgba(255, 215, 0, 0.5));
+        transform: scale(1.05);
+    }
 }
 
 .badge-text {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 700;
-    color: var(--primary-color);
-    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
     text-transform: uppercase;
+    position: relative;
+    z-index: 1;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
 
 .president-message-divider {
