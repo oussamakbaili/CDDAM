@@ -356,27 +356,36 @@ Témoignages
     50% { transform: translate(30px, -30px) scale(1.1); }
 }
 
-/* Image Container - Centered at top */
-.president-image-container {
+/* President Message Wrapper - Flex Layout */
+.president-message-wrapper {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    margin-bottom: 60px;
+    align-items: flex-end;
+    gap: 80px;
     position: relative;
     z-index: 1;
 }
 
 @media (max-width: 992px) {
-    .president-image-container {
-        margin-bottom: 50px;
+    .president-message-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
     }
+}
+
+/* Image Container - Left Side */
+.president-image-container {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
 }
 
 
 .president-image-frame {
     position: relative;
     width: 100%;
-    max-width: 450px;
+    max-width: 420px;
+    min-width: 350px;
     padding: 20px;
     background: linear-gradient(145deg, #ffffff 0%, #f8fafb 100%);
     border-radius: 24px;
@@ -385,6 +394,13 @@ Témoignages
         0 0 0 1px rgba(0, 0, 0, 0.05),
         inset 0 1px 0 rgba(255, 255, 255, 0.9);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 992px) {
+    .president-image-frame {
+        max-width: 100%;
+        min-width: auto;
+    }
 }
 
 .president-image-frame:hover {
@@ -459,8 +475,9 @@ Témoignages
     letter-spacing: 1px;
 }
 
-/* President Message Content - Unified Section */
+/* President Message Content - Right Side, Aligned Bottom */
 .president-message-content {
+    flex: 1;
     background: #ffffff;
     border-radius: 20px;
     padding: 60px 70px;
@@ -470,6 +487,7 @@ Témoignages
     position: relative;
     overflow: hidden;
     z-index: 1;
+    min-width: 0;
 }
 
 .president-message-content::before {
@@ -873,6 +891,10 @@ Témoignages
 }
 
 /* RTL Support for President Message Section */
+[dir="rtl"] .president-message-wrapper {
+    flex-direction: row-reverse;
+}
+
 [dir="rtl"] .president-message-content::before {
     left: auto;
     right: 0;

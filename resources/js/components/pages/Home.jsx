@@ -130,92 +130,94 @@ function Home() {
             {/* Mot du Président Section */}
             <section className="president-message-section">
                 <div className="container">
-                    {/* Image du Président - En haut */}
-                    <div className="president-image-container">
-                        <div className="president-image-frame">
-                            <div className="president-image-decoration"></div>
-                            <img
-                                src="/images/president.jpeg"
-                                alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
-                                className="president-image"
-                            />
-                            <div className="president-image-signature">
-                                <div className="signature-line"></div>
-                                <p className="president-name">{t('home.presidentName')}</p>
-                                <p className="president-role">{t('home.presidentRole')}</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Tout le contenu en dessous de l'image */}
-                    <div className="president-message-content">
-                        <div className="president-message-header">
-                            <div className="president-message-badge">
-                                <span className="badge-icon">👑</span>
-                                <span className="badge-text">{t('home.presidentMessageTitle')}</span>
-                            </div>
-                            <div className="president-message-divider">
-                                <span className="divider-line"></span>
-                                <span className="divider-dot"></span>
-                                <span className="divider-line"></span>
+                    <div className="president-message-wrapper">
+                        {/* Image du Président - À gauche */}
+                        <div className="president-image-container">
+                            <div className="president-image-frame">
+                                <div className="president-image-decoration"></div>
+                                <img
+                                    src="/images/president.jpeg"
+                                    alt={`${t('home.presidentName')} - ${t('home.presidentRole')}`}
+                                    className="president-image"
+                                />
+                                <div className="president-image-signature">
+                                    <div className="signature-line"></div>
+                                    <p className="president-name">{t('home.presidentName')}</p>
+                                    <p className="president-role">{t('home.presidentRole')}</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="president-message-text">
-                            <p className="president-intro">
-                                {t('home.presidentMessageIntro')}
-                                {t('home.presidentMessageIntroBold') && t('home.presidentMessageIntroBold').trim() !== '' && (
-                                    <strong className="intro-bold">{t('home.presidentMessageIntroBold')}</strong>
-                                )}
-                            </p>
-
-                            <div className="president-message-paragraphs">
-                                <p>{t('home.presidentMessageP1')}</p>
-                                <p>{t('home.presidentMessageP2')}</p>
-                                <p>{t('home.presidentMessageP3')}</p>
+                        {/* Contenu du Message - À droite, aligné en bas */}
+                        <div className="president-message-content">
+                            <div className="president-message-header">
+                                <div className="president-message-badge">
+                                    <span className="badge-icon">👑</span>
+                                    <span className="badge-text">{t('home.presidentMessageTitle')}</span>
+                                </div>
+                                <div className="president-message-divider">
+                                    <span className="divider-line"></span>
+                                    <span className="divider-dot"></span>
+                                    <span className="divider-line"></span>
+                                </div>
                             </div>
 
-                            <div className="president-highlight-box">
-                                <div className="highlight-icon">💡</div>
-                                <p className="president-highlight">
-                                    {t('home.presidentMessageHighlight')}
+                            <div className="president-message-text">
+                                <p className="president-intro">
+                                    {t('home.presidentMessageIntro')}
+                                    {t('home.presidentMessageIntroBold') && t('home.presidentMessageIntroBold').trim() !== '' && (
+                                        <strong className="intro-bold">{t('home.presidentMessageIntroBold')}</strong>
+                                    )}
                                 </p>
-                            </div>
 
-                            <div className="president-ambition">
-                                <h3 className="president-ambition-title">
-                                    <span className="ambition-icon">🎯</span>
-                                    {t('home.presidentMessageAmbitionTitle')}
-                                </h3>
-                                <ul className="president-ambition-list">
-                                    <li>
-                                        <span className="ambition-check">✓</span>
-                                        <span>{t('home.presidentMessageAmbition1')}</span>
-                                    </li>
-                                    <li>
-                                        <span className="ambition-check">✓</span>
-                                        <span>{t('home.presidentMessageAmbition2')}</span>
-                                    </li>
-                                    <li>
-                                        <span className="ambition-check">✓</span>
-                                        <span>{t('home.presidentMessageAmbition3')}</span>
-                                    </li>
-                                    <li>
-                                        <span className="ambition-check">✓</span>
-                                        <span>{t('home.presidentMessageAmbition4')}</span>
-                                    </li>
-                                </ul>
-                            </div>
+                                <div className="president-message-paragraphs">
+                                    <p>{t('home.presidentMessageP1')}</p>
+                                    <p>{t('home.presidentMessageP2')}</p>
+                                    <p>{t('home.presidentMessageP3')}</p>
+                                </div>
 
-                            <div className="president-message-paragraphs">
-                                <p>{t('home.presidentMessageP4')}</p>
-                                <p>{t('home.presidentMessageP5')}</p>
-                            </div>
+                                <div className="president-highlight-box">
+                                    <div className="highlight-icon">💡</div>
+                                    <p className="president-highlight">
+                                        {t('home.presidentMessageHighlight')}
+                                    </p>
+                                </div>
 
-                            <div className="president-invitation-box">
-                                <p className="president-invitation">
-                                    {t('home.presidentMessageInvitation')}
-                                </p>
+                                <div className="president-ambition">
+                                    <h3 className="president-ambition-title">
+                                        <span className="ambition-icon">🎯</span>
+                                        {t('home.presidentMessageAmbitionTitle')}
+                                    </h3>
+                                    <ul className="president-ambition-list">
+                                        <li>
+                                            <span className="ambition-check">✓</span>
+                                            <span>{t('home.presidentMessageAmbition1')}</span>
+                                        </li>
+                                        <li>
+                                            <span className="ambition-check">✓</span>
+                                            <span>{t('home.presidentMessageAmbition2')}</span>
+                                        </li>
+                                        <li>
+                                            <span className="ambition-check">✓</span>
+                                            <span>{t('home.presidentMessageAmbition3')}</span>
+                                        </li>
+                                        <li>
+                                            <span className="ambition-check">✓</span>
+                                            <span>{t('home.presidentMessageAmbition4')}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <div className="president-message-paragraphs">
+                                    <p>{t('home.presidentMessageP4')}</p>
+                                    <p>{t('home.presidentMessageP5')}</p>
+                                </div>
+
+                                <div className="president-invitation-box">
+                                    <p className="president-invitation">
+                                        {t('home.presidentMessageInvitation')}
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
