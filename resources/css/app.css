@@ -1286,19 +1286,6 @@ Témoignages
         font-size: 24px;
     }
 }
-    gap: 10px;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, rgba(160, 62, 63, 0.1), rgba(0, 129, 164, 0.1));
-    border-radius: 25px;
-    font-size: 14px;
-    color: #666;
-    font-weight: 500;
-}
-
-.royal-quote-date i {
-    color: #A03E3F;
-    font-size: 16px;
-}
 
 /* Responsive Design for Royal Quote Section */
 @media (max-width: 991.98px) {
@@ -1321,7 +1308,6 @@ Témoignages
 
     .royal-quote-main-text {
         font-size: 16px;
-        padding: 25px 18px;
     }
 }
 
@@ -1341,26 +1327,10 @@ Témoignages
 
     .royal-quote-title {
         font-size: 24px;
-        padding: 0 15px;
-    }
-
-    .royal-quote-title::before,
-    .royal-quote-title::after {
-        height: 40px;
-    }
-
-    .royal-quote-divider {
-        width: 120px;
     }
 
     .royal-quote-main-text {
         font-size: 15px;
-        padding: 20px 15px;
-    }
-
-    .royal-quote-text-wrapper::before,
-    .royal-quote-text-wrapper::after {
-        font-size: 80px;
     }
 }
 
