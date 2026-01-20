@@ -6,6 +6,7 @@ const Chatbot = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
+    const [lastResponseType, setLastResponseType] = useState(null); // Stocker le type de la dernière réponse
     const messagesEndRef = useRef(null);
     const { t, i18n } = useTranslation();
 
@@ -149,6 +150,27 @@ const Chatbot = () => {
         const knowledgeBase = getKnowledgeBase();
         const lang = i18n.language;
 
+        // Détecter les demandes de "plus de détails"
+        const moreDetailsPatterns = lang === 'ar'
+            ? [/المزيد|تفاصيل أكثر|أريد المزيد|أكثر تفصيلاً|تفاصيل إضافية/i]
+            : lang === 'en'
+            ? [/more details|more information|tell me more|more about|additional details|further information/i]
+            : [/plus (de|des) détails|plus d['']informations|en savoir plus|davantage|plus de précisions|donnez-moi plus/i];
+
+        const isMoreDetailsRequest = moreDetailsPatterns.some(pattern => pattern.test(userMessage));
+
+        // Si c'est une demande de plus de détails et qu'on a un contexte
+        if (isMoreDetailsRequest && lastResponseType) {
+            const detailKey = `chatbot.${lastResponseType}DetailResponse`;
+            const detailResponse = t(detailKey);
+            // Si la traduction existe, la retourner, sinon retourner la réponse normale
+            if (detailResponse && detailResponse !== detailKey) {
+                return { text: detailResponse, type: lastResponseType };
+            }
+            // Si pas de réponse détaillée, retourner la réponse normale du type
+            return { text: t(`chatbot.${lastResponseType}Response`), type: lastResponseType };
+        }
+
         // Vérifier si la question est hors sujet
         const offTopicKeywords = lang === 'ar' 
             ? ['طقس', 'رياضة', 'سياسة', 'أخبار عامة', 'موسيقى', 'أفلام', 'طبخ', 'وصفة']
@@ -159,7 +181,7 @@ const Chatbot = () => {
         const isOffTopic = offTopicKeywords.some(keyword => lowerMessage.includes(keyword));
         
         if (isOffTopic) {
-            return t('chatbot.offTopic');
+            return { text: t('chatbot.offTopic'), type: null };
         }
 
         // Vérifier si le message contient CDDA ou CDDAM (indicateur fort que c'est lié au projet)
@@ -169,7 +191,7 @@ const Chatbot = () => {
         if (knowledgeBase.greetings.some(greeting => lowerMessage.includes(greeting))) {
             // Si c'est juste une salutation sans question, répondre simplement
             if (lowerMessage.length < 20 && !hasCDDA) {
-                return t('chatbot.greetingResponse');
+                return { text: t('chatbot.greetingResponse'), type: null };
             }
         }
 
@@ -180,7 +202,7 @@ const Chatbot = () => {
                             (hasCDDA && (lowerMessage.includes('quoi') || lowerMessage.includes('qu\'est') || lowerMessage.includes('que signifie') || lowerMessage.includes('que veut dire') || lowerMessage.includes('c\'est quoi') || lowerMessage.includes('what is') || lowerMessage.includes('what does') || lowerMessage.includes('meaning') || lowerMessage.includes('definition')));
         
         if (aboutMatches) {
-            return t('chatbot.aboutResponse');
+            return { text: t('chatbot.aboutResponse'), type: 'about' };
         }
 
         // Activités - Détection améliorée
@@ -189,7 +211,7 @@ const Chatbot = () => {
                                  knowledgeBase.activities.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (activitiesMatches) {
-            return t('chatbot.activitiesResponse');
+            return { text: t('chatbot.activitiesResponse'), type: 'activities' };
         }
 
         // Adhésion - Détection améliorée
@@ -198,7 +220,7 @@ const Chatbot = () => {
                                  knowledgeBase.membership.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (membershipMatches) {
-            return t('chatbot.membershipResponse');
+            return { text: t('chatbot.membershipResponse'), type: 'membership' };
         }
 
         // Contact - Détection améliorée
@@ -207,7 +229,7 @@ const Chatbot = () => {
                               knowledgeBase.contact.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (contactMatches) {
-            return t('chatbot.contactResponse');
+            return { text: t('chatbot.contactResponse'), type: 'contact' };
         }
 
         // Partenaires - Détection améliorée
@@ -216,7 +238,7 @@ const Chatbot = () => {
                                knowledgeBase.partners.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (partnersMatches) {
-            return t('chatbot.partnersResponse');
+            return { text: t('chatbot.partnersResponse'), type: 'partners' };
         }
 
         // Commissions - Détection améliorée
@@ -225,7 +247,7 @@ const Chatbot = () => {
                                    knowledgeBase.commissions.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (commissionsMatches) {
-            return t('chatbot.commissionsResponse');
+            return { text: t('chatbot.commissionsResponse'), type: 'commissions' };
         }
 
         // Blog - Détection améliorée
@@ -234,7 +256,7 @@ const Chatbot = () => {
                           knowledgeBase.blog.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (blogMatches) {
-            return t('chatbot.blogResponse');
+            return { text: t('chatbot.blogResponse'), type: 'blog' };
         }
 
         // Témoignages - Détection améliorée
@@ -243,16 +265,16 @@ const Chatbot = () => {
                                    knowledgeBase.testimonials.keywords.some(keyword => lowerMessage.includes(keyword));
         
         if (testimonialsMatches) {
-            return t('chatbot.testimonialsResponse');
+            return { text: t('chatbot.testimonialsResponse'), type: 'testimonials' };
         }
 
         // Si le message contient CDDA/CDDAM mais n'a pas été catégorisé, répondre sur le CDDAM
         if (hasCDDA) {
-            return t('chatbot.aboutResponse');
+            return { text: t('chatbot.aboutResponse'), type: 'about' };
         }
 
         // Réponse par défaut - mais seulement si vraiment pas de correspondance
-        return t('chatbot.defaultResponse');
+        return { text: t('chatbot.defaultResponse'), type: null };
     };
 
     const handleSend = (e) => {
@@ -266,16 +288,20 @@ const Chatbot = () => {
         };
 
         setMessages(prev => [...prev, userMessage]);
+        const currentInput = inputValue;
         setInputValue('');
 
         // Simuler un délai de réponse
         setTimeout(() => {
+            const response = getResponse(currentInput);
             const botResponse = {
                 id: Date.now() + 1,
-                text: getResponse(inputValue),
+                text: response.text || response, // Support pour l'ancien format
                 sender: 'bot'
             };
             setMessages(prev => [...prev, botResponse]);
+            // Mettre à jour le type de la dernière réponse
+            setLastResponseType(response.type || null);
         }, 500);
     };
 
