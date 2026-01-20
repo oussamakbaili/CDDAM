@@ -385,7 +385,7 @@ const Chatbot = () => {
                                             className="chatbot-more-details-btn"
                                             onClick={() => handleMoreDetails(message.responseType)}
                                         >
-                                            {t('chatbot.moreDetails') || 'plus de details'}
+                                            <span>{t('chatbot.moreDetails') || 'plus de details'}</span>
                                         </button>
                                     </div>
                                 )}
