@@ -222,36 +222,25 @@ function Home() {
                         {/* Citation Royale */}
                         <div className="col-lg-7 col-md-6 order-lg-1 order-2">
                             <div className="royal-quote-content">
-                                <div className="royal-quote-header">
-                                    <div className="royal-quote-title-wrapper">
-                                        <h2 className="royal-quote-title">
-                                            {t('home.royalQuoteTitle')}
-                                        </h2>
-                                        <div className="royal-quote-divider"></div>
-                                    </div>
+                                {/* Titre simple */}
+                                <div className="royal-quote-title-section">
+                                    <h2 className="royal-quote-title">{t('home.royalQuoteTitle')}</h2>
                                 </div>
 
-                                <div className="royal-quote-source">
-                                    <p className="royal-quote-source-text">
-                                        <i className="fas fa-quote-left"></i>
-                                        {t('home.royalQuoteSource')}
-                                    </p>
-                                </div>
+                                {/* Source */}
+                                <p className="royal-quote-source-text">
+                                    {t('home.royalQuoteSource')}
+                                </p>
 
-                                <div className="royal-quote-text-wrapper">
-                                    <div className="royal-quote-text">
-                                        <p className="royal-quote-main-text">
-                                            {t('home.royalQuoteText')}
-                                        </p>
-                                    </div>
-                                </div>
+                                {/* Texte de la citation */}
+                                <p className="royal-quote-main-text">
+                                    {t('home.royalQuoteText')}
+                                </p>
 
-                                <div className="royal-quote-footer">
-                                    <div className="royal-quote-date">
-                                        <i className="fas fa-calendar-alt"></i>
-                                        <span>{t('home.royalQuoteDate')}</span>
-                                    </div>
-                                </div>
+                                {/* Date */}
+                                <p className="royal-quote-date">
+                                    {t('home.royalQuoteDate')}
+                                </p>
                             </div>
                         </div>
 
