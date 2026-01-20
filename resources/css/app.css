@@ -1145,6 +1145,9 @@ Témoignages
     overflow: hidden;
     box-shadow: 0 25px 70px rgba(0, 0, 0, 0.2);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
 }
 
 .royal-image-wrapper:hover {
@@ -1174,7 +1177,7 @@ Témoignages
 
 .royal-image {
     width: 100%;
-    height: auto;
+    height: 100%;
     display: block;
     position: relative;
     z-index: 1;
@@ -1208,6 +1211,10 @@ Témoignages
     border-top: 1px solid rgba(139, 38, 53, 0.1);
     border-right: 1px solid rgba(139, 38, 53, 0.1);
     border-bottom: 1px solid rgba(139, 38, 53, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .royal-quote-content::before {

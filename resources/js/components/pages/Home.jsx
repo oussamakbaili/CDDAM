@@ -218,10 +218,10 @@ function Home() {
             {/* Royal Quote Section */}
             <section className="royal-quote-section py-5">
                 <div className="container">
-                    <div className="row g-5 align-items-center">
+                    <div className="row g-5 align-items-stretch">
                         {/* Citation Royale */}
-                        <div className="col-lg-7 col-md-6 order-lg-1 order-2">
-                            <div className="royal-quote-content">
+                        <div className="col-lg-7 col-md-6 order-lg-1 order-2 d-flex">
+                            <div className="royal-quote-content w-100">
                                 {/* Titre avec design royal */}
                                 <div className="royal-quote-title-section">
                                     <h2 className="royal-quote-title">
@@ -256,8 +256,8 @@ function Home() {
                         </div>
 
                         {/* Image du Roi */}
-                        <div className="col-lg-5 col-md-6 order-lg-2 order-1">
-                            <div className="royal-image-wrapper">
+                        <div className="col-lg-5 col-md-6 order-lg-2 order-1 d-flex">
+                            <div className="royal-image-wrapper w-100">
                                 <div className="royal-image-glow"></div>
                                 <img
                                     src="/images/image.png"
