@@ -130,6 +130,11 @@ function Home() {
             {/* Mot du Président Section */}
             <section className="president-message-section">
                 <div className="container">
+                    {/* Titre "Mot du Fondateur" */}
+                    <div className="president-message-title-section">
+                        <h2 className="president-message-title">{t('home.presidentMessageTitle')}</h2>
+                    </div>
+
                     {/* Première ligne : Image à gauche + Citation à droite */}
                     <div className="president-message-top-row">
                         {/* Image du Président - À gauche */}
@@ -149,6 +154,10 @@ function Home() {
                                     {t('home.presidentMessageIntroBold') && t('home.presidentMessageIntroBold').trim() !== '' && (
                                         <span className="president-quote-bold">{t('home.presidentMessageIntroBold')}</span>
                                     )}
+                                </div>
+                                {/* Signature */}
+                                <div className="president-signature">
+                                    <p className="president-signature-name">Hani El Harraq</p>
                                 </div>
                             </div>
                         </div>
