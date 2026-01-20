@@ -181,8 +181,8 @@ function Home() {
                     {/* Suite du texte - En pleine largeur sous l'image */}
                     <div className="president-message-bottom-section">
                         <div className="president-message-content-bottom">
-                            <div className="president-message-paragraphs">
-                                <p>{t('home.presidentMessageP2')}</p>
+                            <div className="president-message-paragraphs president-message-continued">
+                                <p className="president-continued-text">{t('home.presidentMessageP2')}</p>
                                 <p>{t('home.presidentMessageP3')}</p>
                             </div>
 

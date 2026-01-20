@@ -530,18 +530,23 @@ Témoignages
 .president-message-bottom-section {
     position: relative;
     z-index: 1;
+    margin-top: -40px;
 }
 
 .president-message-content-bottom {
     background: #ffffff;
     border-radius: 20px;
     padding: 60px 70px;
+    padding-top: 40px;
     box-shadow: 
         0 10px 40px rgba(0, 0, 0, 0.08),
         0 0 0 1px rgba(0, 0, 0, 0.03);
     position: relative;
     overflow: hidden;
     width: 100%;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
 }
 
 .president-message-content-bottom::before {
@@ -672,6 +677,36 @@ Témoignages
     color: #4b5563;
     font-weight: 400;
     line-height: 1.9;
+}
+
+/* Style pour montrer la continuité entre P1 et P2 */
+.president-message-continued {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.president-continued-text {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    position: relative;
+    font-size: 17px !important;
+    line-height: 1.9 !important;
+    color: #4b5563 !important;
+    text-align: justify;
+}
+
+/* Fusionner visuellement les deux sections */
+.president-message-content-top {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom: none;
+    padding-bottom: 40px;
+    margin-bottom: 0;
+}
+
+.president-message-content-bottom .president-message-paragraphs:first-child {
+    margin-top: 0;
+    padding-top: 0;
 }
 
 .president-intro {
