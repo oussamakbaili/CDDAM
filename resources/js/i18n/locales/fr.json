@@ -791,6 +791,25 @@
     "visitWebsite": "Visiter le site web",
     "discoverOtherPartners": "Découvrez nos autres partenaires",
     "seeAllPartners": "Voir tous les partenaires"
+  },
+  "chatbot": {
+    "title": "Assistant CDDAM",
+    "status": "En ligne",
+    "welcome": "Bonjour ! Je suis l'assistant virtuel du Club des Dirigeants des Associations Maroc (CDDAM). Je peux vous renseigner sur notre organisation, nos activités, l'adhésion, nos partenaires et bien plus encore. Comment puis-je vous aider ?",
+    "greetingResponse": "Bonjour ! Je suis là pour répondre à toutes vos questions sur le CDDAM. Que souhaitez-vous savoir ?",
+    "aboutResponse": "Le Club des Dirigeants des Associations Maroc (CDDAM) est un espace national de rencontre, de partage d'expériences et de professionnalisation, dédié aux dirigeants associatifs. Fondé par Hani El Harraq, le CDDAM vise à renforcer le leadership associatif, promouvoir une gouvernance éthique et transparente, et contribuer au développement humain et territorial du Maroc.",
+    "activitiesResponse": "Le CDDAM organise diverses activités : soirées de networking, congrès, assemblées générales, événements thématiques et forums. Ces activités permettent aux dirigeants associatifs de se rencontrer, d'échanger leurs expériences et de créer des synergies durables.",
+    "membershipResponse": "Pour adhérer au CDDAM, vous pouvez consulter notre page 'Packs Adhésions' qui présente les différents niveaux d'adhésion disponibles. L'adhésion vous donne accès à nos événements exclusifs, à notre réseau de dirigeants et à nos ressources de développement professionnel.",
+    "contactResponse": "Pour nous contacter, vous pouvez visiter notre page Contact qui contient toutes nos coordonnées : adresse, téléphone et email. Nous sommes disponibles du lundi au vendredi de 8h à 18h.",
+    "partnersResponse": "Le CDDAM collabore avec de nombreux partenaires publics, privés et ONG. Vous pouvez découvrir tous nos partenaires sur la page dédiée, qui présente leurs contributions et leurs domaines d'expertise.",
+    "commissionsResponse": "Le CDDAM dispose de plusieurs commissions qui travaillent sur différents aspects du développement associatif. Chaque commission regroupe des experts et des dirigeants associatifs pour traiter des sujets spécifiques.",
+    "blogResponse": "Notre blog contient des articles, des actualités et des analyses sur le secteur associatif marocain. Vous y trouverez des informations sur nos activités, des témoignages et des ressources utiles pour les dirigeants associatifs.",
+    "testimonialsResponse": "Les témoignages de nos membres montrent l'impact positif du CDDAM sur leur développement professionnel et celui de leurs associations. Vous pouvez consulter ces témoignages sur notre page dédiée.",
+    "defaultResponse": "Je peux vous renseigner sur le CDDAM, nos activités, l'adhésion, nos partenaires, les commissions, le blog et les témoignages. Posez-moi une question spécifique sur l'un de ces sujets !",
+    "offTopic": "Désolé, je suis spécialisé dans les questions concernant le Club des Dirigeants des Associations Maroc (CDDAM). Je peux vous aider avec des informations sur notre organisation, nos activités, l'adhésion, nos partenaires et autres sujets liés au CDDAM.",
+    "placeholder": "Tapez votre message...",
+    "toggle": "Ouvrir/Fermer le chatbot",
+    "close": "Fermer le chatbot"
   }
 }
 

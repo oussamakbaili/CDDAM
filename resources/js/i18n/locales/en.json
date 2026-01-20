@@ -790,6 +790,25 @@
     "visitWebsite": "Visit website",
     "discoverOtherPartners": "Discover our other partners",
     "seeAllPartners": "See all partners"
+  },
+  "chatbot": {
+    "title": "CDDAM Assistant",
+    "status": "Online",
+    "welcome": "Hello! I'm the virtual assistant of the Club of Directors of Associations Morocco (CDDAM). I can provide information about our organization, activities, membership, partners and much more. How can I help you?",
+    "greetingResponse": "Hello! I'm here to answer all your questions about CDDAM. What would you like to know?",
+    "aboutResponse": "The Club of Directors of Associations Morocco (CDDAM) is a national space for meeting, sharing experiences and professionalization, dedicated to associative leaders. Founded by Hani El Harraq, CDDAM aims to strengthen associative leadership, promote ethical and transparent governance, and contribute to the human and territorial development of Morocco.",
+    "activitiesResponse": "CDDAM organizes various activities: networking evenings, congresses, general assemblies, thematic events and forums. These activities allow associative leaders to meet, exchange experiences and create lasting synergies.",
+    "membershipResponse": "To join CDDAM, you can visit our 'Membership Packs' page which presents the different membership levels available. Membership gives you access to our exclusive events, our network of leaders and our professional development resources.",
+    "contactResponse": "To contact us, you can visit our Contact page which contains all our contact details: address, phone and email. We are available Monday to Friday from 8am to 6pm.",
+    "partnersResponse": "CDDAM collaborates with many public, private and NGO partners. You can discover all our partners on the dedicated page, which presents their contributions and areas of expertise.",
+    "commissionsResponse": "CDDAM has several commissions that work on different aspects of associative development. Each commission brings together experts and associative leaders to address specific topics.",
+    "blogResponse": "Our blog contains articles, news and analysis on the Moroccan associative sector. You will find information about our activities, testimonials and useful resources for associative leaders.",
+    "testimonialsResponse": "The testimonials of our members show the positive impact of CDDAM on their professional development and that of their associations. You can consult these testimonials on our dedicated page.",
+    "defaultResponse": "I can provide information about CDDAM, our activities, membership, our partners, commissions, blog and testimonials. Ask me a specific question about one of these topics!",
+    "offTopic": "Sorry, I specialize in questions about the Club of Directors of Associations Morocco (CDDAM). I can help you with information about our organization, activities, membership, partners and other topics related to CDDAM.",
+    "placeholder": "Type your message...",
+    "toggle": "Open/Close chatbot",
+    "close": "Close chatbot"
   }
 }
 

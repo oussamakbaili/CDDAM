@@ -173,7 +173,6 @@ function Home() {
 
                                 <div className="president-message-paragraphs">
                                     <p>{t('home.presidentMessageP1')}</p>
-                                    <p>{t('home.presidentMessageP2')}</p>
                                 </div>
                             </div>
                         </div>
@@ -183,6 +182,7 @@ function Home() {
                     <div className="president-message-bottom-section">
                         <div className="president-message-content-bottom">
                             <div className="president-message-paragraphs">
+                                <p>{t('home.presidentMessageP2')}</p>
                                 <p>{t('home.presidentMessageP3')}</p>
                             </div>
 
