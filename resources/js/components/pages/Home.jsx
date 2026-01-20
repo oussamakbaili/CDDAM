@@ -222,25 +222,36 @@ function Home() {
                         {/* Citation Royale */}
                         <div className="col-lg-7 col-md-6 order-lg-1 order-2">
                             <div className="royal-quote-content">
-                                {/* Titre simple */}
+                                {/* Titre avec design royal */}
                                 <div className="royal-quote-title-section">
-                                    <h2 className="royal-quote-title">{t('home.royalQuoteTitle')}</h2>
+                                    <h2 className="royal-quote-title">
+                                        <span className="royal-quote-title-text">{t('home.royalQuoteTitle')}</span>
+                                    </h2>
                                 </div>
 
-                                {/* Source */}
-                                <p className="royal-quote-source-text">
-                                    {t('home.royalQuoteSource')}
-                                </p>
+                                {/* Source avec icône */}
+                                <div className="royal-quote-source">
+                                    <i className="fas fa-crown royal-source-icon"></i>
+                                    <p className="royal-quote-source-text">
+                                        {t('home.royalQuoteSource')}
+                                    </p>
+                                </div>
 
-                                {/* Texte de la citation */}
-                                <p className="royal-quote-main-text">
-                                    {t('home.royalQuoteText')}
-                                </p>
+                                {/* Texte de la citation avec guillemets français */}
+                                <div className="royal-quote-text-container">
+                                    <p className="royal-quote-main-text">
+                                        {t('home.royalQuoteText')}
+                                    </p>
+                                </div>
 
-                                {/* Date */}
-                                <p className="royal-quote-date">
-                                    {t('home.royalQuoteDate')}
-                                </p>
+                                {/* Date avec séparateur */}
+                                <div className="royal-quote-footer">
+                                    <div className="royal-quote-separator"></div>
+                                    <p className="royal-quote-date">
+                                        <i className="fas fa-calendar-alt"></i>
+                                        {t('home.royalQuoteDate')}
+                                    </p>
+                                </div>
                             </div>
                         </div>
 

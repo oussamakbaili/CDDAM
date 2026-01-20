@@ -1200,11 +1200,14 @@ Témoignages
 
 .royal-quote-content {
     background: #ffffff;
-    border-radius: 24px;
-    padding: 50px 45px;
-    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.1);
-    border: 2px solid rgba(160, 62, 63, 0.1);
+    border-radius: 0;
+    padding: 60px 50px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border-left: 8px solid #8B2635;
     position: relative;
+    border-top: 1px solid rgba(139, 38, 53, 0.1);
+    border-right: 1px solid rgba(139, 38, 53, 0.1);
+    border-bottom: 1px solid rgba(139, 38, 53, 0.1);
 }
 
 .royal-quote-content::before {
@@ -1212,82 +1215,178 @@ Témoignages
     position: absolute;
     top: 0;
     left: 0;
-    width: 6px;
+    width: 8px;
     height: 100%;
-    background: linear-gradient(180deg, #A03E3F, #8a2e2f, #A03E3F);
-    border-radius: 24px 0 0 24px;
+    background: linear-gradient(180deg, #8B2635 0%, #A03E3F 50%, #8B2635 100%);
+    border-radius: 0;
 }
 
-/* Titre "Parole Royale" - Simple et clean */
+/* Titre "Parole Royale" - Design royal élégant */
 .royal-quote-title-section {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid rgba(139, 38, 53, 0.15);
+    position: relative;
 }
 
 .royal-quote-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #1a1a1a;
     margin: 0;
-    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.royal-quote-title-text {
+    font-size: 36px;
+    font-weight: 800;
+    color: #8B2635;
+    letter-spacing: 3px;
     text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding: 0 30px;
+    font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-.royal-quote-title::before,
-.royal-quote-title::after {
-    display: none;
+.royal-quote-title-text::before,
+.royal-quote-title-text::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 45px;
+    background: linear-gradient(180deg, #D4AF37 0%, #8B2635 100%);
+    border-radius: 2px;
 }
 
-/* Source - Simple */
+.royal-quote-title-text::before {
+    left: 0;
+}
+
+.royal-quote-title-text::after {
+    right: 0;
+}
+
+/* Source avec icône couronne */
+.royal-quote-source {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 35px;
+    padding: 15px 0;
+}
+
+.royal-source-icon {
+    color: #D4AF37;
+    font-size: 18px;
+    margin-top: 2px;
+    filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.3));
+}
+
 .royal-quote-source-text {
     font-size: 14px;
-    color: #6b7280;
+    color: #4b5563;
     font-style: italic;
-    margin: 0 0 30px 0;
-    line-height: 1.6;
-    text-align: left;
+    margin: 0;
+    line-height: 1.7;
+    flex: 1;
+    font-weight: 500;
 }
 
-/* Texte de la citation - Simple */
+/* Texte de la citation avec guillemets français élégants */
+.royal-quote-text-container {
+    position: relative;
+    margin: 40px 0;
+    padding: 0 20px;
+}
+
+.royal-quote-text-container::before {
+    content: "«";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    font-size: 80px;
+    font-family: 'Georgia', serif;
+    color: rgba(139, 38, 53, 0.15);
+    line-height: 1;
+    font-weight: 300;
+}
+
+.royal-quote-text-container::after {
+    content: "»";
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    font-size: 80px;
+    font-family: 'Georgia', serif;
+    color: rgba(139, 38, 53, 0.15);
+    line-height: 1;
+    font-weight: 300;
+}
+
 .royal-quote-main-text {
-    font-size: 18px;
-    line-height: 1.9;
-    color: #374151;
+    font-size: 19px;
+    line-height: 2;
+    color: #1f2937;
     font-weight: 400;
     text-align: justify;
-    margin: 0 0 30px 0;
+    margin: 0;
     padding: 0;
     background: transparent;
     border: none;
     border-radius: 0;
     box-shadow: none;
+    position: relative;
+    z-index: 1;
+    font-family: 'Georgia', 'Times New Roman', serif;
 }
 
-.royal-quote-text-wrapper::before,
-.royal-quote-text-wrapper::after {
-    display: none;
+/* Footer avec séparateur et date */
+.royal-quote-footer {
+    margin-top: 50px;
+    padding-top: 25px;
 }
 
-/* Date - Simple */
+.royal-quote-separator {
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8B2635, transparent);
+    margin: 0 auto 20px;
+    position: relative;
+}
+
+.royal-quote-separator::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: #D4AF37;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
 .royal-quote-date {
-    font-size: 14px;
+    font-size: 13px;
     color: #6b7280;
     margin: 0;
-    text-align: left;
+    text-align: center;
     font-style: italic;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .royal-quote-date i {
-    display: none;
+    color: #8B2635;
+    font-size: 14px;
 }
 
-@media (max-width: 768px) {
-    .royal-quote-title {
-        font-size: 24px;
-    }
-}
-
-/* Responsive Design for Royal Quote Section */
 @media (max-width: 991.98px) {
     .royal-quote-section {
         padding: 60px 0;
@@ -1299,15 +1398,27 @@ Témoignages
     }
 
     .royal-quote-content {
-        padding: 35px 28px;
+        padding: 45px 35px;
     }
 
-    .royal-quote-title {
+    .royal-quote-title-text {
         font-size: 28px;
+        padding: 0 25px;
+        letter-spacing: 2px;
+    }
+
+    .royal-quote-title-text::before,
+    .royal-quote-title-text::after {
+        height: 35px;
     }
 
     .royal-quote-main-text {
-        font-size: 16px;
+        font-size: 17px;
+    }
+
+    .royal-quote-text-container::before,
+    .royal-quote-text-container::after {
+        font-size: 60px;
     }
 }
 
@@ -1322,15 +1433,42 @@ Témoignages
     }
 
     .royal-quote-content {
-        padding: 28px 20px;
+        padding: 35px 25px;
     }
 
-    .royal-quote-title {
+    .royal-quote-title-text {
         font-size: 24px;
+        padding: 0 20px;
+        letter-spacing: 1.5px;
+    }
+
+    .royal-quote-title-text::before,
+    .royal-quote-title-text::after {
+        height: 30px;
+        width: 2px;
     }
 
     .royal-quote-main-text {
-        font-size: 15px;
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    .royal-quote-text-container {
+        padding: 0 15px;
+    }
+
+    .royal-quote-text-container::before,
+    .royal-quote-text-container::after {
+        font-size: 50px;
+    }
+
+    .royal-quote-source {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .royal-source-icon {
+        align-self: flex-start;
     }
 }
 
