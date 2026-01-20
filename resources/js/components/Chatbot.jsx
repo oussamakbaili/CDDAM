@@ -343,7 +343,7 @@ const Chatbot = () => {
                 onClick={() => setIsOpen(!isOpen)}
                 aria-label={t('chatbot.toggle')}
             >
-                <i className={`fas ${isOpen ? 'fa-times' : 'fa-play'}`}></i>
+                <i className={`fas ${isOpen ? 'fa-times' : 'fa-robot'}`}></i>
                 {!isOpen && <span className="chatbot-toggle-text">{t('chatbot.askText') || 'Ask'}</span>}
             </button>
 
